@@ -1,4 +1,4 @@
-.my_pages_button {
+.round_button {
 -fx-background-color: #F2F0E9;
 -fx-border-width: 1px;
 -fx-border-color: #4E4873;
@@ -6,61 +6,26 @@
 -fx-background-radius: 45px;
 -fx-text-fill: #000000;
 -fx-background-insets: 0;
--fx-label-padding: 0 6 0 0;
 -fx-padding: 1;
 }
 
-.shopping_button {
--fx-background-color: #F2F0E9;
--fx-border-width: 1px;
--fx-border-color: #4E4873;
--fx-border-radius: 45px;
--fx-background-radius: 45px;
--fx-text-fill: #000000;
--fx-background-insets: 0;
+#shopping_button {
 -fx-label-padding: 0 45 0 0;
--fx-padding: 1;
 }
 
-.help_button {
--fx-background-color: #F2F0E9;
--fx-border-width: 1px;
--fx-border-color: #4E4873;
--fx-border-radius: 45px;
--fx-background-radius: 45px;
--fx-text-fill: #000000;
--fx-background-insets: 0;
--fx-label-padding: 0 70 0 0;
--fx-padding: 1;
+#my_pages_button {
+-fx-label-padding: 0 6 0 0;
 }
 
-.history_button {
--fx-background-color: #F2F0E9;
--fx-border-width: 1px;
--fx-border-color: #4E4873;
--fx-border-radius: 45px;
--fx-background-radius: 45px;
--fx-text-fill: #000000;
--fx-background-insets: 0;
+#history_button {
 -fx-label-padding: 0 40 0 0;
--fx-padding: 1;
 }
 
+#help_button {
+-fx-label-padding: 0 70 0 0;
+}
 
-
-
-
-
-
-.search_button {
--fx-background-color: #F2F0E9;
--fx-border-width: 1px;
--fx-border-color: #4E4873;
--fx-border-radius: 45px;
--fx-background-radius: 45px;
--fx-text-fill: #000000;
--fx-background-insets: 0;
--fx-label-padding: 0 50 0 0;
--fx-wrap-text: false;
--fx-padding: 14px;
+#search_button {
+-fx-label-padding: 0 0 0 0;
+-fx-padding: 0 0 3 25;
 }
