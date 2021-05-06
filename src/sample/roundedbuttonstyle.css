@@ -1,0 +1,24 @@
+.button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-label-padding: 0 50 0 0;
+-fx-padding: 5px;
+}
+
+.search_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-label-padding: 0 50 0 0;
+-fx-wrap-text: false;
+-fx-padding: 14px;
+}
