@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -33,7 +34,7 @@
                   <Font size="86.0" />
                </font>
             </Label>
-            <Button layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
+            <Button id="my_pages_button" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -45,7 +46,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
+            <Button id="help_button" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -57,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="914.0" layoutY="25.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
+            <Button id="history_button" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -69,7 +70,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="592.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
+            <Button id="shopping_button" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -84,11 +85,19 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField layoutX="252.0" layoutY="26.0" prefHeight="74.0" prefWidth="340.0" promptText="Sök vara" styleClass="search_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
+            <TextField id="search_button" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
                <font>
                   <Font size="32.0" />
                </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </TextField>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/search.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
