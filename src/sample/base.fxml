@@ -40,27 +40,52 @@
                <children>
                   <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label text="Kategorier">
+                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="   Kategorier" textAlignment="CENTER">
                            <font>
-                              <Font size="36.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Chark">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Chark">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Snacks">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frysvaror">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Dryck">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Städ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Hushåll">
                            <font>
                               <Font size="24.0" />
                            </font>
