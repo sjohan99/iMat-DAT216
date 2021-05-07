@@ -40,7 +40,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/settings.png" />
+                        <Image url="@resources/settings.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -52,7 +52,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/help.png" />
+                        <Image url="@resources/help.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -64,7 +64,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/history.png" />
+                        <Image url="@resources/history.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -76,7 +76,7 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/shoppingcart.png" />
+                        <Image url="@resources/shoppingcart.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -94,7 +94,7 @@
             </TextField>
             <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/search.png" />
+                  <Image url="@resources/search.png" />
                </image>
             </ImageView>
          </children>
