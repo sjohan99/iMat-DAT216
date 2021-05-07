@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <GridPane layoutY="125.0" opacity="0.58" prefHeight="773.0" prefWidth="275.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <columnConstraints>
@@ -113,7 +113,7 @@
                   <Font size="86.0" />
                </font>
             </Label>
-            <Button id="my_pages_button" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
+            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -125,7 +125,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="help_button" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
+            <Button id="help_button" fx:id="helpButton" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -137,7 +137,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="history_button" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
+            <Button id="history_button" fx:id="historyButton" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -149,7 +149,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="shopping_button" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
+            <Button id="shopping_button" fx:id="shoppingButton" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
                <font>
                   <Font size="26.0" />
                </font>
