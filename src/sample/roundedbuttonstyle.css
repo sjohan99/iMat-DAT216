@@ -13,8 +13,6 @@
     src: url('resources/Rochester-Regular.ttf');
 }
 
-
-
 .round_button {
 -fx-background-color: #F2F0E9;
 -fx-border-width: 1px;
@@ -25,14 +23,11 @@
 -fx-background-insets: 0;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
-/*-fx-font-style: italic;
--fx-font-weight: 700;*/
 -fx-font-size: 24px;
 }
 
-/* feedback response by changing background color of button when hovered */
-.round_button:hover {
--fx-background-color: #E1DBC7;
+.round_button_pressed {
+-fx-background-color: #F2B84B;
 -fx-border-width: 1px;
 -fx-border-color: #4E4873;
 -fx-border-radius: 45px;
@@ -41,10 +36,30 @@
 -fx-background-insets: 0;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
-/*-fx-font-style: italic;
--fx-font-weight: 700;*/
 -fx-font-size: 24px;
+}
+
+/* feedback response by changing background color of button when hovered */
+.round_button:hover {
+-fx-background-color: #E1DBC7;
 -fx-cursor: hand;
+}
+
+.split-pane {
+    -fx-box-border: transparent;
+}
+
+.split-pane:horizontal > .split-pane-divider {
+   -fx-background-color: transparent;
+}
+.split-pane:vertical > .split-pane-divider {
+   -fx-background-color: transparent;
+}
+
+.top_bar {
+    -fx-background-color: #F25E3D;
+    -fx-border-width: 0 0 1px 0;
+    -fx-border-color: #4E4873;
 }
 
 #imat {
