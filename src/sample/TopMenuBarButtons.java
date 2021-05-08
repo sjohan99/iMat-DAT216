@@ -29,15 +29,23 @@ public class TopMenuBarButtons {
     }
     
     /**
-     * Toggles the pressed button by changing its background color and makes every other button untoggled.
+     * Toggles the pressed button by removing all style-classes added to the button and then adding the wanted one.
      * @param pressedButtonId
      */
     void activate(String pressedButtonId) {
+        // Otroligt ful kod men enda som jag fick det att fungera med haha / Johan
         for (Button button : siblings) {
-            if (!(button.getId() == pressedButtonId)) {
-                button.setStyle("-fx-background-color: #F2F0E9");
+            if (!(button.getId().equals(pressedButtonId))) {
+                button.getStyleClass().removeAll("round_button_pressed");
+                button.getStyleClass().removeAll("round_button");
+                button.getStyleClass().add("round_button");
             }
-            else button.setStyle("-fx-background-color: #F2B84B");
+            else {
+                button.getStyleClass().removeAll("round_button");
+                button.getStyleClass().removeAll("round_button_pressed");
+                button.getStyleClass().add("round_button_pressed");
+            }
+            //System.out.println(button.getStyleClass());
         }
     }
 }
