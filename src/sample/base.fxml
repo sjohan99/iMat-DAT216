@@ -34,7 +34,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <SplitPane dividerPositions="0.18523153942428036, 0.8291614518147684" prefHeight="820.0" prefWidth="1210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <SplitPane dividerPositions="0.18523153942428036, 0.8291614518147684" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
           <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
                <children>
@@ -96,7 +96,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ScrollPane prefHeight="776.0" prefWidth="1033.0" />
+                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
                </children>
             </AnchorPane>
             <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -106,7 +106,7 @@
             </AnchorPane>
         </items>
       </SplitPane>
-      <AnchorPane layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label id="imat" layoutX="25.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat">
                <font>
