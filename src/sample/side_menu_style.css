@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('resources/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('resources/Roboto-BoldItalic.ttf');
+}
+
+.sidebar_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 0;
+-fx-font-family: 'Roboto';
+-fx-label-padding: 0 0 0 25;
+-fx-font-size: 30px;
+}
+
+.headline_label {
+-fx-font-size: 45px;
+-fx-font-family: 'Roboto';
+-fx-font-style: italic;
+-fx-font-weight: 700;
+-fx-underline: true;
+/*-fx-padding: 0 0 0 25;*/
+}
+
+.homepage_button {
+-fx-background-color: #F2F0E9;
+/* -fx-background-color: #F2B84B; /* gul */
+-fx-border-radius: 150px;
+-fx-background-radius: 150px;
+-fx-background-insets: 0; /* Vad är detta? */
+}
+
+.receipt_button {
+-fx-label-padding: 0 0 0 25;
+-fx-font-family: 'Roboto';
+-fx-font-size: 30px;
+}
