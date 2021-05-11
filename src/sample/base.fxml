@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
@@ -111,139 +110,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <SplitPane dividerPositions="0.18523153942428036, 0.5" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
-        <items>
-          <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
-               <children>
-                  <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="   Kategorier" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="36.0" />
-                           </font>
-                        </Label>
-                        <HBox prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css">
-                           <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Button>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                                 <HBox.margin>
-                                    <Insets top="12.5" />
-                                 </HBox.margin>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                        <HBox prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css">
-                           <children>
-                              <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Chark">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                              </Button>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                                 <HBox.margin>
-                                    <Insets top="12.5" />
-                                 </HBox.margin>
-                              </ImageView>
-                           </children>
-                        </HBox>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Snacks">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frysvaror">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Dryck">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Städ">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Hushåll">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
-               </children>
-            </AnchorPane>
-            <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <VBox layoutX="44.0" layoutY="230.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="Varukorg" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold Italic" size="36.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </VBox>
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
-      <Button layoutX="1286.0" layoutY="762.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <Button alignment="BASELINE_LEFT" layoutX="1324.0" layoutY="720.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER" AnchorPane.bottomAnchor="150.0" AnchorPane.rightAnchor="0.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
       <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E79482;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <children>
             <Label id="imat_homepage" layoutX="280.0" layoutY="175.0" prefHeight="183.0" prefWidth="249.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="287.0">
@@ -300,5 +166,188 @@
             </Label>
          </children>
       </AnchorPane>
+      <SplitPane dividerPositions="0.18523153942428036, 0.5" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+        <items>
+          <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
+               <children>
+                  <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="   Kategorier" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="115.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="120.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Chark">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="40.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Snacks">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="80.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frysvaror">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="115.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Dryck">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="130.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Städ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Hushåll">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <VBox layoutX="44.0" layoutY="230.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="Varukorg" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold Italic" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>
