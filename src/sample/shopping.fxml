@@ -110,62 +110,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E79482;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
-         <children>
-            <Label id="imat_homepage" layoutX="280.0" layoutY="175.0" prefHeight="183.0" prefWidth="249.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="287.0">
-               <font>
-                  <Font size="86.0" />
-               </font>
-            </Label>
-            <Button layoutX="330.0" layoutY="407.0" mnemonicParsing="false" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/shoppingcart2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="626.0" layoutY="426.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="612.5">
-               <graphic>
-                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/history2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="107.0" layoutY="432.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
-               <graphic>
-                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/settings2.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label layoutX="174.0" layoutY="66.0" prefHeight="77.0" prefWidth="496.0" text="Välkommen till " textFill="WHITE">
-               <font>
-                  <Font name="Roboto" size="72.0" />
-               </font>
-            </Label>
-            <Label layoutX="65.0" layoutY="650.0" prefHeight="47.0" prefWidth="172.0" text="Mina Sidor">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="616.0" layoutY="650.0" prefHeight="46.0" prefWidth="120.0" text="Historik">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="340.0" layoutY="650.0" prefHeight="17.0" prefWidth="147.0" text="Handla">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
       <SplitPane dividerPositions="0.18523153942428036, 0.5" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
           <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
@@ -318,7 +262,87 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
+                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css">
+                     <content>
+                        <AnchorPane prefHeight="782.0" prefWidth="1042.0">
+                           <children>
+                              <AnchorPane layoutX="95.0" layoutY="82.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="67.5">
+                                 <children>
+                                    <ImageView fitHeight="208.0" fitWidth="220.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@resources/banana.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="12.0" layoutY="217.0" text="Banan">
+                                       <font>
+                                          <Font name="Roboto" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField alignment="CENTER" layoutX="32.0" layoutY="301.0" prefHeight="50.0" prefWidth="155.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="0 st" />
+                                    <Button layoutX="140.0" layoutY="306.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="+">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="40.0" layoutY="306.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="-">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="14.0" layoutY="258.0" text="5 kr/st">
+                                       <font>
+                                          <Font name="Roboto" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="50.0" layoutY="10.0" prefHeight="52.0" prefWidth="250.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="Frukt och grönt" underline="true" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="36.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane layoutX="105.0" layoutY="92.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="292.5" AnchorPane.topAnchor="67.5">
+                                 <children>
+                                    <ImageView fitHeight="208.0" fitWidth="220.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+                                       <image>
+                                          <Image url="@resources/banana.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="12.0" layoutY="217.0" text="Banan">
+                                       <font>
+                                          <Font name="Roboto" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField alignment="CENTER" layoutX="32.0" layoutY="301.0" prefHeight="50.0" prefWidth="155.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="0 st" />
+                                    <Button layoutX="140.0" layoutY="306.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="+">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Button layoutX="40.0" layoutY="306.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="39.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="-">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="14.0" layoutY="258.0" text="5 kr/st">
+                                       <font>
+                                          <Font name="Roboto" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="535.0" layoutY="67.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="535.0" AnchorPane.topAnchor="67.5" />
+                              <AnchorPane layoutX="545.0" layoutY="77.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="777.5" AnchorPane.topAnchor="67.5" />
+                              <AnchorPane layoutX="52.0" layoutY="449.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="448.0" />
+                              <AnchorPane layoutX="310.0" layoutY="442.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="292.5" AnchorPane.topAnchor="448.0" />
+                              <AnchorPane layoutX="499.0" layoutY="442.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="777.5" AnchorPane.topAnchor="448.0" />
+                              <AnchorPane layoutX="515.0" layoutY="452.0" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="535.0" AnchorPane.topAnchor="448.0" />
+                              <Button layoutX="348.0" layoutY="24.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Alla" />
+                              <Button layoutX="494.0" layoutY="24.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Ekologiskt" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
             <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -327,21 +351,30 @@
                      <children>
                         <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="Varukorg" textAlignment="CENTER">
                            <font>
-                              <Font name="System Bold Italic" size="36.0" />
+                              <Font name="Roboto" size="36.0" />
                            </font>
                         </Label>
+                        <ScrollPane prefHeight="300.0" prefWidth="275.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="301.0" prefWidth="256.0" style="-fx-background-color: #F2F0E9;" stylesheets="@roundedbuttonstyle.css" />
+                          </content>
+                        </ScrollPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                         <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan">
+                        <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: #F2B84B;" stylesheets="@roundedbuttonstyle.css" text="Gå till kassan">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
                         </Button>
                      </children>
                   </VBox>
