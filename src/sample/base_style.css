@@ -1,0 +1,15 @@
+
+.cart_item_text {
+-fx-padding: 0;
+-fx-font-family: 'Roboto';
+-fx-label-padding: 0 0 0 25;
+-fx-font-size: 22px;
+}
+
+.scroll_pane_style {
+-fx-fit-to-width: true;
+}
+
+.line_divider {
+-fx-fill: #4E4873;
+}
