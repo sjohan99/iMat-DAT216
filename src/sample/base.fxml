@@ -111,62 +111,6 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E79482;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
-         <children>
-            <Label id="imat_homepage" layoutX="280.0" layoutY="175.0" prefHeight="183.0" prefWidth="249.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="287.0">
-               <font>
-                  <Font size="86.0" />
-               </font>
-            </Label>
-            <Button layoutX="330.0" layoutY="407.0" mnemonicParsing="false" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
-               <graphic>
-                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../handla.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="626.0" layoutY="426.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="612.5">
-               <graphic>
-                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../historik.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button layoutX="107.0" layoutY="432.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
-               <graphic>
-                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../minasidor.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label layoutX="174.0" layoutY="66.0" prefHeight="77.0" prefWidth="496.0" text="Välkommen till " textFill="WHITE">
-               <font>
-                  <Font name="Roboto" size="72.0" />
-               </font>
-            </Label>
-            <Label layoutX="65.0" layoutY="650.0" prefHeight="47.0" prefWidth="172.0" text="Mina Sidor">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="616.0" layoutY="650.0" prefHeight="46.0" prefWidth="120.0" text="Historik">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="340.0" layoutY="650.0" prefHeight="17.0" prefWidth="147.0" text="Handla">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
       <SplitPane dividerPositions="0.18523153942428036, 0.5" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
           <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
@@ -187,7 +131,7 @@
                               </Button>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../pil.png" />
+                                    <Image url="@resources/arrow.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -207,7 +151,7 @@
                               </Button>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../pil.png" />
+                                    <Image url="@resources/arrow.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -225,7 +169,7 @@
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../pil.png" />
+                                    <Image url="@resources/arrow.png" />
                                  </image>
                                  <viewport>
                                     <Rectangle2D />
@@ -300,5 +244,61 @@
             <Font size="24.0" />
          </font>
       </Button>
+      <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E79482;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+         <children>
+            <Label id="imat_homepage" layoutX="280.0" layoutY="175.0" prefHeight="183.0" prefWidth="249.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="287.0">
+               <font>
+                  <Font size="86.0" />
+               </font>
+            </Label>
+            <Button layoutX="330.0" layoutY="407.0" mnemonicParsing="false" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/shoppingcart2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="626.0" layoutY="426.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="612.5">
+               <graphic>
+                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/history2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="107.0" layoutY="432.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
+               <graphic>
+                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/settings2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="174.0" layoutY="66.0" prefHeight="77.0" prefWidth="496.0" text="Välkommen till " textFill="WHITE">
+               <font>
+                  <Font name="Roboto" size="72.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="650.0" prefHeight="47.0" prefWidth="172.0" text="Mina Sidor">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="616.0" layoutY="650.0" prefHeight="46.0" prefWidth="120.0" text="Historik">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="650.0" prefHeight="17.0" prefWidth="147.0" text="Handla">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
