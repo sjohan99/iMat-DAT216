@@ -9,7 +9,7 @@ public class MyPages extends AnchorPane {
     
     private UIController parentController;
     
-    public MyPages(ViewController controller) {
+    public MyPages(MyPagesController controller) {
         this.parentController = parentController;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mina_sidor.fxml"));
         fxmlLoader.setRoot(this);

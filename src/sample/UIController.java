@@ -1,10 +1,7 @@
 package sample;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -14,14 +11,13 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UIController implements Initializable {
     
     public BackendController backend = new BackendController();
-    public ViewController viewController = new ViewController();
+    public MyPagesController myPagesController = new MyPagesController();
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton;
     @FXML private Label iMat;
@@ -42,7 +38,7 @@ public class UIController implements Initializable {
     
     private void addMainViews() {
         parentView.getChildren().clear();
-        parentView.getChildren().add(new MyPages(viewController));
+        parentView.getChildren().add(new MyPages(myPagesController));
     }
     
     private void addSideMenus() {
