@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class UIController implements Initializable {
     
     public BackendController backend = new BackendController();
-    public MyPagesController myPagesController = new MyPagesController();
+    public MyPagesController myPagesController = new MyPagesController(this);
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton;
     @FXML private Label iMat;
