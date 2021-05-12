@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane prefHeight="778.0" prefWidth="1035.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true">
+                     <font>
+                        <Font name="Roboto Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="52.0" layoutY="180.0" prefHeight="515.0" prefWidth="937.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="781.0" prefWidth="1020.0">
+                           <children>
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="237.35415649414062" layoutY="61.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" />
+                              <Label layoutX="55.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Label layoutX="611.0" layoutY="133.0" text="Datum - ÅÅÅÅ-MM-DD TT:MM:SS">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="84.0" fitWidth="304.0" layoutX="102.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="499.0" layoutY="385.0" radiusX="159.0" radiusY="95.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="298.0" AnchorPane.topAnchor="290.0" />
+                  <Label layoutX="364.0" layoutY="364.0" text="Välj ett kvitto i listan">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true">
+                     <font>
+                        <Font name="Roboto Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

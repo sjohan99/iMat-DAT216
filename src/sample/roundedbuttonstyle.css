@@ -186,3 +186,7 @@
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
 }
+
+.instruction_blob {
+-fx-background-color: #F2B84B;
+}
