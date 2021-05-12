@@ -28,6 +28,7 @@ public class UIController implements Initializable {
     @FXML public AnchorPane sideMenuParentAnchorPane;
     
     private TopMenuBarButtons topMenuBarButtons;
+    private SideMenus sideMenus = new SideMenus(this);
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,7 +39,7 @@ public class UIController implements Initializable {
 
     private void addSideMenus() {
         sideMenuParentAnchorPane.getChildren().clear();
-        sideMenuParentAnchorPane.getChildren().add(new SideMenus(this));
+        sideMenuParentAnchorPane.getChildren().add(sideMenus);
     }
     
     /**
@@ -82,6 +83,7 @@ public class UIController implements Initializable {
     public void toggleOnButton(ActionEvent e) {
         String id = ((Node) e.getSource()).getId();
         topMenuBarButtons.activate(id);
+        sideMenus.changeSideMenu(id);
     }
     
     
