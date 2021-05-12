@@ -1,0 +1,13 @@
+
+.label_bold {
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+/* -fx-font-weight: 700; */
+-fx-font-weight: bold;
+-fx-text-decoration: underline;
+}
+
+.label_normal {
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
