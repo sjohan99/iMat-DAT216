@@ -2,9 +2,11 @@ package sample;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,16 +17,36 @@ import java.util.ResourceBundle;
  */
 public class MyPagesController implements Initializable {
     
+    private UIController parentController;
     public BackendController backend = new BackendController();
     
     @FXML TextField adressTextField, apartmentNumTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
+    @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryAnchorPane;
+    
+    public MyPagesController(UIController parentController) {
+        this.parentController = parentController;
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initMyPagesTextFields();
         initMyPagesTextFieldListeners();
+    }
+    
+    public void myPagesChangeWindow(ActionEvent e, String id) {
+        switch(id) {
+            case "personal_info":
+                personalInfoAnchorPane.toFront();
+                break;
+            case "card_details":
+                cardDetailsAnchorPane.toFront();
+                break;
+            case "delivery_details":
+                deliveryAnchorPane.toFront();
+                break;
+        }
     }
     
     /**
