@@ -9,6 +9,9 @@ import java.io.IOException;
 public class SideMenus extends AnchorPane {
     
     private UIController parentController;
+    /**
+     * Different side menu views
+     */
     @FXML AnchorPane shopping_menuPane, my_pages_menuPane, checkout_menuPage, history_menuPane;
 
     public SideMenus(UIController parentController) {
@@ -25,6 +28,10 @@ public class SideMenus extends AnchorPane {
         this.parentController = parentController;
     }
 
+    /**
+     * Changes the side menu view depending on the top menu bar button id
+     * @param buttonId
+     */
     public void changeSideMenu(String buttonId) {
         switch(buttonId) {
             case "history_button":
@@ -40,8 +47,3 @@ public class SideMenus extends AnchorPane {
 
     }
 }
-
-// "shopping_button");
-//        helpButton.setId("help_button");
-//        historyButton.setId("history_button");
-//        myPagesButton.setId("my_pages_button"

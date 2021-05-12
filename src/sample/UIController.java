@@ -77,7 +77,7 @@ public class UIController implements Initializable {
     }
     
     /**
-     * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest.
+     * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest. Also tells SideMenus to update view
      * @param e triggered event
      */
     public void toggleOnButton(ActionEvent e) {
