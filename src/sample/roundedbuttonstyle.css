@@ -143,3 +143,46 @@
 -fx-stroke-width: 2px;
 -fx-stroke: #000000;
 }
+
+.delivery_date_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 64px;
+}
+
+.delivery_time_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-text-fill: #000000;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 20px;
+}
+
+.go_back_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-text-fill: #000000;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.next_step_button {
+-fx-background-color: #F2B84B;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-text-fill: #000000;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}

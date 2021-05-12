@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root prefHeight="40.0" prefWidth="250.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="itemAmountAndName" layoutY="6.0" prefHeight="28.0" prefWidth="240.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
+   </children>
+</fx:root>
