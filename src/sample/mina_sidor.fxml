@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+      <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
          <children>
             <Label prefHeight="42.0" prefWidth="261.0" styleClass="boldText_label" stylesheets="@roundedbuttonstyle.css" text="Personuppgifter" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="66.0">
                <font>
@@ -46,44 +46,7 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <AnchorPane prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
-         <children>
-            <Label prefHeight="42.0" prefWidth="261.0" styleClass="boldText_label" stylesheets="@roundedbuttonstyle.css" text="Leveransadress" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="66.0">
-               <font>
-                  <Font name="Roboto Black" size="36.0" />
-               </font>
-            </Label>
-            <Label alignment="TOP_LEFT" prefHeight="64.0" prefWidth="342.0" styleClass="myPages_label" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" underline="true" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="6.0">
-               <font>
-                  <Font name="Roboto Medium Italic" size="36.0" />
-               </font>
-            </Label>
-            <Label layoutX="64.0" layoutY="142.0" text="Adress:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="145.0">
-               <font>
-                  <Font name="Roboto Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="73.0" layoutY="220.0" text="Lägenhetsnr:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="211.0">
-               <font>
-                  <Font name="Roboto Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="73.0" layoutY="288.0" text="Postnummer:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="279.0">
-               <font>
-                  <Font name="Roboto Regular" size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="73.0" layoutY="362.0" text="Postort:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="346.0">
-               <font>
-                  <Font name="Roboto Regular" size="24.0" />
-               </font>
-            </Label>
-            <TextField prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="145.0" />
-            <TextField prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="211.0" />
-            <TextField prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="279.0" />
-            <TextField prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="347.0" />
-         </children></AnchorPane>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+      <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
          <children>
             <Label prefHeight="42.0" prefWidth="261.0" styleClass="boldText_label" stylesheets="@roundedbuttonstyle.css" text="Kortuppgifter" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="68.0">
                <font>
@@ -121,5 +84,42 @@
             <Spinner fx:id="yearSpinner" layoutX="439.0" layoutY="326.0" prefHeight="12.0" prefWidth="125.0" AnchorPane.leftAnchor="371.0" AnchorPane.topAnchor="280.0" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="deliveryAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+         <children>
+            <Label prefHeight="42.0" prefWidth="261.0" styleClass="boldText_label" stylesheets="@roundedbuttonstyle.css" text="Leveransadress" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="66.0">
+               <font>
+                  <Font name="Roboto Black" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" prefHeight="64.0" prefWidth="342.0" styleClass="myPages_label" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" underline="true" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="6.0">
+               <font>
+                  <Font name="Roboto Medium Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="142.0" text="Adress:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="145.0">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="220.0" text="Lägenhetsnr:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="211.0">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="288.0" text="Postnummer:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="279.0">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="73.0" layoutY="362.0" text="Postort:" AnchorPane.rightAnchor="859.0" AnchorPane.topAnchor="346.0">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="adressTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="145.0" />
+            <TextField fx:id="apartmentNumTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="211.0" />
+            <TextField fx:id="postNumTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="279.0" />
+            <TextField fx:id="postalAreaTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="347.0" />
+         </children></AnchorPane>
    </children>
 </AnchorPane>
