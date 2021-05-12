@@ -14,35 +14,7 @@
    <children>
       <StackPane prefHeight="778.0" prefWidth="1035.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true">
-                     <font>
-                        <Font name="Roboto Bold Italic" size="36.0" />
-                     </font>
-                  </Label>
-                  <ScrollPane layoutX="52.0" layoutY="180.0" prefHeight="515.0" prefWidth="937.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="781.0" prefWidth="1020.0">
-                           <children>
-                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="237.35415649414062" layoutY="61.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" />
-                              <Label layoutX="55.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara">
-                                 <font>
-                                    <Font name="Roboto" size="24.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
-                  <Label layoutX="611.0" layoutY="133.0" text="Datum - ÅÅÅÅ-MM-DD TT:MM:SS">
-                     <font>
-                        <Font name="Roboto" size="24.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <ImageView fitHeight="84.0" fitWidth="304.0" layoutX="102.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -58,6 +30,159 @@
                   <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true">
+                     <font>
+                        <Font name="Roboto Bold Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="52.0" layoutY="180.0" prefHeight="515.0" prefWidth="937.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="781.0" prefWidth="1020.0">
+                           <children>
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="237.35415649414062" layoutY="61.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="60.499969482421875" />
+                              <Label layoutX="55.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="393.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="556.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="728.0" layoutY="24.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="236.0" layoutY="123.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="125.0" />
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="267.0" layoutY="220.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="255.0" />
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="238.0" layoutY="169.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="190.0" />
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="248.0" layoutY="179.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="320.0" />
+                              <Line endX="633.0904541015625" endY="-3.0517578125E-5" layoutX="248.0" layoutY="179.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="385.0" />
+                              <Label layoutX="55.0" layoutY="83.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 1" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="53.0" layoutY="145.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 2" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="55.0" layoutY="212.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 3" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="53.0" layoutY="272.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 4" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="407.0" layoutY="83.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="409.0" layoutY="146.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="408.0" layoutY="212.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="409.0" layoutY="272.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="535.0" layoutY="81.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="535.0" layoutY="143.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="537.0" layoutY="214.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="537.0" layoutY="274.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="747.0" layoutY="83.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="749.0" layoutY="147.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="749.0" layoutY="211.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="751.0" layoutY="273.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="46.0" layoutY="336.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 4" AnchorPane.leftAnchor="50.0">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="410.0" layoutY="338.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="534.0" layoutY="340.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="748.0" layoutY="339.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="665.0" layoutY="408.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris: xxx kr">
+                                 <font>
+                                    <Font name="Roboto" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+                  <Label layoutX="679.0" layoutY="142.0" text="ÅÅÅÅ-MM-DD TT:MM:SS">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
                </children>
