@@ -25,7 +25,7 @@ public class UIController implements Initializable {
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, shopping_menuPane;
+    @FXML public AnchorPane sideMenuParentAnchorPane;
     
     private TopMenuBarButtons topMenuBarButtons;
     
@@ -35,7 +35,7 @@ public class UIController implements Initializable {
         addPlaceholderCartItems();
         addSideMenus();
     }
-    
+
     private void addSideMenus() {
         sideMenuParentAnchorPane.getChildren().clear();
         sideMenuParentAnchorPane.getChildren().add(new SideMenus(this));
