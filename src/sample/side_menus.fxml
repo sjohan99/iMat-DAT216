@@ -145,7 +145,7 @@
                               <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" ellipsisString="." graphicTextGap="12.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Personuppg." textOverrun="CLIP">
+                        <Button id="personal_info" fx:id="personUppgifterButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" ellipsisString="." graphicTextGap="12.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Personuppg." textOverrun="CLIP">
                            <font>
                               <Font name="Roboto" size="30.0" />
                            </font>
@@ -163,7 +163,7 @@
                               <Insets right="20.0" />
                            </opaqueInsets>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="87.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Adress">
+                        <Button id="delivery_details" fx:id="adressButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="87.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Adress">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -178,7 +178,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="50.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Kortuppg.">
+                        <Button id="card_details" fx:id="kortUppgifterButton" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="50.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="Kortuppg.">
                            <font>
                               <Font size="24.0" />
                            </font>
