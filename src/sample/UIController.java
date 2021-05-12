@@ -24,9 +24,10 @@ public class UIController implements Initializable {
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, shopping_menuPane, parentView;
+    @FXML public AnchorPane sideMenuParentAnchorPane, parentView;;
     
     private TopMenuBarButtons topMenuBarButtons;
+    private SideMenus sideMenus = new SideMenus(this);
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,10 +41,10 @@ public class UIController implements Initializable {
         parentView.getChildren().clear();
         parentView.getChildren().add(new MyPages(myPagesController));
     }
-    
+
     private void addSideMenus() {
         sideMenuParentAnchorPane.getChildren().clear();
-        sideMenuParentAnchorPane.getChildren().add(new SideMenus(this));
+        sideMenuParentAnchorPane.getChildren().add(sideMenus);
     }
     
     /**
@@ -79,12 +80,13 @@ public class UIController implements Initializable {
     }
     
     /**
-     * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest.
+     * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest. Also tells SideMenus to update view
      * @param e triggered event
      */
     public void toggleOnButton(ActionEvent e) {
         String id = ((Node) e.getSource()).getId();
         topMenuBarButtons.activate(id);
+        sideMenus.changeSideMenu(id);
     }
     
     
