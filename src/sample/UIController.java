@@ -1,5 +1,7 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,13 +21,14 @@ import java.util.ResourceBundle;
 public class UIController implements Initializable {
     
     public BackendController backend = new BackendController();
+    public ViewController viewController = new ViewController();
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, shopping_menuPane;
+    @FXML public AnchorPane sideMenuParentAnchorPane, shopping_menuPane, parentView;
     
     private TopMenuBarButtons topMenuBarButtons;
     
@@ -34,6 +37,12 @@ public class UIController implements Initializable {
         initMenuButtons();
         addPlaceholderCartItems();
         addSideMenus();
+        addMainViews();
+    }
+    
+    private void addMainViews() {
+        parentView.getChildren().clear();
+        parentView.getChildren().add(new MyPages(viewController));
     }
     
     private void addSideMenus() {
@@ -51,8 +60,6 @@ public class UIController implements Initializable {
             shoppingCartPane.getChildren().add(new CartItem(this, i + "x Test item"));
         }
     }
-    
-    
     
     /**
      * Initializes buttons to be "toggled" by setting their id's (has to be the same as their css id
