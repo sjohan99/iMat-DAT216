@@ -2,34 +2,43 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class UIController implements Initializable {
     
-    BackendController backend = new BackendController();
+    public BackendController backend = new BackendController();
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
+    @FXML public AnchorPane sideMenuParentAnchorPane, shopping_menuPane;
     
     private TopMenuBarButtons topMenuBarButtons;
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initMenuButtons();
-        
         addPlaceholderCartItems();
+        addSideMenus();
+    }
+    
+    private void addSideMenus() {
+        sideMenuParentAnchorPane.getChildren().clear();
+        sideMenuParentAnchorPane.getChildren().add(new SideMenus(this));
     }
     
     /**
