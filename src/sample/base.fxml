@@ -318,11 +318,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
-               </children>
-            </AnchorPane>
+          <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
             <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css">
                <children>
                   <Label alignment="CENTER" prefHeight="68.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER">
