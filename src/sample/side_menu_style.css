@@ -12,12 +12,31 @@
 -fx-background-color: #F2F0E9;
 -fx-border-width: 1px;
 -fx-border-color: #4E4873;
+-fx-background-radius: 0px;
 -fx-text-fill: #000000;
 -fx-background-insets: 0;
 -fx-padding: 0;
 -fx-font-family: 'Roboto';
 -fx-label-padding: 0 0 0 25;
 -fx-font-size: 30px;
+}
+
+.sidebar_button_pressed {
+-fx-background-color: #F2B84B;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-background-radius: 0px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 0;
+-fx-font-family: 'Roboto';
+-fx-label-padding: 0 0 0 25;
+-fx-font-size: 30px;
+}
+
+.sidebar_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
 }
 
 .headline_label {
