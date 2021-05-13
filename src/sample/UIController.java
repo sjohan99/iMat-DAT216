@@ -18,16 +18,18 @@ public class UIController implements Initializable {
     
     public BackendController backend = new BackendController();
     public MyPagesController myPagesController = new MyPagesController(this);
+    public HistoryController historyController = new HistoryController(this);
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, parentView;;
+    @FXML public AnchorPane sideMenuParentAnchorPane, parentView;
     
     private TopMenuBarButtons topMenuBarButtons;
     private SideMenus sideMenus = new SideMenus(this);
+
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,6 +42,7 @@ public class UIController implements Initializable {
     private void addMainViews() {
         parentView.getChildren().clear();
         parentView.getChildren().add(new MyPages(myPagesController));
+        //parentView.getChildren().add(new History(historyController)); // uncomment to test historyView
     }
 
     private void addSideMenus() {

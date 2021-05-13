@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.shape.Ellipse?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1036.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.10-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="778.0" prefWidth="1035.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+            <AnchorPane fx:id="historyGuidePane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <ImageView fitHeight="84.0" fitWidth="304.0" layoutX="102.0" layoutY="372.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -35,14 +30,14 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane fx:id="historyItemPane" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
                      </font>
                   </Label>
-                  <Label layoutX="662.0" layoutY="132.0" text="ÅÅÅÅ-MM-DD TT:MM:SS" underline="true">
+                  <Label fx:id="timeLabel" layoutX="662.0" layoutY="132.0" text="ÅÅÅÅ-MM-DD TT:MM:SS" underline="true">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
@@ -73,7 +68,7 @@
                      </font>
                   </Label>
                   <Line endX="743.89990234375" endY="-4.57763671875E-5" layoutX="275.0" layoutY="234.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-                  <Label layoutX="775.0" layoutY="705.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris: xxx kr">
+                  <Label fx:id="totalprisLabel" layoutX="775.0" layoutY="705.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris: xxx kr">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
@@ -83,4 +78,4 @@
          </children>
       </StackPane>
    </children>
-</AnchorPane>
+</fx:root>
