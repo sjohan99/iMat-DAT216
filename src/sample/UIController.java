@@ -55,16 +55,18 @@ public class UIController implements Initializable {
     public void expandShoppingCart() {
         if (shoppingCartAnchorPane.getMaxWidth() < 500) {
             shoppingCartExpanded = false;
-            //shoppingCartAnchorPane.setMaxWidth(500); uncomment for instant expansion
+            //shoppingCartAnchorPane.setMaxWidth(500); //uncomment for instant expansion
+            //cartLineDivider.setEndX(cartLineDivider.getEndX() + 225); //uncomment for instant expansion
             timer.start();
-            cartLineDivider.setEndX(cartLineDivider.getEndX() + 225);
+            
             expandButton.setText("Minska varukorg");
         }
         else {
             shoppingCartExpanded = true;
-            //shoppingCartAnchorPane.setMaxWidth(275);
+            //shoppingCartAnchorPane.setMaxWidth(275); //uncomment for instant expansion
+            //cartLineDivider.setEndX(245); //uncomment for instant expansion
             timer.start();
-            cartLineDivider.setEndX(245);
+            
             expandButton.setText("Ändra i varukorgen");
         }
         for (Node item : shoppingCartPane.getChildren()) {
@@ -151,6 +153,7 @@ public class UIController implements Initializable {
                     speed = 1;
                 }
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
+                cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
     
                 if (shoppingCartAnchorPane.getMaxWidth() >= 500) {
                     stop();
@@ -167,7 +170,7 @@ public class UIController implements Initializable {
                     speed = 1;
                 }
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
-                
+                cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
     
                 if (shoppingCartAnchorPane.getMaxWidth() <= 275) {
                     stop();
