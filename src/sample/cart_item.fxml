@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root prefHeight="40.0" prefWidth="250.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="480.0" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="itemAmountAndName" layoutY="6.0" prefHeight="28.0" prefWidth="240.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
+      <Label fx:id="itemAmountAndName" layoutY="6.0" maxWidth="240.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
+      <Label layoutX="281.0" layoutY="12.0" text="Label" />
+      <Button layoutX="400.0" layoutY="8.0" mnemonicParsing="false" text="Button" />
    </children>
 </fx:root>
