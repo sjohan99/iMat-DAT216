@@ -11,3 +11,12 @@
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
 }
+
+.label_scaled_normal {
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 30px;
+}
+.label_scaled_bold {
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 45px;
+}

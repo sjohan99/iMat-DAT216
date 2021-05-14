@@ -127,14 +127,7 @@
 -fx-background-insets: 0; /* Vad är detta? */
 }
 
-.myPages_label {
-    -fx-font-style: italic;
-    -fx-font-weight: 500;
-    -fx-text-decoration: underline;
-}
-.boldText_label{
-    -fx-font-weight: 500;
-}
+
 
 .shopping_item {
 -fx-background-color: #F2F0E9;
