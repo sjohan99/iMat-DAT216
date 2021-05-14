@@ -168,9 +168,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <SplitPane dividerPositions="0.18523153942428036, 0.5" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <SplitPane dividerPositions="0.18523153942428036" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
-          <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
+          <AnchorPane fx:id="sideMenuParentAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
                <children>
                   <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -318,46 +318,42 @@
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ScrollPane layoutX="-3.0" prefHeight="776.0" prefWidth="1036.0" stylesheets="@roundedbuttonstyle.css" />
-               </children>
-            </AnchorPane>
-            <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css">
-               <children>
-                  <Label alignment="CENTER" prefHeight="68.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold Italic" size="36.0" />
-                     </font>
-                  </Label>
-                  <VBox layoutX="44.0" layoutY="230.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-                     <children>
-                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="150.0" prefWidth="275.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan">
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </VBox>
-                  <ScrollPane prefHeight="420.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
-                     <content>
-                        <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" prefHeight="427.0" prefWidth="260.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
-                     </content>
-                  </ScrollPane>
-                  <Label layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
-                  <Label layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
-                  <Line endX="246.0" endY="492.0" layoutY="14.0" startX="26.0" startY="492.0" styleClass="line_divider" />
-               </children>
-            </AnchorPane>
+          <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
+      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="68.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button fx:id="expandButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="150.0" prefWidth="500.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" maxWidth="500.0" prefHeight="420.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+               <content>
+                  <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="260.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
+               </content>
+            </ScrollPane>
+            <Label layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
+            <Label layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
+            <Line fx:id="cartLineDivider" endX="245.0" endY="492.0" layoutY="14.0" startX="25.0" startY="492.0" styleClass="line_divider" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

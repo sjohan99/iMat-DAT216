@@ -31,4 +31,17 @@ public class CartItem extends AnchorPane {
         
         itemAmountAndName.setText(text);
     }
+    
+    /**
+     * Changes the size of the item-name-label to remove "..." (ellipsis) at the end.
+     */
+    public void resizeNameLabel() {
+        int expasionSize = 300;
+        if (itemAmountAndName.getMaxWidth() == expasionSize) {
+            itemAmountAndName.setMaxWidth(240);
+        }
+        else {
+            itemAmountAndName.setMaxWidth(expasionSize);
+        }
+    }
 }
