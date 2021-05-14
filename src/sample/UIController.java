@@ -14,6 +14,8 @@ import javafx.scene.shape.Line;
 
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class UIController implements Initializable {
@@ -23,12 +25,12 @@ public class UIController implements Initializable {
     public HistoryController historyController = new HistoryController(this);
     private AnimationTimer timer = new MyTimer();
     
-    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton;
+    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane;
+    @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
     
@@ -41,12 +43,28 @@ public class UIController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCartExpanded = false;
         initMenuButtons();
+        initStartMenuButtons();
         addPlaceholderCartItems();
         addSideMenus();
-        addMainViews();
+        startPagePane.toFront();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
-    
+
+    public void changeMainView(String buttonId) {
+        startPagePane.toBack(); // Needed because it won't disappear otherwise
+        parentView.getChildren().clear();
+        switch(buttonId) {
+            case "history_button":
+                parentView.getChildren().add(new History(historyController));
+                break;
+            case "my_pages_button":
+                parentView.getChildren().add(new MyPages(myPagesController));
+                break;
+            default:
+
+                break;
+        }
+    }
     
     /**
      * Method is called when expanding shopping cart.
@@ -72,12 +90,6 @@ public class UIController implements Initializable {
         for (Node item : shoppingCartPane.getChildren()) {
             ((CartItem) item).resizeNameLabel();
         }
-    }
-    
-    private void addMainViews() {
-        parentView.getChildren().clear();
-        parentView.getChildren().add(new MyPages(myPagesController));
-        //parentView.getChildren().add(new History(historyController)); // uncomment to test historyView
     }
 
     private void addSideMenus() {
@@ -117,6 +129,17 @@ public class UIController implements Initializable {
             button.setOnAction(e -> toggleOnButton(e));
         }
     }
+
+    private void initStartMenuButtons() {
+        List<Button> buttons = new ArrayList<Button>();
+        startHistoryButton.setId("history_button");
+        startShoppingButton.setId("shopping_button");
+        startMyPagesButton.setId("my_pages_button");
+
+        for (Button button : buttons) {
+            button.setOnAction(e -> toggleOnButton(e));
+        }
+    }
     
     /**
      * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest. Also tells SideMenus to update view
@@ -126,6 +149,7 @@ public class UIController implements Initializable {
         String id = ((Node) e.getSource()).getId();
         topMenuBarButtons.activate(id);
         sideMenus.changeSideMenu(id);
+        changeMainView(id);
     }
     
     /**
