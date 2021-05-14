@@ -2,77 +2,122 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1036.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="100.0" layoutY="469.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="101.0" />
-      <Button layoutX="98.0" layoutY="537.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="101.0" />
-      <Button layoutX="96.0" layoutY="602.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="101.0" />
-      <Button layoutX="75.0" layoutY="184.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="1" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="150.0">
-         <font>
-            <Font size="64.0" />
-         </font>
-      </Button>
-      <Button layoutX="721.0" layoutY="672.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-      <Button layoutX="61.0" layoutY="673.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
-      <Label layoutX="57.5" layoutY="81.0" text="Leveranstid" AnchorPane.leftAnchor="57.5">
-         <font>
-            <Font name="Roboto" size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="181.0" layoutY="326.0" text="Maj">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="176.0" layoutY="177.0" text="Idag">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Button layoutX="409.0" layoutY="400.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="401.0" />
-      <Button layoutX="407.0" layoutY="479.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="401.0" />
-      <Button layoutX="405.0" layoutY="544.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="401.0" />
-      <Button layoutX="384.0" layoutY="126.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="2" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="150.0">
-         <font>
-            <Font size="64.0" />
-         </font>
-      </Button>
-      <Button layoutX="633.0" layoutY="151.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="3" AnchorPane.leftAnchor="675.0" AnchorPane.topAnchor="150.0">
-         <font>
-            <Font size="64.0" />
-         </font>
-      </Button>
-      <Button layoutX="718.0" layoutY="419.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="701.0" />
-      <Button layoutX="716.0" layoutY="498.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="701.0" />
-      <Button layoutX="714.0" layoutY="563.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="701.0" />
-      <Label layoutX="473.0" layoutY="178.0" text="Idag">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="779.0" layoutY="178.0" text="Idag">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="783.0" layoutY="329.0" text="Maj">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="479.0" layoutY="325.0" text="Maj">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="541.0" layoutY="90.0" text="Eller välj ett datum i kalendern: ">
-         <font>
-            <Font name="Roboto" size="24.0" />
-         </font>
-      </Label>
+      <AnchorPane fx:id="deliveryTimeAnchorPane" layoutX="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+         <children>
+            <Button layoutX="100.0" layoutY="469.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="101.0" />
+            <Button layoutX="98.0" layoutY="537.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="101.0" />
+            <Button layoutX="96.0" layoutY="602.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="101.0" />
+            <Button layoutX="75.0" layoutY="184.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="1" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Button>
+            <Button layoutX="721.0" layoutY="672.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+            <Button layoutX="61.0" layoutY="673.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+            <Label layoutX="57.5" layoutY="81.0" text="Leveranstid" AnchorPane.leftAnchor="57.5">
+               <font>
+                  <Font name="Roboto" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="326.0" text="Maj">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="176.0" layoutY="177.0" text="Idag">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button layoutX="409.0" layoutY="400.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="401.0" />
+            <Button layoutX="407.0" layoutY="479.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="401.0" />
+            <Button layoutX="405.0" layoutY="544.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="401.0" />
+            <Button layoutX="384.0" layoutY="126.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="2" AnchorPane.leftAnchor="375.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Button>
+            <Button layoutX="633.0" layoutY="151.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="3" AnchorPane.leftAnchor="675.0" AnchorPane.topAnchor="150.0">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Button>
+            <Button layoutX="718.0" layoutY="419.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="701.0" />
+            <Button layoutX="716.0" layoutY="498.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="701.0" />
+            <Button layoutX="714.0" layoutY="563.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="701.0" />
+            <Label layoutX="473.0" layoutY="178.0" text="Idag">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="779.0" layoutY="178.0" text="Idag">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="783.0" layoutY="329.0" text="Maj">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="479.0" layoutY="325.0" text="Maj">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="541.0" layoutY="90.0" text="Eller välj ett datum i kalendern: ">
+               <font>
+                  <Font name="Roboto" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+         <children>
+            <Label layoutX="36.0" layoutY="66.0" prefHeight="42.0" prefWidth="261.0" styleClass="boldText_label" stylesheets="@roundedbuttonstyle.css" text="Leveransadress">
+               <font>
+                  <Font name="Roboto Black" size="36.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="21.0" layoutY="9.0" prefHeight="64.0" prefWidth="342.0" styleClass="myPages_label" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" underline="true">
+               <font>
+                  <Font name="Roboto Medium Italic" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="88.0" layoutY="141.0" text="Adress:">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="210.0" text="Lägenhetsnr:">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="29.0" layoutY="280.0" text="Postnummer:">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="345.0" text="Postort:">
+               <font>
+                  <Font name="Roboto Regular" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="adressTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="144.0" />
+            <TextField fx:id="apartmentNumTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="211.0" />
+            <TextField fx:id="postNumTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="279.0" />
+            <TextField fx:id="postalAreaTextField" prefHeight="29.0" prefWidth="421.0" AnchorPane.leftAnchor="199.0" AnchorPane.topAnchor="347.0" />
+            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+            <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;" />
    </children>
 </AnchorPane>
