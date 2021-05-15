@@ -13,3 +13,8 @@
 .line_divider {
 -fx-fill: #4E4873;
 }
+
+.remove_focus {
+-fx-focus-color: transparent;
+-fx-faint-focus-color: transparent;
+}
