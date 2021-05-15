@@ -25,7 +25,7 @@ public class ItemCard extends AnchorPane {
     private Product product;
     
     public ItemCard(Product product, UIController uiController, BackendController backend) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("itemcard.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("itemCard.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
     
