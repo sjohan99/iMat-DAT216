@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+
+
+<fx:root fx:id="shoppingAnchorPane" prefHeight="778.0" prefWidth="1036.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="shoppingHeadline" layoutX="51.0" layoutY="30.0" text="Label" />
+      <ScrollPane fx:id="shoppingScrollPane" layoutX="11.0" layoutY="220.0" prefHeight="708.0" prefWidth="1025.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <content>
+            <FlowPane fx:id="shoppingFlowPane" prefHeight="699.0" prefWidth="1023.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </children>
+</fx:root>
