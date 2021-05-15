@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
 
@@ -16,7 +17,8 @@ import java.io.IOException;
 public class ItemCard extends AnchorPane {
     
     @FXML private ImageView itemImage;
-    @FXML private Label itemName, itemCost, itemUnit, itemAmount;
+    @FXML private Label itemCost, itemUnit, itemAmount;
+    @FXML private Text itemNameText;
     
     private UIController parentController;
     private BackendController backend;
@@ -37,12 +39,11 @@ public class ItemCard extends AnchorPane {
         this.backend = backend;
         
         itemImage.setImage(backend.getProductImage(product));
-        itemName.setText(product.getName());
-        itemCost.setText(backend.getProductPrice(product));
-        itemUnit.setText(product.getUnitSuffix());
+        itemNameText.setText(product.getName());
+        itemCost.setText(backend.getCorrectFormatPrice(product));
+        //itemUnit.setText(product.getUnitSuffix());
         // TODO item amount probably needs to be a textfield/area
     }
-    
     
     
 }
