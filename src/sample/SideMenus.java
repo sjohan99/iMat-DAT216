@@ -16,7 +16,7 @@ public class SideMenus extends AnchorPane {
     /**
      * Different side menu views
      */
-    @FXML AnchorPane shopping_menuPane, my_pages_menuPane, checkout_menuPage, history_menuPane;
+    @FXML AnchorPane shopping_menuPane, my_pages_menuPane, checkout_menuPane, history_menuPane;
     @FXML Button personUppgifterButton, adressButton, kortUppgifterButton;
 
     public SideMenus(UIController parentController) {
@@ -56,12 +56,16 @@ public class SideMenus extends AnchorPane {
      * @param buttonId
      */
     public void changeSideMenu(String buttonId) {
+        System.out.println(buttonId);
         switch(buttonId) {
             case "history_button":
                 history_menuPane.toFront();
                 break;
             case "my_pages_button":
                 my_pages_menuPane.toFront();
+                break;
+            case "checkout_button":
+                checkout_menuPane.toFront();
                 break;
             default:
                 shopping_menuPane.toFront();

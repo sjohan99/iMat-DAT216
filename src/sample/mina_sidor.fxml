@@ -123,6 +123,42 @@
                   </Label>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="326.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="68.0">
+                     <font>
+                        <Font name="Roboto Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="TOP_LEFT" prefHeight="64.0" prefWidth="342.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Mina Sidor" underline="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="6.0">
+                     <font>
+                        <Font name="Roboto Medium Italic" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="133.0" layoutY="194.0" prefHeight="38.0" prefWidth="181.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Kortnummer:" AnchorPane.rightAnchor="799.0" AnchorPane.topAnchor="144.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="114.0" layoutY="218.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Korttyp:" AnchorPane.rightAnchor="835.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="40.0" layoutY="277.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Utgångsdatum:" AnchorPane.rightAnchor="835.0" AnchorPane.topAnchor="281.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="52.0" layoutY="345.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Säkerhetskod:" AnchorPane.rightAnchor="835.0" AnchorPane.topAnchor="347.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cardNumberTextField" layoutX="293.0" layoutY="145.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="293.0" AnchorPane.topAnchor="145.0" />
+                  <TextField fx:id="securityCodeTextField" layoutX="268.0" layoutY="382.0" prefHeight="29.0" prefWidth="196.0" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="347.0" />
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
    </children>

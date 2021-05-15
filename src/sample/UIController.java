@@ -19,14 +19,15 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class UIController implements Initializable {
-    
+
     public BackendController backend = new BackendController();
     public MyPagesController myPagesController = new MyPagesController(this);
     public HistoryController historyController = new HistoryController(this);
     public ShoppingController shoppingController = new ShoppingController(this, backend);
+    public CheckoutController checkoutController = new CheckoutController(this);
     private AnimationTimer timer = new MyTimer();
-    
-    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton;
+
+    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton, checkoutButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
@@ -34,12 +35,12 @@ public class UIController implements Initializable {
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
-    
+
     private TopMenuBarButtons topMenuBarButtons;
     private SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
 
-    
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCartExpanded = false;
@@ -67,12 +68,15 @@ public class UIController implements Initializable {
             case "my_pages_button":
                 parentView.getChildren().add(new MyPages(myPagesController));
                 break;
+            case "checkout_button":
+                parentView.getChildren().add(new Checkout(checkoutController));
+                break;
             default:
 
                 break;
         }
     }
-    
+
     /**
      * Method is called when expanding shopping cart.
      * Resizes necessary elements and changes the button-text.
@@ -83,7 +87,7 @@ public class UIController implements Initializable {
             //shoppingCartAnchorPane.setMaxWidth(500); //uncomment for instant expansion
             //cartLineDivider.setEndX(cartLineDivider.getEndX() + 225); //uncomment for instant expansion
             timer.start();
-            
+
             expandButton.setText("Minska varukorg");
         }
         else {
@@ -91,7 +95,7 @@ public class UIController implements Initializable {
             //shoppingCartAnchorPane.setMaxWidth(275); //uncomment for instant expansion
             //cartLineDivider.setEndX(245); //uncomment for instant expansion
             timer.start();
-            
+
             expandButton.setText("Ändra i varukorgen");
         }
         for (Node item : shoppingCartPane.getChildren()) {
@@ -103,7 +107,7 @@ public class UIController implements Initializable {
         sideMenuParentAnchorPane.getChildren().clear();
         sideMenuParentAnchorPane.getChildren().add(sideMenus);
     }
-    
+
     /**
      * Placeholder method which just adds fake items in the shopping cart. Gives a bunch of processValue errors
      * (atleast for me) shouldn't do any harm though
@@ -115,7 +119,7 @@ public class UIController implements Initializable {
             shoppingCartPane.getChildren().add(new CartItem(this, i + "x Test Item"));
         }
     }
-    
+
     /**
      * Initializes buttons to be "toggled" by setting their id's (has to be the same as their css id
      * to not remove their individual styling) and adding an actionevent which reads the id of the pressed button.
@@ -126,12 +130,12 @@ public class UIController implements Initializable {
         topMenuBarButtons.addButtonToList(helpButton);
         topMenuBarButtons.addButtonToList(historyButton);
         topMenuBarButtons.addButtonToList(myPagesButton);
-        
+
         shoppingButton.setId("shopping_button");
         helpButton.setId("help_button");
         historyButton.setId("history_button");
         myPagesButton.setId("my_pages_button");
-        
+
         for (Button button : topMenuBarButtons.getButtons()) {
             button.setOnAction(e -> toggleOnButton(e));
         }
@@ -146,8 +150,13 @@ public class UIController implements Initializable {
         for (Button button : buttons) {
             button.setOnAction(e -> toggleOnButton(e));
         }
-    }
     
+        checkoutButton.setId("checkout_button");
+    
+        checkoutButton.setOnAction(e -> toggleOnButton(e));
+        
+    }
+
     /**
      * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest. Also tells SideMenus to update view
      * @param e triggered event
@@ -158,19 +167,19 @@ public class UIController implements Initializable {
         sideMenus.changeSideMenu(id);
         changeMainView(id);
     }
-    
+
     /**
      * Animation timer for sliding out the cart when expanded.
      */
     private class MyTimer extends AnimationTimer {
-    
+
         double speed = 20;
-        
+
         @Override
         public void handle(long l) {
             slideOut();
         }
-    
+
         /**
          * Method is called every frame, starts with high speed then slows down at the end
          */
@@ -179,13 +188,13 @@ public class UIController implements Initializable {
                 if (speed >= 3) {
                     speed -= 1;
                 }
-    
+
                 if (shoppingCartAnchorPane.getMaxWidth() > 485) {
                     speed = 1;
                 }
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
-    
+
                 if (shoppingCartAnchorPane.getMaxWidth() >= 500) {
                     stop();
                     speed = 20;
@@ -196,13 +205,13 @@ public class UIController implements Initializable {
                 if (speed >= 3) {
                     speed -= 1;
                 }
-    
+
                 if (shoppingCartAnchorPane.getMaxWidth() < 290) {
                     speed = 1;
                 }
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
-    
+
                 if (shoppingCartAnchorPane.getMaxWidth() <= 275) {
                     stop();
                     speed = 20;
