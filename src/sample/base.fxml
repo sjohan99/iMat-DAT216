@@ -119,7 +119,7 @@
                   <Font size="86.0" />
                </font>
             </Label>
-            <Button fx:id="startShoppingButton" layoutX="330.0" layoutY="407.0" mnemonicParsing="false" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
+            <Button fx:id="startShoppingButton" layoutX="330.0" layoutY="407.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -128,7 +128,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="startHistoryButton" layoutX="626.0" layoutY="426.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="612.5">
+            <Button fx:id="startHistoryButton" layoutX="626.0" layoutY="426.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="612.5">
                <graphic>
                   <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -137,7 +137,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="startMyPagesButton" layoutX="107.0" layoutY="432.0" mnemonicParsing="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
+            <Button fx:id="startMyPagesButton" layoutX="107.0" layoutY="432.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
                <graphic>
                   <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
                      <image>
