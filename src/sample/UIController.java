@@ -23,6 +23,7 @@ public class UIController implements Initializable {
     public BackendController backend = new BackendController();
     public MyPagesController myPagesController = new MyPagesController(this);
     public HistoryController historyController = new HistoryController(this);
+    public ShoppingController shoppingController = new ShoppingController(this, backend);
     private AnimationTimer timer = new MyTimer();
     
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton;
@@ -48,6 +49,12 @@ public class UIController implements Initializable {
         addSideMenus();
         startPagePane.toFront();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        // UNCOMMENT THIS BLOCK TO SEE ITEMCARDS
+        /*
+        startPagePane.toBack();
+        parentView.getChildren().add(new Shopping(shoppingController));
+        shoppingController.addItems();
+        */
     }
 
     public void changeMainView(String buttonId) {
