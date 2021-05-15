@@ -16,7 +16,6 @@ import javafx.scene.shape.Line;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -25,6 +24,7 @@ public class UIController implements Initializable {
     public BackendController backend = new BackendController();
     public MyPagesController myPagesController = new MyPagesController(this);
     public HistoryController historyController = new HistoryController(this);
+    public ShoppingController shoppingController = new ShoppingController(this, backend);
     public CheckoutController checkoutController = new CheckoutController(this);
     private AnimationTimer timer = new MyTimer();
 
@@ -54,6 +54,12 @@ public class UIController implements Initializable {
         startPagePane.toFront();
         guideStackPane.toBack();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        // UNCOMMENT THIS BLOCK TO SEE ITEMCARDS
+        /*
+        startPagePane.toBack();
+        parentView.getChildren().add(new Shopping(shoppingController));
+        shoppingController.addItems();
+        */
     }
 
     /**
@@ -202,12 +208,14 @@ public class UIController implements Initializable {
     }
 
     private void initStartMenuButtons() {
+        List<Button> buttons = new ArrayList<Button>();
         startHistoryButton.setId("history_button");
         startShoppingButton.setId("shopping_button");
         startMyPagesButton.setId("my_pages_button");
 
         // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
+
         checkoutButton.setOnAction(e -> toggleOnButton(e));
 
         skipGuideButton.setId("shopping_button");

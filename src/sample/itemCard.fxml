@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="358.0" prefWidth="220.0" styleClass="shopping_item" stylesheets="@roundedbuttonstyle.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="378.0" prefWidth="240.0" styleClass="shopping_item" stylesheets="@item_card_style.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="206.0" fitWidth="220.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="itemImage" fitHeight="179.0" fitWidth="218.0" layoutX="11.0" layoutY="11.0" pickOnBounds="true">
          <image>
             <Image url="@resources/banana.png" />
          </image>
       </ImageView>
-      <Label layoutX="11.0" layoutY="210.0" text="Banan">
-         <font>
-            <Font name="Roboto" size="24.0" />
-         </font>
-      </Label>
-      <TextField alignment="CENTER" layoutX="14.0" layoutY="290.0" prefHeight="62.5" prefWidth="194.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="0 st" AnchorPane.leftAnchor="12.5" AnchorPane.rightAnchor="12.5" />
-      <Button layoutX="149.0" layoutY="296.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="+">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Button layoutX="22.0" layoutY="297.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFFFFF;" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="-">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Button>
-      <Label layoutX="15.0" layoutY="258.0" text="5 kr/st">
+      <TextField alignment="CENTER" layoutX="23.0" layoutY="298.0" prefHeight="62.5" prefWidth="194.0" styleClass="rounded" stylesheets="@item_card_style.css" text="0 st" />
+      <Label fx:id="itemCost" layoutX="23.0" layoutY="265.0" styleClass="item_price" stylesheets="@item_card_style.css" text="5 kr/st">
          <font>
             <Font name="Roboto" size="20.0" />
          </font>
       </Label>
+      <TextFlow fx:id="itemTextFlow" layoutX="22.0" layoutY="192.0" prefHeight="75.0" prefWidth="202.0">
+         <children>
+            <Text fx:id="itemNameText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="item_name" text="Text" />
+         </children>
+      </TextFlow>
+      <Circle fx:id="itemRemoveButton" fill="WHITE" layoutX="55.0" layoutY="330.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
+      <Circle fx:id="itemAddButton" fill="WHITE" layoutX="185.0" layoutY="330.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" styleClass="add_circle_style" />
+      <Line endX="-34.0" endY="63.5" layoutX="99.0" layoutY="266.0" mouseTransparent="true" startX="-54.0" startY="63.5" strokeWidth="4.0" />
+      <Line endX="-34.0" endY="64.0" layoutX="220.0" layoutY="276.0" mouseTransparent="true" startX="-34.0" startY="44.0" strokeWidth="4.0" />
+      <Line endX="-34.0" endY="63.5" layoutX="230.0" layoutY="266.0" mouseTransparent="true" startX="-54.0" startY="63.5" strokeWidth="4.0" />
    </children>
-</AnchorPane>
+</fx:root>

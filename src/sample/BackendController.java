@@ -35,10 +35,17 @@ public class BackendController {
             price = kr + ":-";
         }
         else {
+            if (ore < 10) {
+                ore *= 10;
+            }
             price = kr + ":" + ore;
         }
         return price;
     }
     
+    public String getCorrectFormatPrice(Product product) {
+        String correct = getProductPrice(product) + " / " + product.getUnitSuffix();
+        return correct;
+    }
     
 }

@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('resources/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('resources/Roboto-Medium.ttf');
+}
+
+.rounded {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 2px;
+-fx-border-color: #4E4873;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 25px;
+}
+
+.add_circle_style {
+-fx-stroke-width: 2px;
+-fx-stroke: #4E4873;
+}
+
+.add_circle_style:hover {
+-fx-stroke-width: 4px;
+
+}
+
+.remove_circle_style {
+-fx-stroke-width: 2px;
+-fx-stroke: #4E4873;
+}
+
+.remove_circle_style:hover {
+-fx-stroke-width: 4px;
+}
+
+.shopping_item {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-stroke-width: 2px;
+-fx-stroke: #000000;
+-fx-padding: 10px;
+-fx-border-insets: 10px;
+-fx-background-insets: 10px;
+}
+
+.item_name {
+-fx-font-family: 'Roboto';
+-fx-font-weight: 500;
+-fx-font-size: 30px;
+}
+
+.item_price {
+-fx-font-family: 'Roboto';
+-fx-font-size: 25px;
+}
+
