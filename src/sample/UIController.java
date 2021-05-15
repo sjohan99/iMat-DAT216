@@ -9,12 +9,14 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -26,19 +28,21 @@ public class UIController implements Initializable {
     public CheckoutController checkoutController = new CheckoutController(this);
     private AnimationTimer timer = new MyTimer();
 
-    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton, checkoutButton;
+    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton, checkoutButton, skipGuideButton, endGuideButton, nextStepButton;
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
-    @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane;
+    @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
+    @FXML public StackPane guideStackPane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
 
     private TopMenuBarButtons topMenuBarButtons;
     private SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
-
+    List<AnchorPane> guidePanes = new ArrayList<>();
+    private int guideStep = 1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -48,11 +52,71 @@ public class UIController implements Initializable {
         addPlaceholderCartItems();
         addSideMenus();
         startPagePane.toFront();
+        guideStackPane.toBack();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+    }
+
+    /**
+     * Adds all guidePanes to a List. Lowers opacity for surrounding elements and brings guide to front
+     */
+    public void initGuideView() {
+
+        guidePanes.add(0,guidePane1);
+        guidePanes.add(1,guidePane2);
+        guidePanes.add(2,guidePane3);
+        guidePanes.add(3,guidePane4);
+        guidePanes.add(4,guidePane5);
+        guidePanes.add(5,guidePane6);
+        for (AnchorPane pane : guidePanes) { pane.setStyle("-fx-opacity: 0"); }
+        guidePane1.setStyle("-fx-opacity: 1");
+        topBarPane.setStyle("-fx-opacity: 0.5");
+        shoppingCartAnchorPane.setStyle("-fx-opacity: 0.5");
+        sideMenuParentAnchorPane.setStyle("-fx-opacity: 0.5");
+        guideStackPane.toFront();
+        guideButtonsPane.toFront();
+        nextStepButton.toFront();
+    }
+
+    /**
+     * Changes opacities on guidePanes and surrounding elements on button press
+     * @param e
+     */
+    public void changeGuideView(ActionEvent e) {
+        for (AnchorPane pane : guidePanes) { pane.setStyle("-fx-opacity: 0"); }
+
+        switch(guideStep) {
+            case 1:
+                topBarPane.setStyle("-fx-opacity: 1");
+                break;
+            case 3:
+                topBarPane.setStyle("-fx-opacity: 0.5");
+                sideMenuParentAnchorPane.setStyle("-fx-opacity: 1");
+                break;
+            case 4:
+                sideMenuParentAnchorPane.setStyle("-fx-opacity: 0.5");
+                shoppingCartAnchorPane.setStyle("-fx-opacity: 1");
+                break;
+            case 5:
+                shoppingCartAnchorPane.setStyle("-fx-opacity: 0.5");
+                topBarPane.setStyle("-fx-opacity: 1");
+                endGuideButton.toFront();
+                break;
+            default:
+
+                break;
+        }
+        guidePanes.get(guideStep).setStyle("-fx-opacity: 1");
+        System.out.println(guideStep);
+        guideStep++;
     }
 
     public void changeMainView(String buttonId) {
         startPagePane.toBack(); // Needed because it won't disappear otherwise
+        guideStackPane.toBack();
+        topBarPane.setStyle("-fx-opacity: 1");
+        shoppingCartAnchorPane.setStyle("-fx-opacity: 1");
+        sideMenuParentAnchorPane.setStyle("-fx-opacity: 1");
+        guideStep = 1;
         parentView.getChildren().clear();
         switch(buttonId) {
             case "history_button":
@@ -63,6 +127,9 @@ public class UIController implements Initializable {
                 break;
             case "checkout_button":
                 parentView.getChildren().add(new Checkout(checkoutController));
+                break;
+            case "help_button":
+                initGuideView();
                 break;
             default:
 
@@ -135,14 +202,18 @@ public class UIController implements Initializable {
     }
 
     private void initStartMenuButtons() {
-        List<Button> buttons = new ArrayList<Button>();
         startHistoryButton.setId("history_button");
         startShoppingButton.setId("shopping_button");
         startMyPagesButton.setId("my_pages_button");
 
+        // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
-
         checkoutButton.setOnAction(e -> toggleOnButton(e));
+
+        skipGuideButton.setId("shopping_button");
+        skipGuideButton.setOnAction(e -> toggleOnButton(e));
+        endGuideButton.setId("shopping_button");
+        endGuideButton.setOnAction(e -> toggleOnButton(e));
 
     }
 
