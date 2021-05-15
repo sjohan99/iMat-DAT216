@@ -497,7 +497,7 @@
                   <Button layoutX="1063.0" layoutY="758.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="162.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="61.0" AnchorPane.rightAnchor="400.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #f08080;">
+            <AnchorPane prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: tranparent;">
                <children>
                   <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1087.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" rotate="143.1">
                      <image>
