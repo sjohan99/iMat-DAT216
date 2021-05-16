@@ -16,11 +16,14 @@ public class CheckoutController implements Initializable {
 
     private UIController parentController;
     public BackendController backend = new BackendController();
-    SideMenus sideMenus = new SideMenus(parentController);
+    SideMenus sideMenus;
 
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
     @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1;
-    public CheckoutController(UIController parentController) { this.parentController = parentController; }
+    public CheckoutController(UIController parentController, SideMenus sideMenus) {
+        this.parentController = parentController;
+        this.sideMenus = sideMenus;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -72,7 +75,7 @@ public class CheckoutController implements Initializable {
                 break;
             case "back1":
                 confirmCartAnchorPane.toFront();
-                sideMenus.checkoutButtons.activateCheckoutButtons("checkoutButton1");
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1");
                 sideMenus.changeIcon(0);
                 break;
             case "next_step2":

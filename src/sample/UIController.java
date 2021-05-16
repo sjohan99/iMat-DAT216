@@ -25,7 +25,7 @@ public class UIController implements Initializable {
     public MyPagesController myPagesController = new MyPagesController(this);
     public HistoryController historyController = new HistoryController(this);
     public ShoppingController shoppingController = new ShoppingController(this, backend);
-    public CheckoutController checkoutController = new CheckoutController(this);
+    public CheckoutController checkoutController;
     private AnimationTimer timer = new MyTimer();
 
 
@@ -49,6 +49,7 @@ public class UIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCartExpanded = false;
+        checkoutController = new CheckoutController(this, sideMenus);
         initMenuButtons();
         initStartMenuButtons();
         addPlaceholderCartItems();
