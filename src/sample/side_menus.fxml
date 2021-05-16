@@ -16,112 +16,6 @@
    <children>
       <StackPane fx:id="menuStack">
          <children>
-            <AnchorPane fx:id="checkout_menuPane" prefHeight="775.0" prefWidth="275.0">
-               <children>
-                  <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Label alignment="CENTER" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Kategorier" textAlignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="36.0" />
-                           </font>
-                        </Label>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="28.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="1. Varukorg" textOverrun="CLIP">
-                           <font>
-                              <Font name="Roboto" size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                           <opaqueInsets>
-                              <Insets right="20.0" />
-                           </opaqueInsets>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="2. Personupp." textOverrun="CLIP">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="59.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="3. Adress">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="4. Leveranstid">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="30.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="5. Betalning">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="44.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="6. Bekräfta">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@resources/arrow.png" />
-                                 </image>
-                                 <viewport>
-                                    <Rectangle2D />
-                                 </viewport>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="my_pages_menuPane" prefHeight="775.0" prefWidth="275.0">
                <children>
                   <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -346,6 +240,112 @@
                         <FlowPane prefHeight="708.0" prefWidth="275.0" />
                        </children>
                    </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkout_menuPane" prefHeight="775.0" prefWidth="275.0">
+               <children>
+                  <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Kategorier" textAlignment="CENTER">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <Button id="checkoutButton1" fx:id="checkoutButton1" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="28.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="1. Varukorg" textOverrun="CLIP">
+                           <font>
+                              <Font name="Roboto" size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                           <opaqueInsets>
+                              <Insets right="20.0" />
+                           </opaqueInsets>
+                        </Button>
+                        <Button fx:id="checkoutButton2" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="2. Personupp." textOverrun="CLIP">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="checkoutButton3" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="59.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="3. Adress">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="checkoutButton4" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="4. Leveranstid">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="checkoutButton5" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="30.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="5. Betalning">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="checkoutButton6" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="44.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="6. Bekräfta">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="image6" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
          </children>

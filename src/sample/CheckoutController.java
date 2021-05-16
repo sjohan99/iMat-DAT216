@@ -16,6 +16,7 @@ public class CheckoutController implements Initializable {
 
     private UIController parentController;
     public BackendController backend = new BackendController();
+    SideMenus sideMenus = new SideMenus(parentController);
 
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
     @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1;
@@ -65,31 +66,33 @@ public class CheckoutController implements Initializable {
     public void checkoutChangeWindow(String id) {
         switch(id) {
             case "next_step1":
+            case "back3":
                 adressAnchorPane.toFront();
+                sideMenus.changeIcon(2);
                 break;
             case "back1":
                 confirmCartAnchorPane.toFront();
+                sideMenus.checkoutButtons.activateCheckoutButtons("checkoutButton1");
+                sideMenus.changeIcon(0);
                 break;
             case "next_step2":
+            case "back4":
                 deliveryTimeAnchorPane.toFront();
+                sideMenus.changeIcon(3);
                 break;
             case "back2":
                 personalInfoAnchorPane.toFront();
+                sideMenus.changeIcon(1);
                 break;
             case "next_step3":
+            case "back5":
                 cardDetailsAnchorPane.toFront();
-                break;
-            case "back3":
-                adressAnchorPane.toFront();
+                sideMenus.changeIcon(4);
                 break;
             case "next_step4":
                 confirmOrderAnchorPane.toFront();
+                sideMenus.changeIcon(5);
                 break;
-            case "back4":
-                deliveryTimeAnchorPane.toFront();
-                break;
-            case "back5":
-                cardDetailsAnchorPane.toFront();
         }
     }
 
