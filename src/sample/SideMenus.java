@@ -18,7 +18,7 @@ public class SideMenus extends AnchorPane {
     private UIController parentController;
     private ButtonGrouper myPagesButtonGroup;
     private ButtonGrouper shoppingButtonGroup;
-    ButtonGrouper checkoutButtons = new ButtonGrouper();
+    ButtonGrouper checkoutButtonsGroup;
     /**
      * Different side menu views
      */
@@ -79,12 +79,17 @@ public class SideMenus extends AnchorPane {
     }
     
     private void initCheckoutButtons() {
-        checkoutButtons.addButtonToList(checkoutButton1);
-        checkoutButtons.addButtonToList(checkoutButton2);
-        checkoutButtons.addButtonToList(checkoutButton3);
-        checkoutButtons.addButtonToList(checkoutButton4);
-        checkoutButtons.addButtonToList(checkoutButton5);
-        checkoutButtons.addButtonToList(checkoutButton6);
+        checkoutButtonsGroup = new ButtonGrouper();
+        checkoutButtonsGroup.addButtonToList(checkoutButton1);
+        checkoutButtonsGroup.addButtonToList(checkoutButton2);
+        checkoutButtonsGroup.addButtonToList(checkoutButton3);
+        checkoutButtonsGroup.addButtonToList(checkoutButton4);
+        checkoutButtonsGroup.addButtonToList(checkoutButton5);
+        checkoutButtonsGroup.addButtonToList(checkoutButton6);
+    
+        for (Button button : checkoutButtonsGroup.getButtons()) {
+            button.setOnAction(e -> buttonPressed(e));
+        }
     }
 
     private void initImages() {
@@ -115,6 +120,7 @@ public class SideMenus extends AnchorPane {
         parentController.shoppingController.ShoppingChangeWindow(id);
         myPagesButtonGroup.activateSideBarButtons(id);
         shoppingButtonGroup.activateSideBarButtons(id);
+        checkoutButtonsGroup.activateSideBarButtons(id);
     }
 
     /**
