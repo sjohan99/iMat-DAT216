@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
@@ -39,12 +40,14 @@ public class UIController implements Initializable {
     @FXML public StackPane guideStackPane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
+    @FXML private TextField searchTextField;
 
     private ButtonGrouper buttonGrouper;
     private SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
+    private Shopping shopping;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,13 +60,15 @@ public class UIController implements Initializable {
         startPagePane.toFront();
         guideStackPane.toBack();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        shopping = new Shopping(shoppingController);
+        initSearch();
+        
     }
 
     /**
      * Adds all guidePanes to a List. Lowers opacity for surrounding elements and brings guide to front
      */
     public void initGuideView() {
-
         guidePanes.add(0,guidePane1);
         guidePanes.add(1,guidePane2);
         guidePanes.add(2,guidePane3);
@@ -79,6 +84,15 @@ public class UIController implements Initializable {
         guideButtonsPane.toFront();
         nextStepButton.toFront();
         skipGuideButton.setStyle("-fx-opacity: 1");
+    }
+    
+    private void initSearch() {
+        searchTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                shoppingController.search(searchTextField.getText());
+                changeMainView("shopping_button");
+            }
+        });
     }
 
     /**
@@ -137,7 +151,8 @@ public class UIController implements Initializable {
                 initGuideView();
                 break;
             case "shopping_button":
-                parentView.getChildren().add(new Shopping(shoppingController));
+                //parentView.getChildren().add(new Shopping(shoppingController));
+                parentView.getChildren().add(shopping);
                 break;
         }
     }
