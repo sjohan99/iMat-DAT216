@@ -39,7 +39,7 @@ public class SideMenus extends AnchorPane {
         buttonGroup.addButtonToList(personUppgifterButton);
         buttonGroup.addButtonToList(adressButton);
         buttonGroup.addButtonToList(kortUppgifterButton);
-    
+        //TODO: add checkout buttons
         for (Button button : buttonGroup.getButtons()) {
             button.setOnAction(e -> buttonPressed(e));
         }
