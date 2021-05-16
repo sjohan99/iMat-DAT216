@@ -48,4 +48,8 @@ public class ItemCard extends AnchorPane {
     public String getCategory() {
         return product.getCategory().toString();
     }
+    
+    public Product getProduct() {
+        return product;
+    }
 }
