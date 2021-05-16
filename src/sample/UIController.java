@@ -28,7 +28,9 @@ public class UIController implements Initializable {
     public CheckoutController checkoutController = new CheckoutController(this);
     private AnimationTimer timer = new MyTimer();
 
-    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, startShoppingButton, startHistoryButton, startMyPagesButton, checkoutButton, skipGuideButton, endGuideButton, nextStepButton;
+
+    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton,// main
+            startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
@@ -75,6 +77,7 @@ public class UIController implements Initializable {
         guideStackPane.toFront();
         guideButtonsPane.toFront();
         nextStepButton.toFront();
+        skipGuideButton.setStyle("-fx-opacity: 1");
     }
 
     /**
@@ -99,6 +102,7 @@ public class UIController implements Initializable {
             case 5:
                 shoppingCartAnchorPane.setStyle("-fx-opacity: 0.5");
                 topBarPane.setStyle("-fx-opacity: 1");
+                skipGuideButton.setStyle("-fx-opacity: 0");
                 endGuideButton.toFront();
                 break;
             default:
@@ -202,21 +206,19 @@ public class UIController implements Initializable {
     }
 
     private void initStartMenuButtons() {
-        List<Button> buttons = new ArrayList<Button>();
+
         startHistoryButton.setId("history_button");
         startShoppingButton.setId("shopping_button");
         startMyPagesButton.setId("my_pages_button");
 
         // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
-
         checkoutButton.setOnAction(e -> toggleOnButton(e));
 
         skipGuideButton.setId("shopping_button");
         skipGuideButton.setOnAction(e -> toggleOnButton(e));
         endGuideButton.setId("shopping_button");
         endGuideButton.setOnAction(e -> toggleOnButton(e));
-
     }
 
     /**
