@@ -17,8 +17,8 @@ public class CheckoutController implements Initializable {
     private UIController parentController;
     public BackendController backend = new BackendController();
 
-    @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmOrderAnchorPane;
-    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5;
+    @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
+    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1;
     public CheckoutController(UIController parentController) { this.parentController = parentController; }
 
     @Override
@@ -37,7 +37,10 @@ public class CheckoutController implements Initializable {
         nextStepButton4.setId("next_step4");
         backButton4.setId("back4");
         backButton5.setId("back5");
+        confirmButton1.setId("back2");
 
+        backToShoppingButton.setId("shopping_button");
+        backToShoppingButton.setOnAction(e -> parentController.toggleOnButton(e));
 
         buttons.add(nextStepButton1);
         buttons.add(backButton1);
@@ -48,6 +51,7 @@ public class CheckoutController implements Initializable {
         buttons.add(nextStepButton4);
         buttons.add(backButton4);
         buttons.add(backButton5);
+        buttons.add(confirmButton1);
 
         for (Button button : buttons) { button.setOnAction(e -> changeStep(e)); }
 
@@ -64,7 +68,7 @@ public class CheckoutController implements Initializable {
                 adressAnchorPane.toFront();
                 break;
             case "back1":
-                //TODO
+                confirmCartAnchorPane.toFront();
                 break;
             case "next_step2":
                 deliveryTimeAnchorPane.toFront();
