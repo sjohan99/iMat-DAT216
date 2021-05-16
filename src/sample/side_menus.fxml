@@ -319,7 +319,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="history_menuPane" prefHeight="775.0" prefWidth="275.0" visible="false">
+            <AnchorPane fx:id="history_menuPane" prefHeight="775.0" prefWidth="275.0">
                <children>
                    <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                        <children>
