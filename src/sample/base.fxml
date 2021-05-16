@@ -357,7 +357,7 @@
           <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
-      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
          <children>
             <Label alignment="CENTER" prefHeight="68.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER">
                <font>
