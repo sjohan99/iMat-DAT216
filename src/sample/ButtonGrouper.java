@@ -9,14 +9,14 @@ import java.util.List;
  * Groups the top menu buttons and make them relate to each other.
  */
 
-public class TopMenuBarButtons {
+public class ButtonGrouper {
     
     /**
      * Holds which buttons are in relation.
      */
     List<Button> siblings;
     
-    public TopMenuBarButtons() {
+    public ButtonGrouper() {
         this.siblings = new ArrayList<Button>();
     }
     
