@@ -5,19 +5,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SideMenus extends AnchorPane {
     
     private UIController parentController;
-    private TopMenuBarButtons buttonGroup;
+    private ButtonGrouper myPagesButtonGroup;
+    private ButtonGrouper shoppingButtonGroup;
+    ButtonGrouper checkoutButtonsGroup;
     /**
      * Different side menu views
      */
     @FXML AnchorPane shopping_menuPane, my_pages_menuPane, checkout_menuPane, history_menuPane;
-    @FXML Button personUppgifterButton, adressButton, kortUppgifterButton;
+    @FXML Button mejeriButton, meatButton, fruitButton, skafferiButton, snacksButton, dryckButton, ekoButton, greensButton;
+    @FXML Button personUppgifterButton, adressButton, kortUppgifterButton, checkoutButton1, checkoutButton2, checkoutButton3, checkoutButton4, checkoutButton5, checkoutButton6;
+    @FXML ImageView image1, image2, image3, image4, image5, image6;
+
+    private List<ImageView> images;
 
     public SideMenus(UIController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("side_menus.fxml"));
@@ -32,23 +42,85 @@ public class SideMenus extends AnchorPane {
         
         this.parentController = parentController;
         initButtons();
+        initImages();
     }
     
     private void initButtons() {
-        buttonGroup = new TopMenuBarButtons();
-        buttonGroup.addButtonToList(personUppgifterButton);
-        buttonGroup.addButtonToList(adressButton);
-        buttonGroup.addButtonToList(kortUppgifterButton);
-        //TODO: add checkout buttons
-        for (Button button : buttonGroup.getButtons()) {
+        initMyPagesButtons();
+        initShoppingButtons();
+        initCheckoutButtons();
+    }
+    
+    private void initShoppingButtons() {
+        shoppingButtonGroup = new ButtonGrouper();
+        shoppingButtonGroup.addButtonToList(mejeriButton);
+        shoppingButtonGroup.addButtonToList(meatButton);
+        shoppingButtonGroup.addButtonToList(snacksButton);
+        shoppingButtonGroup.addButtonToList(dryckButton);
+        shoppingButtonGroup.addButtonToList(fruitButton);
+        shoppingButtonGroup.addButtonToList(skafferiButton);
+        shoppingButtonGroup.addButtonToList(ekoButton);
+        shoppingButtonGroup.addButtonToList(greensButton);
+    
+        for (Button button : shoppingButtonGroup.getButtons()) {
             button.setOnAction(e -> buttonPressed(e));
+        }
+    }
+    
+    private void initMyPagesButtons() {
+        myPagesButtonGroup = new ButtonGrouper();
+        myPagesButtonGroup.addButtonToList(personUppgifterButton);
+        myPagesButtonGroup.addButtonToList(adressButton);
+        myPagesButtonGroup.addButtonToList(kortUppgifterButton);
+    
+        for (Button button : myPagesButtonGroup.getButtons()) {
+            button.setOnAction(e -> buttonPressed(e));
+        }
+    }
+    
+    private void initCheckoutButtons() {
+        checkoutButtonsGroup = new ButtonGrouper();
+        checkoutButtonsGroup.addButtonToList(checkoutButton1);
+        checkoutButtonsGroup.addButtonToList(checkoutButton2);
+        checkoutButtonsGroup.addButtonToList(checkoutButton3);
+        checkoutButtonsGroup.addButtonToList(checkoutButton4);
+        checkoutButtonsGroup.addButtonToList(checkoutButton5);
+        checkoutButtonsGroup.addButtonToList(checkoutButton6);
+    
+        for (Button button : checkoutButtonsGroup.getButtons()) {
+            button.setOnAction(e -> buttonPressed(e));
+        }
+    }
+
+    private void initImages() {
+        images = new ArrayList<>();
+        images.add(image1);
+        images.add(image2);
+        images.add(image3);
+        images.add(image4);
+        images.add(image5);
+        images.add(image6);
+    }
+
+    public void changeIcon(int step) {
+
+        for (ImageView image : images) {
+            image.setImage(new Image("sample/resources/arrow.png"));
+        }
+
+        for (int i = 0; i < step ; i++) {
+            System.out.println(images.get(i));
+            images.get(i).setImage(new Image("sample/resources/checkmark.png"));
         }
     }
     
     private void buttonPressed(ActionEvent e) {
         String id = ((Node) e.getSource()).getId();
-        parentController.myPagesController.myPagesChangeWindow(e, id);
-        buttonGroup.activateSideBarButtons(id);
+        parentController.myPagesController.myPagesChangeWindow(id);
+        parentController.shoppingController.ShoppingChangeWindow(id);
+        myPagesButtonGroup.activateSideBarButtons(id);
+        shoppingButtonGroup.activateSideBarButtons(id);
+        checkoutButtonsGroup.activateSideBarButtons(id);
     }
 
     /**

@@ -9,14 +9,14 @@ import java.util.List;
  * Groups the top menu buttons and make them relate to each other.
  */
 
-public class TopMenuBarButtons {
+public class ButtonGrouper {
     
     /**
      * Holds which buttons are in relation.
      */
     List<Button> siblings;
     
-    public TopMenuBarButtons() {
+    public ButtonGrouper() {
         this.siblings = new ArrayList<Button>();
     }
     
@@ -50,6 +50,21 @@ public class TopMenuBarButtons {
     }
     
     void activateSideBarButtons(String pressedButtonId) {
+        for (Button button : siblings) {
+            if (!(button.getId().equals(pressedButtonId))) {
+                button.getStyleClass().removeAll("sidebar_button_pressed");
+                button.getStyleClass().removeAll("sidebar_button");
+                button.getStyleClass().add("sidebar_button");
+            } else {
+                button.getStyleClass().removeAll("sidebar_button");
+                button.getStyleClass().removeAll("sidebar_button_pressed");
+                button.getStyleClass().add("sidebar_button_pressed");
+            }
+        }
+    }
+
+    void activateCheckoutButtons(String pressedButtonId) {
+        //TODO: Hjäääälp Johan!!!
         for (Button button : siblings) {
             if (!(button.getId().equals(pressedButtonId))) {
                 button.getStyleClass().removeAll("sidebar_button_pressed");

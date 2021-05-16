@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
@@ -25,7 +26,7 @@ public class UIController implements Initializable {
     public MyPagesController myPagesController = new MyPagesController(this);
     public HistoryController historyController = new HistoryController(this);
     public ShoppingController shoppingController = new ShoppingController(this, backend);
-    public CheckoutController checkoutController = new CheckoutController(this);
+    public CheckoutController checkoutController;
     private AnimationTimer timer = new MyTimer();
 
 
@@ -39,16 +40,19 @@ public class UIController implements Initializable {
     @FXML public StackPane guideStackPane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
+    @FXML private TextField searchTextField;
 
-    private TopMenuBarButtons topMenuBarButtons;
+    private ButtonGrouper buttonGrouper;
     private SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
+    private Shopping shopping;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCartExpanded = false;
+        checkoutController = new CheckoutController(this, sideMenus);
         initMenuButtons();
         initStartMenuButtons();
         addPlaceholderCartItems();
@@ -56,18 +60,15 @@ public class UIController implements Initializable {
         startPagePane.toFront();
         guideStackPane.toBack();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        // UNCOMMENT THIS BLOCK TO SEE ITEMCARDS
-        startPagePane.toBack();
-        parentView.getChildren().add(new Shopping(shoppingController));
-        shoppingController.addItems();
+        shopping = new Shopping(shoppingController);
+        initSearch();
+        
     }
-
 
     /**
      * Adds all guidePanes to a List. Lowers opacity for surrounding elements and brings guide to front
      */
     public void initGuideView() {
-
         guidePanes.add(0,guidePane1);
         guidePanes.add(1,guidePane2);
         guidePanes.add(2,guidePane3);
@@ -83,6 +84,15 @@ public class UIController implements Initializable {
         guideButtonsPane.toFront();
         nextStepButton.toFront();
         skipGuideButton.setStyle("-fx-opacity: 1");
+    }
+    
+    private void initSearch() {
+        searchTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                shoppingController.search(searchTextField.getText());
+                changeMainView("shopping_button");
+            }
+        });
     }
 
     /**
@@ -140,8 +150,9 @@ public class UIController implements Initializable {
             case "help_button":
                 initGuideView();
                 break;
-            default:
-
+            case "shopping_button":
+                //parentView.getChildren().add(new Shopping(shoppingController));
+                parentView.getChildren().add(shopping);
                 break;
         }
     }
@@ -194,18 +205,18 @@ public class UIController implements Initializable {
      * to not remove their individual styling) and adding an actionevent which reads the id of the pressed button.
      */
     private void initMenuButtons() {
-        topMenuBarButtons = new TopMenuBarButtons();
-        topMenuBarButtons.addButtonToList(shoppingButton);
-        topMenuBarButtons.addButtonToList(helpButton);
-        topMenuBarButtons.addButtonToList(historyButton);
-        topMenuBarButtons.addButtonToList(myPagesButton);
+        buttonGrouper = new ButtonGrouper();
+        buttonGrouper.addButtonToList(shoppingButton);
+        buttonGrouper.addButtonToList(helpButton);
+        buttonGrouper.addButtonToList(historyButton);
+        buttonGrouper.addButtonToList(myPagesButton);
 
         shoppingButton.setId("shopping_button");
         helpButton.setId("help_button");
         historyButton.setId("history_button");
         myPagesButton.setId("my_pages_button");
 
-        for (Button button : topMenuBarButtons.getButtons()) {
+        for (Button button : buttonGrouper.getButtons()) {
             button.setOnAction(e -> toggleOnButton(e));
         }
     }
@@ -224,8 +235,6 @@ public class UIController implements Initializable {
         skipGuideButton.setOnAction(e -> toggleOnButton(e));
         endGuideButton.setId("shopping_button");
         endGuideButton.setOnAction(e -> toggleOnButton(e));
-
-
     }
 
     /**
@@ -234,7 +243,7 @@ public class UIController implements Initializable {
      */
     public void toggleOnButton(ActionEvent e) {
         String id = ((Node) e.getSource()).getId();
-        topMenuBarButtons.activate(id);
+        buttonGrouper.activate(id);
         sideMenus.changeSideMenu(id);
         changeMainView(id);
     }

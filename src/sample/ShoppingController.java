@@ -1,20 +1,26 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ShoppingController implements Initializable {
     
     private UIController parentController;
     private BackendController backend;
+    private List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
+            ekoItems, fruitItems, snackItems, greensItems, searchItems;
     
     @FXML private FlowPane shoppingFlowPane;
     @FXML private ScrollPane shoppingScrollPane;
@@ -28,16 +34,139 @@ public class ShoppingController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    
+        shoppingScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        createItemCards();
+        mejeriItems = new ArrayList<>();
+        meatItems = new ArrayList<>();
+        skafferiItems = new ArrayList<>();
+        dryckItems = new ArrayList<>();
+        ekoItems = new ArrayList<>();
+        fruitItems = new ArrayList<>();
+        snackItems = new ArrayList<>();
+        greensItems = new ArrayList<>();
+        searchItems = new ArrayList<>();
+        populateItemCards();
     }
     
-    public void addItems() {
-        int count = 0;
+    private void createItemCards() {
+        itemCards = new ArrayList<>();
+        int i = 1;
         for (Product product : backend.dataHandler.getProducts()) {
-            shoppingFlowPane.getChildren().add(new ItemCard(product, parentController, backend));
-            if (count++ > 20) {
-                break;
+            itemCards.add(new ItemCard(product, parentController, backend));
+            System.out.println("Creating item card " + i + " out of " + backend.dataHandler.getProducts().size());
+            i++;
+        }
+    }
+    
+    public void search(String searchInput) {
+        searchItems.clear();
+        shoppingFlowPane.getChildren().clear();
+        for (Product product : backend.dataHandler.findProducts(searchInput)) {
+            for (ItemCard itemCard : itemCards) {
+                if (itemCard.getProduct().equals(product)) {
+                    searchItems.add(itemCard);
+                }
+            }
+        }
+        addItems(searchItems);
+        shoppingHeadline.setText("Sökresultat för '" + searchInput + "':");
+    }
+    
+    private void populateItemCards() {
+        for (ItemCard itemCard : itemCards) {
+            switch (itemCard.getCategory()) {
+                case "DAIRIES":
+                    mejeriItems.add(itemCard);
+                    break;
+                case "MEAT":
+                case "FISH":
+                    meatItems.add(itemCard);
+                    break;
+                case "VEGETABLE_FRUIT":
+                case "CABBAGE":
+                case "ROOT_VEGETABLE":
+                case "HERB":
+                    greensItems.add(itemCard);
+                    break;
+                case "BERRY":
+                case "CITRUS_FRUIT":
+                case "EXOTIC_FRUIT":
+                case "MELONS":
+                    fruitItems.add(itemCard);
+                    break;
+                case "SWEET":
+                case "NUTS_AND_SEEDS":
+                    snackItems.add(itemCard);
+                    break;
+                case "HOT_DRINKS":
+                case "COLD_DRINKS":
+                    dryckItems.add(itemCard);
+                    break;
+                case "POD":
+                case "PASTA":
+                case "FLOUR_SUGAR_SALT":
+                case "POTATO_RICE":
+                    skafferiItems.add(itemCard);
             }
         }
     }
+    
+    
+    
+    public void ShoppingChangeWindow(String id) {
+        switch(id) {
+            case "mejeri":
+                shoppingFlowPane.getChildren().clear();
+                addItems(mejeriItems);
+                shoppingHeadline.setText("Mejeri");
+                break;
+            case "meat":
+                shoppingFlowPane.getChildren().clear();
+                addItems(meatItems);
+                shoppingHeadline.setText("Kött & Fisk");
+                break;
+            case "skafferi":
+                shoppingFlowPane.getChildren().clear();
+                addItems(skafferiItems);
+                shoppingHeadline.setText("Skafferi");
+                break;
+            case "frukt":
+                shoppingFlowPane.getChildren().clear();
+                addItems(fruitItems);
+                shoppingHeadline.setText("Frukt");
+                break;
+            case "greens":
+                shoppingFlowPane.getChildren().clear();
+                addItems(greensItems);
+                shoppingHeadline.setText("Grönsaker");
+                break;
+            case "snacks":
+                shoppingFlowPane.getChildren().clear();
+                addItems(snackItems);
+                shoppingHeadline.setText("Snacks");
+                break;
+            case "dryck":
+                shoppingFlowPane.getChildren().clear();
+                addItems(dryckItems);
+                shoppingHeadline.setText("Dryck");
+                break;
+            case "eko":
+                shoppingFlowPane.getChildren().clear();
+                for (Product product : backend.dataHandler.findProducts("ekologi")) {
+                    for (ItemCard itemCard : itemCards) {
+                        if (itemCard.getProduct().equals(product)) {
+                            ekoItems.add(itemCard);
+                        }
+                    }
+                }
+                addItems(ekoItems);
+                shoppingHeadline.setText("Ekologiskt");
+                break;
+        }
+    }
+    
+    public void addItems(List<ItemCard> items) {
+        for (ItemCard itemCard : items)
+            shoppingFlowPane.getChildren().add(itemCard);
+        }
 }

@@ -357,7 +357,7 @@
           <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
         </items>
       </SplitPane>
-      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
          <children>
             <Label alignment="CENTER" prefHeight="68.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER">
                <font>
@@ -449,7 +449,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField id="search_button" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
+            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
                <font>
                   <Font size="32.0" />
                </font>
@@ -457,7 +457,7 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resources/search.png" />
                </image>
