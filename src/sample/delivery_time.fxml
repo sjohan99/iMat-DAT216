@@ -15,50 +15,6 @@
    <children>
       <StackPane prefHeight="773.0" prefWidth="1022.0">
          <children>
-            <AnchorPane fx:id="cardDetailsAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
-               <children>
-                  <Button fx:id="nextStepButton4" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-                  <Button fx:id="backButton4" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
-                  <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="14.0" prefHeight="64.0" prefWidth="342.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kassan" underline="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="7.0">
-                     <font>
-                        <Font size="45.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="67.0" layoutY="180.0" prefHeight="36.0" prefWidth="196.0" stylesheets="@text_styles.css" text="Kortnummer:" AnchorPane.rightAnchor="769.0" AnchorPane.topAnchor="180.0">
-                     <font>
-                        <Font name="Roboto" size="30.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="label_bold" />
-                        <String fx:value="label_scaled_normal" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="113.0" layoutY="296.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Korttyp:" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="265.0">
-                     <font>
-                        <Font name="Roboto" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="39.0" layoutY="358.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Utgångsdatum:" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="351.0">
-                     <font>
-                        <Font name="Roboto" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Säkerhetskod:" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="433.0">
-                     <font>
-                        <Font name="Roboto" size="24.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="cardNumberTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="273.0" AnchorPane.topAnchor="180.0" />
-                  <TextField fx:id="securityCodeTextField" prefHeight="36.0" prefWidth="167.0" AnchorPane.leftAnchor="273.0" AnchorPane.topAnchor="433.0" />
-                  <Label layoutX="68.0" layoutY="92.0" prefHeight="66.0" prefWidth="316.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="82.0">
-                     <font>
-                        <Font size="45.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="273.0" layoutY="358.0" prefHeight="36.0" prefWidth="141.0" />
-                  <TextField layoutX="482.0" layoutY="358.0" prefHeight="36.0" prefWidth="141.0" />
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="deliveryTimeAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
                <children>
                   <Button layoutX="100.0" layoutY="469.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="101.0" />
@@ -132,54 +88,6 @@
                         <Font name="Roboto Medium Italic" size="36.0" />
                      </font>
                   </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="adressAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
-               <children>
-                  <Label layoutX="36.0" layoutY="66.0" prefHeight="54.0" prefWidth="355.0" stylesheets="@text_styles.css" text="Leveransadress" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="82.0">
-                     <font>
-                        <Font name="Roboto Black" size="36.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="label_scaled_normal" />
-                        <String fx:value="label_scaled_bold" />
-                     </styleClass>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="21.0" layoutY="9.0" prefHeight="64.0" prefWidth="342.0" stylesheets="@text_styles.css" text="Kassan" underline="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="7.0">
-                     <font>
-                        <Font name="Roboto Medium Italic" size="36.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="label_scaled_normal" />
-                        <String fx:value="label_scaled_bold" />
-                     </styleClass>
-                  </Label>
-                  <Label layoutX="88.0" layoutY="141.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Adress:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="180.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="32.0" layoutY="210.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Lägenhetsnr:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="263.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="29.0" layoutY="280.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Postnummer:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="348.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="82.0" layoutY="345.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Postort:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="433.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="adressTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
-                  <TextField fx:id="apartmentNumTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="263.0" />
-                  <TextField fx:id="postNumTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
-                  <TextField fx:id="postalAreaTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="433.0" />
-                  <Button fx:id="nextStepButton2" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-                  <Button fx:id="backButton2" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
@@ -270,21 +178,6 @@
                   <Label layoutX="508.0" layoutY="444.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Label" AnchorPane.topAnchor="433.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #808080;">
-               <children>
-                  <AnchorPane layoutX="161.0" layoutY="124.0" prefHeight="512.0" prefWidth="700.0" style="-fx-background-color: #F2F0E9;">
-                     <children>
-                        <Button fx:id="confirmButton21" layoutX="206.0" layoutY="394.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Gå till handla" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="218.0" />
-                        <Label layoutX="336.0" layoutY="118.0" prefHeight="77.0" prefWidth="658.0" text="Tack för din beställning!" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="70.0">
-                           <font>
-                              <Font name="Roboto" size="60.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="343.0" layoutY="203.0" text="Label" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="confirmCartAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
                <children>
                   <Label layoutX="36.0" layoutY="66.0" prefHeight="54.0" prefWidth="355.0" stylesheets="@text_styles.css" text="Varukorg" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="82.0">
@@ -347,6 +240,88 @@
                         </Label>
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="adressAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+               <children>
+                  <Label layoutX="36.0" layoutY="66.0" prefHeight="54.0" prefWidth="355.0" stylesheets="@text_styles.css" text="Leveransadress" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="82.0">
+                     <font>
+                        <Font name="Roboto Black" size="36.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="label_scaled_normal" />
+                        <String fx:value="label_scaled_bold" />
+                     </styleClass>
+                  </Label>
+                  <Label alignment="TOP_LEFT" layoutX="21.0" layoutY="9.0" prefHeight="64.0" prefWidth="342.0" stylesheets="@text_styles.css" text="Kassan" underline="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font name="Roboto Medium Italic" size="36.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="label_scaled_normal" />
+                        <String fx:value="label_scaled_bold" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="88.0" layoutY="141.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Adress:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="180.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="29.0" layoutY="280.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Postnummer:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="262.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="82.0" layoutY="345.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Postort:" AnchorPane.rightAnchor="820.0" AnchorPane.topAnchor="347.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="adressTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
+                  <TextField fx:id="postNumTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="262.0" />
+                  <TextField fx:id="postalAreaTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="347.0" />
+                  <Button fx:id="nextStepButton2" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <Button fx:id="backButton2" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cardDetailsAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+               <children>
+                  <Button fx:id="nextStepButton4" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <Button fx:id="backButton4" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+                  <Label alignment="TOP_LEFT" layoutX="27.0" layoutY="14.0" prefHeight="64.0" prefWidth="342.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kassan" underline="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="7.0">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="67.0" layoutY="180.0" prefHeight="36.0" prefWidth="196.0" stylesheets="@text_styles.css" text="Kortnummer:" AnchorPane.rightAnchor="769.0" AnchorPane.topAnchor="180.0">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="label_bold" />
+                        <String fx:value="label_scaled_normal" />
+                     </styleClass>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="344.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Utgångsdatum:" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="262.0">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="53.0" layoutY="427.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Säkerhetskod:" AnchorPane.rightAnchor="790.0" AnchorPane.topAnchor="347.0">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cardNumberTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="273.0" AnchorPane.topAnchor="180.0" />
+                  <TextField fx:id="securityCodeTextField" layoutX="273.0" layoutY="427.0" prefHeight="36.0" prefWidth="167.0" AnchorPane.leftAnchor="273.0" AnchorPane.topAnchor="347.0" />
+                  <Label layoutX="68.0" layoutY="92.0" prefHeight="66.0" prefWidth="316.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="82.0">
+                     <font>
+                        <Font size="45.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="273.0" layoutY="255.0" prefHeight="36.0" prefWidth="141.0" AnchorPane.topAnchor="262.0" />
+                  <TextField layoutX="452.0" layoutY="262.0" prefHeight="36.0" prefWidth="141.0" AnchorPane.topAnchor="262.0" />
+                  <Label layoutX="473.0" layoutY="330.0" prefHeight="90.0" prefWidth="205.0" styleClass="label_normal" stylesheets="@text_styles.css" text="*tre sista på baksidan av kortet" wrapText="true" />
                </children>
             </AnchorPane>
          </children>
