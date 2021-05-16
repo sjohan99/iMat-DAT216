@@ -38,7 +38,7 @@ public class UIController implements Initializable {
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
 
-    private TopMenuBarButtons topMenuBarButtons;
+    private ButtonGrouper buttonGrouper;
     private SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
@@ -54,12 +54,6 @@ public class UIController implements Initializable {
         startPagePane.toFront();
         guideStackPane.toBack();
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        // UNCOMMENT THIS BLOCK TO SEE ITEMCARDS
-        /*
-        startPagePane.toBack();
-        parentView.getChildren().add(new Shopping(shoppingController));
-        shoppingController.addItems();
-        */
     }
 
     /**
@@ -137,8 +131,8 @@ public class UIController implements Initializable {
             case "help_button":
                 initGuideView();
                 break;
-            default:
-
+            case "shopping_button":
+                parentView.getChildren().add(new Shopping(shoppingController));
                 break;
         }
     }
@@ -191,18 +185,18 @@ public class UIController implements Initializable {
      * to not remove their individual styling) and adding an actionevent which reads the id of the pressed button.
      */
     private void initMenuButtons() {
-        topMenuBarButtons = new TopMenuBarButtons();
-        topMenuBarButtons.addButtonToList(shoppingButton);
-        topMenuBarButtons.addButtonToList(helpButton);
-        topMenuBarButtons.addButtonToList(historyButton);
-        topMenuBarButtons.addButtonToList(myPagesButton);
+        buttonGrouper = new ButtonGrouper();
+        buttonGrouper.addButtonToList(shoppingButton);
+        buttonGrouper.addButtonToList(helpButton);
+        buttonGrouper.addButtonToList(historyButton);
+        buttonGrouper.addButtonToList(myPagesButton);
 
         shoppingButton.setId("shopping_button");
         helpButton.setId("help_button");
         historyButton.setId("history_button");
         myPagesButton.setId("my_pages_button");
 
-        for (Button button : topMenuBarButtons.getButtons()) {
+        for (Button button : buttonGrouper.getButtons()) {
             button.setOnAction(e -> toggleOnButton(e));
         }
     }
@@ -231,7 +225,7 @@ public class UIController implements Initializable {
      */
     public void toggleOnButton(ActionEvent e) {
         String id = ((Node) e.getSource()).getId();
-        topMenuBarButtons.activate(id);
+        buttonGrouper.activate(id);
         sideMenus.changeSideMenu(id);
         changeMainView(id);
     }
