@@ -14,6 +14,10 @@
 -fx-fill: #4E4873;
 }
 
+.shopping_cart {
+-fx-background-color: #F2F0E9;
+}
+
 .remove_focus {
 -fx-focus-color: transparent;
 -fx-faint-focus-color: transparent;
