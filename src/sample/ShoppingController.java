@@ -19,7 +19,8 @@ public class ShoppingController implements Initializable {
     
     private UIController parentController;
     private BackendController backend;
-    private List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems, ekoItems, fruitItems, snackItems, greensItems;
+    private List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
+            ekoItems, fruitItems, snackItems, greensItems, searchItems;
     
     @FXML private FlowPane shoppingFlowPane;
     @FXML private ScrollPane shoppingScrollPane;
@@ -33,6 +34,7 @@ public class ShoppingController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        shoppingScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         createItemCards();
         mejeriItems = new ArrayList<>();
         meatItems = new ArrayList<>();
@@ -42,6 +44,7 @@ public class ShoppingController implements Initializable {
         fruitItems = new ArrayList<>();
         snackItems = new ArrayList<>();
         greensItems = new ArrayList<>();
+        searchItems = new ArrayList<>();
         populateItemCards();
     }
     
@@ -53,6 +56,20 @@ public class ShoppingController implements Initializable {
             System.out.println("Creating item card " + i + " out of " + backend.dataHandler.getProducts().size());
             i++;
         }
+    }
+    
+    public void search(String searchInput) {
+        searchItems.clear();
+        shoppingFlowPane.getChildren().clear();
+        for (Product product : backend.dataHandler.findProducts(searchInput)) {
+            for (ItemCard itemCard : itemCards) {
+                if (itemCard.getProduct().equals(product)) {
+                    searchItems.add(itemCard);
+                }
+            }
+        }
+        addItems(searchItems);
+        shoppingHeadline.setText("Sökresultat för '" + searchInput + "':");
     }
     
     private void populateItemCards() {
@@ -134,7 +151,16 @@ public class ShoppingController implements Initializable {
                 shoppingHeadline.setText("Dryck");
                 break;
             case "eko":
-                // TODO skapa sortering
+                shoppingFlowPane.getChildren().clear();
+                for (Product product : backend.dataHandler.findProducts("ekologi")) {
+                    for (ItemCard itemCard : itemCards) {
+                        if (itemCard.getProduct().equals(product)) {
+                            ekoItems.add(itemCard);
+                        }
+                    }
+                }
+                addItems(ekoItems);
+                shoppingHeadline.setText("Ekologiskt");
                 break;
         }
     }
