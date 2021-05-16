@@ -23,7 +23,6 @@ public class SideMenus extends AnchorPane {
      * Different side menu views
      */
     @FXML AnchorPane shopping_menuPane, my_pages_menuPane, checkout_menuPane, history_menuPane;
-    @FXML Button personUppgifterButton, adressButton, kortUppgifterButton;
     @FXML Button mejeriButton, meatButton, fruitButton, skafferiButton, snacksButton, dryckButton, ekoButton, greensButton;
     @FXML Button personUppgifterButton, adressButton, kortUppgifterButton, checkoutButton1, checkoutButton2, checkoutButton3, checkoutButton4, checkoutButton5, checkoutButton6;
     @FXML ImageView image1, image2, image3, image4, image5, image6;
