@@ -35,7 +35,7 @@ public class MyPagesController implements Initializable {
         initMyPagesTextFieldListeners();
     }
     
-    public void myPagesChangeWindow(ActionEvent e, String id) {
+    public void myPagesChangeWindow(String id) {
         switch(id) {
             case "personal_info":
                 personalInfoAnchorPane.toFront();
