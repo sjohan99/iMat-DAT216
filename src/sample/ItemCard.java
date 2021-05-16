@@ -45,5 +45,7 @@ public class ItemCard extends AnchorPane {
         // TODO item amount probably needs to be a textfield/area
     }
     
-    
+    public String getCategory() {
+        return product.getCategory().toString();
+    }
 }
