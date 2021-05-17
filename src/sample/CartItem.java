@@ -16,7 +16,7 @@ public class CartItem extends AnchorPane {
     
     private UIController parentController;
     
-    public CartItem(UIController parentController, String text) {
+    public CartItem(String text) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cart_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -26,8 +26,6 @@ public class CartItem extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        
-        this.parentController = parentController;
         
         itemAmountAndName.setText(text);
     }

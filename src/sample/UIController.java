@@ -13,6 +13,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 
 import java.net.URL;
@@ -34,7 +35,6 @@ public class UIController implements Initializable {
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
     @FXML private Label iMat;
     @FXML private ImageView testimage;
-    @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
     @FXML public StackPane guideStackPane, purchaseDonePane;
@@ -63,6 +63,7 @@ public class UIController implements Initializable {
         shopping = new Shopping(shoppingController);
         initSearch();
         
+        backend.shoppingCart.clear(); // Remove this to save cart between runs
     }
 
     /**
@@ -194,9 +195,18 @@ public class UIController implements Initializable {
      */
     private void addPlaceholderCartItems() {
         shoppingCartPane.getChildren().clear(); // Have to do this even if it's empty at launch for unknown reason
+        /*
         shoppingCartPane.getChildren().add(new CartItem(this, "1x Långt ooooooooord"));
         for (int i = 0; i < 16; i++) {
             shoppingCartPane.getChildren().add(new CartItem(this, i + "x Test Item"));
+        }
+         */
+    }
+    
+    public void updateShoppingCart() {
+        shoppingCartPane.getChildren().clear();
+        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
+            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
         }
     }
 

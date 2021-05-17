@@ -3,8 +3,10 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -19,12 +21,15 @@ public class ItemCard extends AnchorPane {
     @FXML private ImageView itemImage;
     @FXML private Label itemCost, itemUnit, itemAmount;
     @FXML private Text itemNameText;
+    @FXML private TextField itemAmountTextField;
+    @FXML private Circle itemAddButton, itemRemoveButton;
     
     private UIController parentController;
     private BackendController backend;
     private Product product;
+    private double amount;
     
-    public ItemCard(Product product, UIController uiController, BackendController backend) {
+    public ItemCard(Product product, UIController parentController, BackendController backend) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("itemCard.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -37,6 +42,7 @@ public class ItemCard extends AnchorPane {
         
         this.product = product;
         this.backend = backend;
+        this.parentController = parentController;
         
         itemImage.setImage(backend.getProductImage(product));
         itemNameText.setText(product.getName());
@@ -51,5 +57,20 @@ public class ItemCard extends AnchorPane {
     
     public Product getProduct() {
         return product;
+    }
+    
+    public void add() {
+        amount += 1;
+        backend.addItemToShoppingCart(product, amount);
+        parentController.updateShoppingCart();
+    }
+    
+    public void remove() {
+        amount -= 1;
+        if (amount < 0) {
+            amount = 0;
+        }
+        backend.addItemToShoppingCart(product, amount);
+        parentController.updateShoppingCart();
     }
 }
