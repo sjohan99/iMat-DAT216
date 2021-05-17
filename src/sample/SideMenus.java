@@ -106,11 +106,14 @@ public class SideMenus extends AnchorPane {
 
         for (ImageView image : images) {
             image.setImage(new Image("sample/resources/arrow.png"));
+            image.setFitWidth(50);
+            image.setFitHeight(50);
         }
 
         for (int i = 0; i < step ; i++) {
-            System.out.println(images.get(i));
             images.get(i).setImage(new Image("sample/resources/checkmark.png"));
+            images.get(i).setFitHeight(35);
+            images.get(i).setFitWidth(35);
         }
     }
     

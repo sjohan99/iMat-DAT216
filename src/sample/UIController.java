@@ -146,6 +146,7 @@ public class UIController implements Initializable {
                 break;
             case "checkout_button":
                 parentView.getChildren().add(new Checkout(checkoutController));
+                sideMenus.changeIcon(0);
                 break;
             case "help_button":
                 initGuideView();
