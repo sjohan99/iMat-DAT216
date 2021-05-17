@@ -18,6 +18,22 @@ public class BackendController {
         }
     }
     
+    public String getCorrectDateFormat(Order order) {
+        int year = order.getDate().getYear() + 1900;
+        int month = order.getDate().getMonth() + 1;
+        int day = order.getDate().getDate();
+        
+        String yearString = String.valueOf(year);
+        String monthString = String.valueOf(month);
+        if (month < 10) {
+            monthString = "0" + String.valueOf(month);
+        }
+        String dayString = String.valueOf(day);
+        if (day < 10) {
+            dayString = "0" + String.valueOf(day);
+        }
+        return yearString + "-" + monthString + "-" + dayString;
+    }
     
     /**
      * Gets the FXImage from backend
