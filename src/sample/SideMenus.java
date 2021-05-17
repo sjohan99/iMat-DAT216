@@ -5,9 +5,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.Order;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ import java.util.List;
 public class SideMenus extends AnchorPane {
     
     private UIController parentController;
+    private HistoryController historyParentController;
+    private BackendController backend = new BackendController();
     private ButtonGrouper myPagesButtonGroup;
     private ButtonGrouper shoppingButtonGroup;
     ButtonGrouper checkoutButtonsGroup;
@@ -26,10 +31,12 @@ public class SideMenus extends AnchorPane {
     @FXML Button mejeriButton, meatButton, fruitButton, skafferiButton, snacksButton, dryckButton, ekoButton, greensButton;
     @FXML Button personUppgifterButton, adressButton, kortUppgifterButton, checkoutButton1, checkoutButton2, checkoutButton3, checkoutButton4, checkoutButton5, checkoutButton6;
     @FXML ImageView image1, image2, image3, image4, image5, image6;
+    @FXML FlowPane receiptFlowPane;
+    @FXML ScrollPane historyScrollPane;
 
     private List<ImageView> images;
 
-    public SideMenus(UIController parentController) {
+    public SideMenus(UIController parentController, HistoryController historyController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("side_menus.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -40,9 +47,20 @@ public class SideMenus extends AnchorPane {
             throw new RuntimeException(exception);
         }
         
+        this.historyParentController = historyController;
         this.parentController = parentController;
         initButtons();
         initImages();
+        initHistory();
+    }
+    
+    private void initHistory() {
+        receiptFlowPane.getChildren().clear();
+        historyScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        historyScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        for (Order order : backend.dataHandler.getOrders()) {
+            receiptFlowPane.getChildren().add(new HistoryMenuButton(order, historyParentController));
+        }
     }
     
     private void initButtons() {
@@ -135,6 +153,7 @@ public class SideMenus extends AnchorPane {
         switch(buttonId) {
             case "history_button":
                 history_menuPane.toFront();
+                System.out.println(backend.dataHandler.getOrders());
                 break;
             case "my_pages_button":
                 my_pages_menuPane.toFront();

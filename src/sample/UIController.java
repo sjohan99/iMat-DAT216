@@ -43,7 +43,7 @@ public class UIController implements Initializable {
     @FXML private TextField searchTextField;
 
     private ButtonGrouper buttonGrouper;
-    public SideMenus sideMenus = new SideMenus(this);
+    public SideMenus sideMenus = new SideMenus(this, historyController);
     private boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
