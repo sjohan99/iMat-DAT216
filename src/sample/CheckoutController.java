@@ -101,6 +101,7 @@ public class CheckoutController implements Initializable {
             case "confirm":
                 parentController.changeMainView("shopping_button");
                 parentController.purchaseDonePane.toFront();
+                backend.dataHandler.placeOrder();
                 sideMenus.changeIcon(6);
                 break;
         }
