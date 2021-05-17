@@ -489,7 +489,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="174.0" layoutY="72.0" prefHeight="77.0" prefWidth="496.0" text="Välkommen till " textFill="WHITE">
+            <Label layoutX="175.0" layoutY="73.0" prefHeight="77.0" prefWidth="496.0" text="Välkommen till " textFill="WHITE">
                <font>
                   <Font name="Roboto" size="72.0" />
                </font>
