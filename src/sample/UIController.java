@@ -30,20 +30,20 @@ public class UIController implements Initializable {
     private AnimationTimer timer = new MyTimer();
 
 
-    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton,// main
+    @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
     @FXML private Label iMat;
     @FXML private ImageView testimage;
     @FXML private VBox shoppingCart;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
-    @FXML public StackPane guideStackPane;
+    @FXML public StackPane guideStackPane, purchaseDonePane;
     @FXML private Line cartLineDivider;
     @FXML private ScrollPane shoppingCartScrollPane;
     @FXML private TextField searchTextField;
 
     private ButtonGrouper buttonGrouper;
-    private SideMenus sideMenus = new SideMenus(this);
+    public SideMenus sideMenus = new SideMenus(this);
     private boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
@@ -125,13 +125,13 @@ public class UIController implements Initializable {
                 break;
         }
         guidePanes.get(guideStep).setStyle("-fx-opacity: 1");
-        System.out.println(guideStep);
         guideStep++;
     }
 
     public void changeMainView(String buttonId) {
         startPagePane.toBack(); // Needed because it won't disappear otherwise
         guideStackPane.toBack();
+        purchaseDonePane.toBack();
         topBarPane.setStyle("-fx-opacity: 1");
         shoppingCartAnchorPane.setStyle("-fx-opacity: 1");
         sideMenuParentAnchorPane.setStyle("-fx-opacity: 1");
@@ -230,6 +230,8 @@ public class UIController implements Initializable {
         // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
         checkoutButton.setOnAction(e -> toggleOnButton(e));
+        backToShoppingButton.setId("shopping_button");
+        backToShoppingButton.setOnAction(e -> toggleOnButton(e));
 
         skipGuideButton.setId("shopping_button");
         skipGuideButton.setOnAction(e -> toggleOnButton(e));

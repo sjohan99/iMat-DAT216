@@ -19,7 +19,7 @@ public class CheckoutController implements Initializable {
     SideMenus sideMenus;
 
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
-    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1;
+    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2;
     public CheckoutController(UIController parentController, SideMenus sideMenus) {
         this.parentController = parentController;
         this.sideMenus = sideMenus;
@@ -42,6 +42,7 @@ public class CheckoutController implements Initializable {
         backButton4.setId("back4");
         backButton5.setId("back5");
         confirmButton1.setId("back2");
+        confirmButton2.setId("confirm");
 
         backToShoppingButton.setId("shopping_button");
         backToShoppingButton.setOnAction(e -> parentController.toggleOnButton(e));
@@ -56,6 +57,7 @@ public class CheckoutController implements Initializable {
         buttons.add(backButton4);
         buttons.add(backButton5);
         buttons.add(confirmButton1);
+        buttons.add(confirmButton2);
 
         for (Button button : buttons) { button.setOnAction(e -> changeStep(e)); }
 
@@ -95,6 +97,11 @@ public class CheckoutController implements Initializable {
             case "next_step4":
                 confirmOrderAnchorPane.toFront();
                 sideMenus.changeIcon(5);
+                break;
+            case "confirm":
+                parentController.changeMainView("shopping_button");
+                parentController.purchaseDonePane.toFront();
+                sideMenus.changeIcon(6);
                 break;
         }
     }
