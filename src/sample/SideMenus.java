@@ -51,13 +51,13 @@ public class SideMenus extends AnchorPane {
         this.parentController = parentController;
         initButtons();
         initImages();
-        initHistory();
-    }
-    
-    private void initHistory() {
-        receiptFlowPane.getChildren().clear();
+        updateHistory();
         historyScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         historyScrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+    }
+    
+    public void updateHistory() {
+        receiptFlowPane.getChildren().clear();
         for (Order order : backend.dataHandler.getOrders()) {
             receiptFlowPane.getChildren().add(new HistoryMenuButton(order, historyParentController));
         }
