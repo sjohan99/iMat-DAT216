@@ -76,12 +76,11 @@
     -fx-font-family: 'Rochester';
     -fx-font-size: 130px;
     -fx-text-fill: #FFFFFF;
-    /*
-    -fx-border-width: 1px;
-    -fx-border-color: #000000;
-    -fx-stroke: #000000;
-    -fx-stroke-width: 2px;
-    */
+}
+
+.outline.label .text {
+-fx-stroke: #000000;
+-fx-stroke-width: 1.5px;
 }
 
 #shopping_button {
@@ -117,6 +116,17 @@
 -fx-label-padding: 0 0 0 25;
 }
 
+.checkout_button {
+-fx-background-color: #F2B84B;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
+.checkout_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
+
 .headline_label {
 -fx-font-style: italic;
 -fx-font-weight: 700;
@@ -129,9 +139,28 @@
 -fx-border-radius: 150px;
 -fx-background-radius: 150px;
 -fx-background-insets: 0; /* Vad är detta? */
+-fx-border-width: 2px;
+-fx-border-color: #000000;
 }
 
+.homepage_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
 
+.bighomepage_button {
+-fx-background-color: #F2B84B;
+-fx-border-radius: 150px;
+-fx-background-radius: 150px;
+-fx-background-insets: 0;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
+.bighomepage_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
 
 
 .shopping_item {
@@ -175,6 +204,11 @@
 -fx-font-size: 24px;
 }
 
+.go_back_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .next_step_button {
 -fx-background-color: #F2B84B;
 -fx-border-width: 1px;
@@ -183,6 +217,11 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+}
+
+.next_step_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
 }
 
 .instruction_blob {
@@ -200,6 +239,11 @@
 -fx-font-size: 24px;
 }
 
+.next_step_startwizard:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .skip_button_startwizard {
 -fx-background-color: #FABFB1;
 -fx-border-width: 1px;
@@ -208,4 +252,9 @@
 -fx-background-radius: 45px;
 -fx-font-family: 'Roboto';
 -fx-font-size: 18px;
+}
+
+.skip_button_startwizard:hover {
+-fx-background-color: #d6a296;
+-fx-cursor: hand;
 }
