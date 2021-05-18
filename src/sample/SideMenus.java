@@ -142,7 +142,6 @@ public class SideMenus extends AnchorPane {
         parentController.shoppingController.ShoppingChangeWindow(id);
         myPagesButtonGroup.activateSideBarButtons(id);
         shoppingButtonGroup.activateSideBarButtons(id);
-        checkoutButtonsGroup.activateSideBarButtons(id);
     }
 
     /**
