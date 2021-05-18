@@ -208,8 +208,32 @@ public class UIController implements Initializable {
     public void updateShoppingCart() {
         shoppingCartPane.getChildren().clear();
         for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
-            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
+            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this));
         }
+        updateItemCardAmounts();
+    }
+    
+    public void updateItemCardAmounts() {
+        for (ItemCard itemCard : shoppingController.itemCards) {
+            if (itemCard.getProduct().getUnitSuffix().equals("kg")) {
+                itemCard.cardAmountTextField.setText(String.valueOf(itemCard.amount));
+            }
+            else {
+                itemCard.cardAmountTextField.setText(String.valueOf((int) itemCard.amount));
+            }
+            
+            if (itemCard.amount > 0) {
+                itemCard.itemAmountTextField.getStyleClass().removeAll("rounded");
+                itemCard.itemAmountTextField.getStyleClass().removeAll("rounded_in_cart");
+                itemCard.itemAmountTextField.getStyleClass().add("rounded_in_cart");
+            } else {
+                itemCard.itemAmountTextField.getStyleClass().removeAll("rounded");
+                itemCard.itemAmountTextField.getStyleClass().removeAll("rounded_in_cart");
+                itemCard.itemAmountTextField.getStyleClass().add("rounded");
+            }
+        
+        }
+        
     }
 
     /**
