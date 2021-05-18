@@ -325,7 +325,7 @@
             <AnchorPane fx:id="guidePane1" prefHeight="900.0" prefWidth="1600.0">
                <children>
                   <Ellipse fill="#f2b84b" layoutX="819.0" layoutY="478.0" radiusX="198.0" radiusY="138.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label layoutX="686.0" layoutY="372.0" prefHeight="214.0" prefWidth="272.0" text="Här kommer en snabb guide för att du lättare ska lära dig hur du navigerar i applikationen" textAlignment="CENTER" wrapText="true">
+                  <Label layoutX="686.0" layoutY="372.0" prefHeight="220.0" prefWidth="272.0" text="Här kommer en snabb guide för att du lättare ska lära dig hur du navigerar i applikationen" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
                      </font>
@@ -339,7 +339,7 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="556.0" layoutY="329.0" radiusX="184.0" radiusY="79.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="556.0" layoutY="329.0" radiusX="184.0" radiusY="88.0" stroke="BLACK" strokeType="INSIDE" />
                   <Label layoutX="420.0" layoutY="222.0" prefHeight="214.0" prefWidth="272.0" text="Tryck på &quot;iMat&quot; för att komma tillbaka till första sidan" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -435,8 +435,8 @@
             </AnchorPane>
             <AnchorPane fx:id="guideButtonsPane">
                <children>
-                  <Button fx:id="skipGuideButton" layoutX="1066.0" layoutY="786.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="61.0" prefWidth="162.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" textAlignment="CENTER" wrapText="true" />
-                  <Button fx:id="nextStepButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#changeGuideView" prefHeight="80.0" prefWidth="212.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Nästa steg">
+                  <Button fx:id="skipGuideButton" layoutX="1066.0" layoutY="786.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="61.0" prefWidth="170.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="nextStepButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#changeGuideView" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Nästa steg">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -445,7 +445,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="endGuideButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="212.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Börja Handla!" />
+                  <Button fx:id="endGuideButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Börja Handla!" />
                </children>
             </AnchorPane>
          </children>
