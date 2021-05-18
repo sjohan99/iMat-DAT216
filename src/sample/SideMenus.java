@@ -104,10 +104,6 @@ public class SideMenus extends AnchorPane {
         checkoutButtonsGroup.addButtonToList(checkoutButton4);
         checkoutButtonsGroup.addButtonToList(checkoutButton5);
         checkoutButtonsGroup.addButtonToList(checkoutButton6);
-    
-        for (Button button : checkoutButtonsGroup.getButtons()) {
-            button.setOnAction(e -> buttonPressed(e));
-        }
     }
 
     private void initImages() {
@@ -123,15 +119,20 @@ public class SideMenus extends AnchorPane {
     public void changeIcon(int step) {
 
         for (ImageView image : images) {
-            image.setImage(new Image("sample/resources/arrow.png"));
-            image.setFitWidth(50);
-            image.setFitHeight(50);
+            image.setStyle("-fx-opacity: 0");
         }
 
-        for (int i = 0; i < step ; i++) {
+        for (int i = 0; i < step; i++) {
             images.get(i).setImage(new Image("sample/resources/checkmark.png"));
             images.get(i).setFitHeight(35);
             images.get(i).setFitWidth(35);
+            images.get(i).setStyle("-fx-opacity: 1");
+        }
+        if (step < 6) {
+            images.get(step).setStyle("-fx-opacity: 1");
+            images.get(step).setImage(new Image("sample/resources/arrow.png"));
+            images.get(step).setFitWidth(50);
+            images.get(step).setFitHeight(50);
         }
     }
     

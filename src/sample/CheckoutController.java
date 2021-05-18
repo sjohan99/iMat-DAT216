@@ -74,29 +74,34 @@ public class CheckoutController implements Initializable {
             case "back3":
                 adressAnchorPane.toFront();
                 sideMenus.changeIcon(2);
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton3", 2);
                 break;
             case "back1":
                 confirmCartAnchorPane.toFront();
-                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1");
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 sideMenus.changeIcon(0);
                 break;
             case "next_step2":
             case "back4":
                 deliveryTimeAnchorPane.toFront();
                 sideMenus.changeIcon(3);
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton4", 3);
                 break;
             case "back2":
                 personalInfoAnchorPane.toFront();
                 sideMenus.changeIcon(1);
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton2", 1);
                 break;
             case "next_step3":
             case "back5":
                 cardDetailsAnchorPane.toFront();
                 sideMenus.changeIcon(4);
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton5", 4);
                 break;
             case "next_step4":
                 confirmOrderAnchorPane.toFront();
                 sideMenus.changeIcon(5);
+                sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton6", 5);
                 break;
             case "confirm":
                 parentController.changeMainView("shopping_button");
@@ -104,6 +109,8 @@ public class CheckoutController implements Initializable {
                 backend.dataHandler.placeOrder();
                 parentController.sideMenus.updateHistory();
                 sideMenus.changeIcon(6);
+                sideMenus.checkoutButton6.getStyleClass().removeAll("sidebar_button_pressed");
+                sideMenus.checkoutButton6.getStyleClass().add("sidebar_buttonNH");
                 break;
         }
     }

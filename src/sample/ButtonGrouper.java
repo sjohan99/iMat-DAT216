@@ -63,18 +63,21 @@ public class ButtonGrouper {
         }
     }
 
-    void activateCheckoutButtons(String pressedButtonId) {
-        //TODO: Hjäääälp Johan!!!
+    void activateCheckoutButtons(String pressedButtonId, int step) {
+
         for (Button button : siblings) {
-            if (!(button.getId().equals(pressedButtonId))) {
-                button.getStyleClass().removeAll("sidebar_button_pressed");
-                button.getStyleClass().removeAll("sidebar_button");
-                button.getStyleClass().add("sidebar_button");
-            } else {
-                button.getStyleClass().removeAll("sidebar_button");
-                button.getStyleClass().removeAll("sidebar_button_pressed");
-                button.getStyleClass().add("sidebar_button_pressed");
-            }
+            button.getStyleClass().removeAll("sidebar_button_pressed");
+            button.getStyleClass().removeAll("sidebar_buttonNH");
+            button.getStyleClass().add("sidebar_button_grey");
         }
+
+        for (int i = 0; i < step; i++) {
+            siblings.get(i).getStyleClass().removeAll("sidebar_button_pressed");
+            siblings.get(i).getStyleClass().removeAll("sidebar_button_grey");
+            siblings.get(i).getStyleClass().add("sidebar_buttonNH");
+        }
+        siblings.get(step).getStyleClass().removeAll("sidebar_button_grey");
+        siblings.get(step).getStyleClass().add("sidebar_button_pressed");
+
     }
 }

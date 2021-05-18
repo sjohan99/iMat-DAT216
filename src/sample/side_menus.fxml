@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane fx:id="menuStack">
          <children>
@@ -26,7 +26,7 @@
                               <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Button id="checkoutButton1" fx:id="checkoutButton1" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="28.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="1. Varukorg" textOverrun="CLIP">
+                        <Button id="checkoutButton1" fx:id="checkoutButton1" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="28.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="1. Varukorg" textOverrun="CLIP">
                            <font>
                               <Font name="Roboto" size="24.0" />
                            </font>
@@ -44,7 +44,7 @@
                               <Insets right="20.0" />
                            </opaqueInsets>
                         </Button>
-                        <Button fx:id="checkoutButton2" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="2. Personupp." textOverrun="CLIP">
+                        <Button fx:id="checkoutButton2" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="2. Personupp." textOverrun="CLIP">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -59,7 +59,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkoutButton3" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="59.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="3. Adress">
+                        <Button fx:id="checkoutButton3" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="59.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="3. Adress">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -74,7 +74,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkoutButton4" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="4. Leveranstid">
+                        <Button fx:id="checkoutButton4" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="4. Leveranstid">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -89,7 +89,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkoutButton5" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="30.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="5. Betalning">
+                        <Button fx:id="checkoutButton5" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="30.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="5. Betalning">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -104,7 +104,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Button fx:id="checkoutButton6" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="44.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@side_menu_style.css" text="6. Bekräfta">
+                        <Button fx:id="checkoutButton6" alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="44.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_buttonNH" stylesheets="@side_menu_style.css" text="6. Bekräfta">
                            <font>
                               <Font size="24.0" />
                            </font>
