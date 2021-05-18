@@ -21,7 +21,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="purchaseDonePane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -62,7 +62,7 @@
       </GridPane>
       <SplitPane dividerPositions="0.18523153942428036" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
-          <AnchorPane fx:id="sideMenuParentAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
+          <AnchorPane fx:id="sideMenuParentAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -210,7 +210,7 @@
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+          <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" />
         </items>
       </SplitPane>
       <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" onMouseClicked="#expandShoppingCart" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
