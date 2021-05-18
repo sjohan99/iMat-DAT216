@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
 
-<fx:root maxWidth="480.0" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="480.0" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" stylesheets="@item_card_style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemAmountAndName" layoutY="6.0" maxWidth="240.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
-      <Label layoutX="279.0" layoutY="8.0" styleClass="label_scaled_itemPrice" stylesheets="@text_styles.css" text="Label" />
-      <TextField alignment="CENTER" layoutX="358.0" layoutY="2.0" prefHeight="34.0" prefWidth="112.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" text="0 st" />
-      <Button layoutX="359.0" layoutY="3.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="34.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.topAnchor="3.0">
-         <font>
-            <Font name="Roboto" size="16.0" />
-         </font>
-         <graphic>
-            <Line endX="435.49993896484375" endY="20.500045776367188" startX="446.5857238769531" startY="20.50004768371582" strokeWidth="2.0" />
-         </graphic></Button>
-      <Button layoutX="434.0" layoutY="3.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="35.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="+" AnchorPane.topAnchor="3.0" />
+      <Label alignment="BASELINE_LEFT" layoutX="264.0" layoutY="6.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90 kr" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="370.0" layoutY="2.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" />
+      <TextField alignment="CENTER" layoutX="358.0" layoutY="3.0" mouseTransparent="true" prefHeight="34.0" prefWidth="112.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" />
+      <Circle fx:id="removeCircleButton" fill="WHITE" layoutX="375.0" layoutY="20.0" onMouseClicked="#removeFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
+      <Circle fx:id="addCircleButton" fill="WHITE" layoutX="453.0" layoutY="20.0" onMouseClicked="#addFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="add_circle_style" />
+      <Line endX="100.0" layoutX="270.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
+      <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" rotate="90.0" startX="110.0" strokeWidth="3.0" />
+      <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
+      <Label layoutX="419.0" layoutY="8.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" />
    </children>
 </fx:root>
