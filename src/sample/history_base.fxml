@@ -28,7 +28,7 @@
                         <Font name="Roboto" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="40.0" layoutY="28.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
                      </font>
@@ -37,7 +37,7 @@
             </AnchorPane>
             <AnchorPane fx:id="historyItemPane" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="40.0" layoutY="28.0" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="40.0" layoutY="28.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
                      </font>
@@ -47,27 +47,27 @@
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <ScrollPane layoutX="53.0" layoutY="240.0" prefHeight="455.0" prefWidth="935.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+                  <ScrollPane fx:id="historyScrollPane" layoutX="53.0" layoutY="240.0" prefHeight="455.0" prefWidth="932.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="53.0">
                      <content>
-                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="455.0" prefWidth="935.0" />
+                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="440.0" prefWidth="931.0" style="-fx-background-color: #FFFFFF;" />
                      </content>
                   </ScrollPane>
-                  <Label layoutX="89.0" layoutY="197.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="89.0">
+                  <Label layoutX="89.0" layoutY="194.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="89.0">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="467.0" layoutY="198.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
+                  <Label layoutX="467.0" layoutY="195.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="676.0" layoutY="200.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
+                  <Label layoutX="676.0" layoutY="197.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="834.0" layoutY="200.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
+                  <Label layoutX="834.0" layoutY="197.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>

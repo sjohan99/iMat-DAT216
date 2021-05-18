@@ -14,6 +14,14 @@
 -fx-fill: #4E4873;
 }
 
+.headline_label_history {
+-fx-font-size: 45px;
+-fx-font-family: 'Roboto';
+-fx-font-style: italic;
+-fx-font-weight: 700;
+-fx-underline: true;
+}
+
 .shopping_cart {
 -fx-background-color: #F2F0E9;
 }
