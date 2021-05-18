@@ -112,6 +112,17 @@
 -fx-label-padding: 0 0 0 25;
 }
 
+.checkout_button {
+-fx-background-color: #F2B84B;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
+.checkout_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
+
 .headline_label {
 -fx-font-style: italic;
 -fx-font-weight: 700;
@@ -143,7 +154,7 @@
 }
 
 .bighomepage_button:hover {
--fx-background-color: #d19f41 ;
+-fx-background-color: #d19f41;
 -fx-cursor: hand;
 }
 

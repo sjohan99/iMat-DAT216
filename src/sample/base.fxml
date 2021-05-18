@@ -227,7 +227,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button fx:id="checkoutButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="150.0" prefWidth="500.0" style="-fx-background-color: #F2B84B;" text="Gå till kassan">
+                  <Button fx:id="checkoutButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="150.0" prefWidth="500.0" styleClass="checkout_button" stylesheets="@roundedbuttonstyle.css" text="Gå till kassan">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
