@@ -127,7 +127,22 @@
 -fx-background-insets: 0; /* Vad är detta? */
 }
 
+.homepage_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
 
+.bighomepage_button {
+-fx-background-color: #F2B84B;
+-fx-border-radius: 150px;
+-fx-background-radius: 150px;
+-fx-background-insets: 0;
+}
+
+.bighomepage_button:hover {
+-fx-background-color: #d19f41 ;
+-fx-cursor: hand;
+}
 
 
 .shopping_item {

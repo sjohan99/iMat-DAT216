@@ -462,7 +462,7 @@
                   <Font size="86.0" />
                </font>
             </Label>
-            <Button fx:id="startShoppingButton" layoutX="330.0" layoutY="407.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="225.0" prefWidth="225.0" style="-fx-background-color: #F2B84B;" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
+            <Button fx:id="startShoppingButton" layoutX="330.0" layoutY="407.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="225.0" prefWidth="225.0" styleClass="bighomepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
                <graphic>
                   <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                      <image>
