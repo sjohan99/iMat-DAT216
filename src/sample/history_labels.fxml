@@ -4,24 +4,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="935.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="935.0" style="-fx-background-color: #FFFFFF;" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="itemName" layoutX="26.0" layoutY="19.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 1" AnchorPane.leftAnchor="26.0">
+      <Label fx:id="itemName" layoutX="36.0" layoutY="16.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 1" AnchorPane.leftAnchor="36.0">
          <font>
             <Font name="Roboto" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="itemAmount" layoutX="446.0" layoutY="15.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
+      <Label fx:id="itemAmount" layoutX="415.0" layoutY="15.0" styleClass="label_normal" stylesheets="@text_styles.css" text="x st">
          <font>
             <Font name="Roboto" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="itemPrice" layoutX="627.0" layoutY="16.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
+      <Label fx:id="itemPrice" layoutX="623.0" layoutY="16.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx:xx/st">
          <font>
             <Font name="Roboto" size="24.0" />
          </font>
       </Label>
-      <Label fx:id="itemCost" layoutX="827.0" layoutY="18.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
+      <Label fx:id="itemCost" layoutX="784.0" layoutY="18.0" styleClass="label_normal" stylesheets="@text_styles.css" text="xx kr">
          <font>
             <Font name="Roboto" size="24.0" />
          </font>
