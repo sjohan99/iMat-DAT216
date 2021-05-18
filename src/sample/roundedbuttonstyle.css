@@ -200,6 +200,11 @@
 -fx-font-size: 24px;
 }
 
+.go_back_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .next_step_button {
 -fx-background-color: #F2B84B;
 -fx-border-width: 1px;
@@ -208,6 +213,11 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+}
+
+.next_step_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
 }
 
 .instruction_blob {
