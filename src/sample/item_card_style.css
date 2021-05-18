@@ -21,6 +21,19 @@
 -fx-font-size: 25px;
 }
 
+.rounded_in_cart {
+-fx-background-color: #F2B84B;
+-fx-border-width: 2px;
+-fx-border-color: #4E4873;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 25px;
+}
+
 .add_circle_style {
 -fx-stroke-width: 2px;
 -fx-stroke: #4E4873;
@@ -28,7 +41,7 @@
 
 .add_circle_style:hover {
 -fx-stroke-width: 4px;
-
+-fx-cursor: hand;
 }
 
 .remove_circle_style {
@@ -38,6 +51,7 @@
 
 .remove_circle_style:hover {
 -fx-stroke-width: 4px;
+-fx-cursor: hand;
 }
 
 .shopping_item {
@@ -62,7 +76,7 @@
 -fx-font-size: 25px;
 }
 .rounded_smaller {
-    -fx-background-color: #F2F0E9;
+    -fx-background-color: transparent;
     -fx-border-width: 2px;
     -fx-border-color: #4E4873;
     -fx-border-radius: 45px;
@@ -72,4 +86,34 @@
     -fx-padding: 1;
     -fx-font-family: 'Roboto';
     -fx-font-size: 20px;
+}
+
+.writing_text_area {
+-fx-background-color: #F2F0E9;
+-fx-font-family: 'Roboto';
+-fx-font-size: 18px;
+}
+
+.item_suffix {
+-fx-font-family: 'Roboto';
+-fx-font-size: 18px;
+}
+
+.writing_text_area_card {
+-fx-background-color: transparent;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.item_suffix_card {
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.text_fill_button {
+-fx-fill: #CDCDCD;
+}
+
+.text_fill_button:hover {
+-fx-fill: #9A9A9A;
 }

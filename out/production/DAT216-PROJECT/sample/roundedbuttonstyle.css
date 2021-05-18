@@ -49,11 +49,15 @@
     -fx-box-border: transparent;
 }
 
+.split-pane-divider {
+-fx-padding: 0;
+}
+
 .split-pane:horizontal > .split-pane-divider {
    -fx-background-color: transparent;
 }
 .split-pane:vertical > .split-pane-divider {
-   -fx-background-color: transparent;
+   -fx-background-color: #FFFFFF;
 }
 
 .top_bar {
@@ -127,14 +131,8 @@
 -fx-background-insets: 0; /* Vad är detta? */
 }
 
-.myPages_label {
-    -fx-font-style: italic;
-    -fx-font-weight: 500;
-    -fx-text-decoration: underline;
-}
-.boldText_label{
-    -fx-font-weight: 500;
-}
+
+
 
 .shopping_item {
 -fx-background-color: #F2F0E9;
@@ -189,4 +187,25 @@
 
 .instruction_blob {
 -fx-background-color: #F2B84B;
+}
+
+.next_step_startwizard {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-background-insets: 0;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.skip_button_startwizard {
+-fx-background-color: #FABFB1;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-font-family: 'Roboto';
+-fx-font-size: 18px;
 }
