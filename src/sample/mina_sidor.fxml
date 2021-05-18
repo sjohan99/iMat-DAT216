@@ -72,8 +72,8 @@
                      </font>
                   </Label>
                   <TextField fx:id="adressTextField" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
-                  <TextField fx:id="postNumTextField" layoutX="248.0" layoutY="347.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
-                  <TextField fx:id="postalAreaTextField" layoutX="248.0" layoutY="262.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="postNumTextField" layoutX="248.0" layoutY="262.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="postalAreaTextField" layoutX="248.0" layoutY="347.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
