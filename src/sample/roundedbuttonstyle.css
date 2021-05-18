@@ -72,12 +72,11 @@
     -fx-font-family: 'Rochester';
     -fx-font-size: 130px;
     -fx-text-fill: #FFFFFF;
-    /*
-    -fx-border-width: 1px;
-    -fx-border-color: #000000;
-    -fx-stroke: #000000;
-    -fx-stroke-width: 2px;
-    */
+}
+
+.outline.label .text {
+-fx-stroke: #000000;
+-fx-stroke-width: 1.5px;
 }
 
 #shopping_button {
@@ -125,6 +124,8 @@
 -fx-border-radius: 150px;
 -fx-background-radius: 150px;
 -fx-background-insets: 0; /* Vad är detta? */
+-fx-border-width: 2px;
+-fx-border-color: #000000;
 }
 
 .homepage_button:hover {
@@ -137,6 +138,8 @@
 -fx-border-radius: 150px;
 -fx-background-radius: 150px;
 -fx-background-insets: 0;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
 }
 
 .bighomepage_button:hover {
