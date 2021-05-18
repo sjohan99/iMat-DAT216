@@ -21,8 +21,29 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
+      <StackPane fx:id="purchaseDonePane" prefHeight="900.0" prefWidth="1600.0">
+         <children>
+            <AnchorPane opacity="0.5" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #000000;" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="11.0" layoutY="52.0" prefHeight="77.0" prefWidth="658.0" styleClass="label_scaled_big" stylesheets="@text_styles.css" text="Tack för din beställning!" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="70.0" />
+                  <Label alignment="CENTER" layoutX="336.0" layoutY="202.0" prefHeight="52.0" prefWidth="550.0" text="Vi levererar dina varor till:" textAlignment="CENTER" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="196.0">
+                     <font>
+                        <Font name="Roboto" size="37.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="87.0" prefWidth="538.0" text="Label" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
+                     <font>
+                        <Font name="Roboto" size="37.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backToShoppingButton" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="366.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Gå till handla" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="206.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
       <GridPane layoutY="125.0" opacity="0.58" prefHeight="773.0" prefWidth="275.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
@@ -39,27 +60,6 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <StackPane fx:id="purchaseDonePane" prefHeight="900.0" prefWidth="1600.0">
-         <children>
-            <AnchorPane opacity="0.5" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #000000;" />
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <Label layoutX="11.0" layoutY="52.0" prefHeight="77.0" prefWidth="658.0" styleClass="label_scaled_big" stylesheets="@text_styles.css" text="Tack för din beställning!" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="70.0" />
-                  <Label alignment="CENTER" layoutX="336.0" layoutY="202.0" prefHeight="52.0" prefWidth="465.0" text="Vi levererar dina varor till:" textAlignment="CENTER" AnchorPane.leftAnchor="121.0" AnchorPane.topAnchor="196.0">
-                     <font>
-                        <Font name="Roboto" size="37.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="87.0" prefWidth="538.0" text="Label" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
-                     <font>
-                        <Font name="Roboto" size="37.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="backToShoppingButton" layoutX="221.0" layoutY="366.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Gå till handla" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="206.0" />
-               </children>
-            </AnchorPane>
-         </children>
-      </StackPane>
       <SplitPane dividerPositions="0.18523153942428036" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
           <AnchorPane fx:id="sideMenuParentAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
