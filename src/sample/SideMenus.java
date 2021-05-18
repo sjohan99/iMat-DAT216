@@ -149,7 +149,7 @@ public class SideMenus extends AnchorPane {
      * @param buttonId
      */
     public void changeSideMenu(String buttonId) {
-        System.out.println(buttonId);
+
         switch(buttonId) {
             case "history_button":
                 history_menuPane.toFront();
