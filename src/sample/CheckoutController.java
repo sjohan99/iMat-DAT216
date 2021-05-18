@@ -8,8 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -27,7 +30,11 @@ public class CheckoutController implements Initializable {
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
-    @FXML Label adressLabel, dateLabel, priceLabel;
+    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel;
+    @FXML ScrollPane checkoutScrollPane;
+    @FXML FlowPane checkoutItemFlowPane;
+    
+    
     public CheckoutController(UIController parentController, SideMenus sideMenus) {
         this.parentController = parentController;
         this.sideMenus = sideMenus;
@@ -39,7 +46,21 @@ public class CheckoutController implements Initializable {
         initButtons();
         initMyPagesTextFields();
         initMyPagesTextFieldListeners();
+        checkoutScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
+    
+    public void populateItemsToBeBought() {
+        checkoutItemFlowPane.getChildren().clear();
+        double total = 0;
+        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
+            checkoutItemFlowPane.getChildren().add(new HistoryItem(shoppingItem));
+            //total += shoppingItem.getTotal();
+        }
+        System.out.println(backend.shoppingCart.getItems());
+        totalPriceLabel.setText("Totalt: " + String.valueOf(backend.shoppingCart.getTotal()) + " kr");
+        
+    }
+    
 
     /**
      * Gets the saved information from backend and loads it upon starting the program
@@ -187,6 +208,7 @@ public class CheckoutController implements Initializable {
                 break;
             case "back1":
                 confirmCartAnchorPane.toFront();
+                populateItemsToBeBought();
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 sideMenus.changeIcon(0);
                 break;
