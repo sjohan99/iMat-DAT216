@@ -26,7 +26,7 @@ public class HistoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        historyItemPane.toFront();
+        historyGuidePane.toFront();
         historyScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
     

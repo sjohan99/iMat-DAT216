@@ -35,6 +35,7 @@ public class HistoryMenuButton extends AnchorPane {
     }
     
     public void showOrder() {
+        historyParentController.historyItemPane.toFront();
         historyParentController.populateHistoryOrder(order);
     }
     
