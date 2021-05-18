@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="720.0" prefWidth="989.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+            <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <Label prefHeight="54.0" prefWidth="326.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="86.0">
                      <font>
@@ -44,7 +44,7 @@
                   <TextField layoutX="430.0" layoutY="265.0" prefHeight="36.0" prefWidth="150.0" AnchorPane.topAnchor="265.0" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="deliveryAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+            <AnchorPane fx:id="deliveryAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <Label prefHeight="54.0" prefWidth="335.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Leveransadress" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="86.0">
                      <font>
@@ -76,7 +76,7 @@
                   <TextField fx:id="postalAreaTextField" layoutX="248.0" layoutY="262.0" prefHeight="36.0" prefWidth="525.0" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+            <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <Label prefHeight="54.0" prefWidth="342.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Personuppgifter" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="86.0">
                      <font>
