@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="776.0" prefWidth="1036.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
@@ -28,7 +29,7 @@
                         <Font name="Roboto" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="40.0" layoutY="28.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="40.0" layoutY="28.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="6.0">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
                      </font>
@@ -37,47 +38,51 @@
             </AnchorPane>
             <AnchorPane fx:id="historyItemPane" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="40.0" layoutY="28.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
+                  <Label layoutX="50.0" layoutY="6.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Historik" underline="true" AnchorPane.leftAnchor="50.0">
                      <font>
                         <Font name="Roboto Bold Italic" size="36.0" />
                      </font>
                   </Label>
-                  <Label fx:id="timeLabel" layoutX="662.0" layoutY="132.0" text="ÅÅÅÅ-MM-DD TT:MM:SS" underline="true">
+                  <Label fx:id="timeLabel" layoutX="194.0" layoutY="98.0" text="ÅÅÅÅ-MM-DD TT:MM:SS">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <ScrollPane fx:id="historyScrollPane" layoutX="53.0" layoutY="240.0" prefHeight="455.0" prefWidth="932.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="53.0">
+                  <ScrollPane fx:id="historyScrollPane" layoutX="53.0" layoutY="211.0" prefHeight="442.0" prefWidth="888.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="74.0">
                      <content>
-                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="440.0" prefWidth="931.0" style="-fx-background-color: #FFFFFF;" />
+                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" />
                      </content>
                   </ScrollPane>
-                  <Label layoutX="89.0" layoutY="194.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="89.0">
+                  <Label layoutX="87.0" layoutY="162.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="87.0">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="467.0" layoutY="195.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
+                  <Label layoutX="465.0" layoutY="163.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="676.0" layoutY="197.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
+                  <Label layoutX="674.0" layoutY="165.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="834.0" layoutY="197.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
+                  <Label layoutX="833.0" layoutY="165.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Line endX="743.89990234375" endY="-4.57763671875E-5" layoutX="275.0" layoutY="234.0" startX="-186.85415649414062" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-                  <Label fx:id="totalprisLabel" layoutX="775.0" layoutY="705.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris: xxx kr">
+                  <Line endX="722.0" endY="-3.0517578125E-5" layoutX="237.56126403808594" layoutY="211.0" startX="-187.0" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="52.83172607421875" />
+                  <Label fx:id="totalprisLabel" layoutX="678.0" layoutY="685.0" styleClass="label_bold_big" stylesheets="@text_styles.css" text="Totalt: xxx kr">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
+                  <Line endX="722.0" endY="-6.103515625E-5" layoutX="239.0" layoutY="653.0" startX="-186.85415649414062" startY="-3.0517578125E-5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="588.0" layoutX="50.0" layoutY="120.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="37.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="536.0" layoutX="952.0" layoutY="130.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="37.0" />
+                  <Label layoutX="87.0" layoutY="91.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Datum:" />
                </children>
             </AnchorPane>
          </children>

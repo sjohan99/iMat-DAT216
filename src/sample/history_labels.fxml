@@ -2,9 +2,10 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="935.0" style="-fx-background-color: #FFFFFF;" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="935.0" style="-fx-background-color: #F2F0E9;" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemName" layoutX="36.0" layoutY="16.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Vara nummer 1" AnchorPane.leftAnchor="36.0">
          <font>
@@ -26,5 +27,6 @@
             <Font name="Roboto" size="24.0" />
          </font>
       </Label>
+      <Line endX="535.0" layoutX="400.0" layoutY="64.0" startX="-400.0" />
    </children>
 </fx:root>
