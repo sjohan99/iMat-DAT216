@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
@@ -33,7 +34,7 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML private Label iMat;
+    @FXML private Label iMatLabel;
     @FXML private ImageView testimage;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
@@ -157,6 +158,9 @@ public class UIController implements Initializable {
                 //parentView.getChildren().add(new Shopping(shoppingController));
                 parentView.getChildren().add(shopping);
                 break;
+            case "imat":
+                startPagePane.toFront();
+                break;
         }
     }
 
@@ -249,6 +253,12 @@ public class UIController implements Initializable {
         skipGuideButton.setOnAction(e -> toggleOnButton(e));
         endGuideButton.setId("shopping_button");
         endGuideButton.setOnAction(e -> toggleOnButton(e));
+
+        iMatLabel.setOnMouseClicked(e -> labelButton(e));
+    }
+
+    private void labelButton(MouseEvent e) {
+        changeMainView("imat");
     }
 
     /**

@@ -249,7 +249,7 @@
       </AnchorPane>
       <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label id="imat" layoutX="25.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat">
+            <Label id="imat" fx:id="iMatLabel" layoutX="25.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat">
                <font>
                   <Font size="86.0" />
                </font>
