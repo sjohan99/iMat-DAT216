@@ -1,14 +1,19 @@
 package sample;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 
 import java.io.IOException;
@@ -19,15 +24,16 @@ import java.io.IOException;
 public class ItemCard extends AnchorPane {
     
     @FXML private ImageView itemImage;
-    @FXML private Label itemCost, itemUnit, itemAmount;
+    @FXML public Label itemCost, itemUnit, itemAmount, cardUnitSuffix;
     @FXML private Text itemNameText;
-    @FXML private TextField itemAmountTextField;
+    @FXML public TextField cardAmountTextField, itemAmountTextField;
     @FXML private Circle itemAddButton, itemRemoveButton;
+    @FXML private Rectangle boxRectangle;
     
     private UIController parentController;
     private BackendController backend;
     private Product product;
-    private double amount;
+    public double amount;
     
     public ItemCard(Product product, UIController parentController, BackendController backend) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("itemCard.fxml"));
@@ -49,6 +55,18 @@ public class ItemCard extends AnchorPane {
         itemCost.setText(backend.getCorrectFormatPrice(product));
         //itemUnit.setText(product.getUnitSuffix());
         // TODO item amount probably needs to be a textfield/area
+        initTextField();
+        this.amount = 0;
+        setCardUnitSuffix();
+    }
+    
+    private void setCardUnitSuffix() {
+        if (product.getUnitSuffix().equals("kg")) {
+            cardUnitSuffix.setText("kg");
+        }
+        else {
+            cardUnitSuffix.setText("st");
+        }
     }
     
     public String getCategory() {
@@ -57,6 +75,59 @@ public class ItemCard extends AnchorPane {
     
     public Product getProduct() {
         return product;
+    }
+    
+    private void initTextField() {
+        boxRectangle.visibleProperty().bind(cardAmountTextField.hoverProperty());
+        
+        cardAmountTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                newInputInTextField();
+                parentController.updateItemCardAmounts();
+            }
+        });
+        
+        cardAmountTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+                
+                }
+                else
+                {
+                    newInputInTextField();
+                    parentController.updateItemCardAmounts();
+                }
+            }
+        });
+    }
+    
+    private void newInputInTextField() {
+        String amountText = "";
+        double amount = 0;
+        for (ShoppingItem existingItems : backend.shoppingCart.getItems()) {
+            if (existingItems.getProduct().equals(product)) {
+                amount = existingItems.getAmount();
+            }
+        }
+        try {
+            amount = Double.parseDouble(cardAmountTextField.getText());
+            amountText = cardAmountTextField.getText();
+        } catch (NumberFormatException e) {
+            System.out.println("Empty string");
+            backend.addItemToShoppingCart(product, 0);
+            parentController.updateShoppingCart();
+            cardAmountTextField.setText("0");
+            this.amount = 0;
+            return;
+        }
+        this.amount = amount;
+        cardAmountTextField.setText(amountText);
+        backend.addItemToShoppingCart(product, amount);
+        parentController.updateShoppingCart();
     }
     
     public void add() {

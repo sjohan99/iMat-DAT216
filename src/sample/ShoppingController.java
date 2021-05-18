@@ -19,7 +19,7 @@ public class ShoppingController implements Initializable {
     
     private UIController parentController;
     private BackendController backend;
-    private List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
+    public List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
             ekoItems, fruitItems, snackItems, greensItems, searchItems;
     
     @FXML private FlowPane shoppingFlowPane;
@@ -46,6 +46,7 @@ public class ShoppingController implements Initializable {
         greensItems = new ArrayList<>();
         searchItems = new ArrayList<>();
         populateItemCards();
+        parentController.updateItemCardAmounts();
     }
     
     private void createItemCards() {
