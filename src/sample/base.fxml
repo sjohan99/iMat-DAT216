@@ -21,7 +21,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="purchaseDonePane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -34,7 +34,7 @@
                         <Font name="Roboto" size="37.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="87.0" prefWidth="538.0" text="Label" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
+                  <Label fx:id="adressLabel" alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="87.0" prefWidth="538.0" text="Label" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
                      <font>
                         <Font name="Roboto" size="37.0" />
                      </font>

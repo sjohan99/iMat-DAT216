@@ -34,7 +34,7 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML private Label iMatLabel;
+    @FXML public Label iMatLabel, adressLabel;
     @FXML private ImageView testimage;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
