@@ -9,9 +9,10 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="773.0" prefWidth="1022.0">
          <children>
@@ -254,7 +255,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="confirmCartAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
+            <AnchorPane prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #F2F0E9;">
                <children>
                   <Label layoutX="36.0" layoutY="66.0" prefHeight="54.0" prefWidth="355.0" stylesheets="@text_styles.css" text="Varukorg" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="86.0">
                      <font>
@@ -276,7 +277,7 @@
                   </Label>
                   <AnchorPane fx:id="historyItemPane" prefHeight="773.0" prefWidth="1032.0">
                      <children>
-                        <Button fx:id="confirmButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Bekräfta varor" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                        <Button mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Bekräfta varor" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
                         <Button fx:id="backToShoppingButton" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Tillbaka till Handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
                         <Label fx:id="timeLabel" layoutX="662.0" layoutY="94.0" text="ÅÅÅÅ-MM-DD TT:MM:SS" underline="true">
                            <font>
@@ -316,6 +317,53 @@
                         </Label>
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="confirmCartAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label fx:id="timeLabel1" layoutX="194.0" layoutY="98.0" text="ÅÅÅÅ-MM-DD TT:MM:SS" visible="false">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane fx:id="checkoutScrollPane" layoutX="51.0" layoutY="157.0" prefHeight="394.0" prefWidth="909.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="73.0">
+                     <content>
+                        <FlowPane fx:id="checkoutItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" />
+                     </content>
+                  </ScrollPane>
+                  <Label layoutX="87.0" layoutY="112.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="87.0">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="465.0" layoutY="113.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Mängd">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="674.0" layoutY="115.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Pris">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="833.0" layoutY="115.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Totalpris">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="720.0" endY="-3.0517578125E-5" layoutX="237.5" layoutY="157.0" startX="-187.0" startY="-3.0517578125E-5" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="73.0" />
+                  <Label fx:id="totalPriceLabel" layoutX="707.0" layoutY="557.0" styleClass="label_bold_big" stylesheets="@text_styles.css" text="Totalt: xxx kr">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Line endX="720.0" endY="-6.103515625E-5" layoutX="239.0" layoutY="549.0" startX="-186.85415649414062" startY="-3.0517578125E-5" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="481.0" layoutX="50.0" layoutY="120.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="37.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="536.0" layoutX="952.0" layoutY="130.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="37.0" />
+                  <Label layoutX="87.0" layoutY="91.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Datum:" visible="false" />
+                  <Button fx:id="confirmButton1" layoutX="689.0" layoutY="646.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Bekräfta varor" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
+                  <Button layoutX="98.0" layoutY="607.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Tillbaka till Handla" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+                  <Label layoutX="88.0" layoutY="9.0" prefHeight="54.0" prefWidth="196.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Kassan" />
                </children>
             </AnchorPane>
          </children>
