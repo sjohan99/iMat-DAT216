@@ -3,6 +3,7 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
@@ -17,6 +18,7 @@ public class HistoryController implements Initializable {
     public BackendController backend = new BackendController();
 
     @FXML AnchorPane historyViewParentAnchorPane, historyGuidePane, historyItemPane;
+    @FXML ScrollPane historyScrollPane;
     @FXML Label totalprisLabel, timeLabel;
     @FXML FlowPane HistoryItemFlowPane;
     
@@ -25,6 +27,7 @@ public class HistoryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         historyItemPane.toFront();
+        historyScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
     
     public void populateHistoryOrder(Order order) {
