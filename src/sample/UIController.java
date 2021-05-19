@@ -220,12 +220,8 @@ public class UIController implements Initializable {
             shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this));
         }
         updateItemCardAmounts();
-        totalPriceLabel.setText("Totalt: " + roundTwoDecimals(backend.shoppingCart.getTotal()) + " kr");
+        totalPriceLabel.setText("Totalt: " + backend.roundTwoDecimals(backend.shoppingCart.getTotal()) + " kr");
         itemAmountLabel.setText("Varor: " + varor + " st");
-    }
-    
-    public double roundTwoDecimals(double a) {
-        return Math.round(a * 100.0) / 100.0;
     }
     
     public void updateItemCardAmounts() {

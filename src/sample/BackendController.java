@@ -11,13 +11,17 @@ public class BackendController {
     public CartItem createFinalShoppingCartItem(Product product, double amount, UIController parentcontroller) {
         if (product.getUnitSuffix().equals("kg")) {
             parentcontroller.varor += 1;
-            return new CartItem(amount + " kg " + product.getName(), product, parentcontroller);
+            return new CartItem(amount + " kg " + product.getName(), product, parentcontroller, amount);
         }
         else {
             int intAmount = (int) amount;
             parentcontroller.varor += intAmount;
-            return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller);
+            return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller, amount);
         }
+    }
+    
+    public double roundTwoDecimals(double a) {
+        return Math.round(a * 100.0) / 100.0;
     }
     
     public String getCorrectDateFormat(Order order) {
@@ -57,11 +61,37 @@ public class BackendController {
         String price;
         double val = product.getPrice();
         String[] arr = String.valueOf(val).split("\\.");
+        if (arr[1].length() > 1) {
+            arr[1] = arr[1].substring(0,2);
+        }
+        
         int kr = Integer.parseInt(arr[0]);
         int ore = Integer.parseInt(arr[1]);
         
         if (ore == 0) {
             price = kr + ":-";
+        }
+        else {
+            if (ore < 10) {
+                ore *= 10;
+            }
+            price = kr + ":" + ore;
+        }
+        return price;
+    }
+    
+    public String getProductPrice(double number) {
+        String price;
+        double val = number;
+        String[] arr = String.valueOf(val).split("\\.");
+        if (arr[1].length() > 1) {
+            arr[1] = arr[1].substring(0,2);
+        }
+        int kr = Integer.parseInt(arr[0]);
+        int ore = Integer.parseInt(arr[1]);
+        
+        if (ore == 0) {
+            price = kr + ":00";
         }
         else {
             if (ore < 10) {

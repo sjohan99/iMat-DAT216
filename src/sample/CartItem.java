@@ -18,14 +18,14 @@ public class CartItem extends AnchorPane {
     /**
      * Keeping the amount and name of the item as one Label, just construct correct string before creating CartItem.
      */
-    @FXML Label itemAmountAndName;
+    @FXML Label itemAmountAndName, priceLabel;
     @FXML TextField amountTextField;
     
     private BackendController backend = new BackendController();
     private UIController parentController;
     private Product product;
     
-    public CartItem(String text, Product product, UIController parentController) {
+    public CartItem(String text, Product product, UIController parentController, double amount) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cart_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -40,6 +40,7 @@ public class CartItem extends AnchorPane {
         this.product = product;
         itemAmountAndName.setText(text);
         initTextField();
+        priceLabel.setText(backend.getProductPrice(product.getPrice() * amount) + " kr");
     }
     
     private void initTextField() {

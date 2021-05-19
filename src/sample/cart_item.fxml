@@ -9,7 +9,7 @@
 <fx:root maxWidth="480.0" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" stylesheets="@item_card_style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="itemAmountAndName" layoutY="6.0" maxWidth="240.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
-      <Label alignment="BASELINE_LEFT" layoutX="264.0" layoutY="6.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90 kr" />
+      <Label fx:id="priceLabel" alignment="BASELINE_LEFT" layoutX="264.0" layoutY="6.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90 kr" />
       <TextField fx:id="amountTextField" alignment="CENTER" layoutX="370.0" layoutY="2.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" />
       <TextField alignment="CENTER" layoutX="358.0" layoutY="3.0" mouseTransparent="true" prefHeight="34.0" prefWidth="112.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" />
       <Circle fx:id="removeCircleButton" fill="WHITE" layoutX="375.0" layoutY="20.0" onMouseClicked="#removeFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
