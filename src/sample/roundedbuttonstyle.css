@@ -307,3 +307,11 @@
 -fx-background-color: #d6a296;
 -fx-cursor: hand;
 }
+
+.information_textfield {
+-fx-background-color: #E4E4E4;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
