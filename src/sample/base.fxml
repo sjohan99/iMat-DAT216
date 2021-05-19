@@ -362,7 +362,7 @@
             </Label>
             <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Button fx:id="expandButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                  <Button fx:id="expandButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -445,7 +445,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
+            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="search_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
                <font>
                   <Font size="32.0" />
                </font>
