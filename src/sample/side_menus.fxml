@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane fx:id="menuStack">
          <children>
@@ -329,9 +329,9 @@
                                    <Font name="System Bold" size="36.0" />
                                </font>
                            </Label>
-                        <ScrollPane fx:id="historyScrollPane" prefHeight="710.0" prefWidth="275.0">
+                        <ScrollPane fx:id="historyScrollPane" layoutX="-1.0" prefHeight="710.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css">
                            <content>
-                              <FlowPane fx:id="receiptFlowPane" prefHeight="708.0" prefWidth="275.0" />
+                              <FlowPane fx:id="receiptFlowPane" layoutX="-1.0" prefHeight="708.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css" />
                            </content>
                         </ScrollPane>
                        </children>
