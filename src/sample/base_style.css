@@ -38,6 +38,12 @@
 -fx-background-color: #FFFFFF;
 }
 
+.remove_focus_beige {
+-fx-focus-color: transparent;
+-fx-faint-focus-color: transparent;
+-fx-background-color: #F2F0E9;
+}
+
 .make-invisible {
 -fx-background-color: #FFFFFF;
 }
