@@ -21,7 +21,7 @@ public class SideMenus extends AnchorPane {
     private UIController parentController;
     private HistoryController historyParentController;
     private BackendController backend = new BackendController();
-    private ButtonGrouper myPagesButtonGroup;
+    public ButtonGrouper myPagesButtonGroup;
     private ButtonGrouper shoppingButtonGroup;
     ButtonGrouper checkoutButtonsGroup;
     /**
