@@ -10,10 +10,12 @@ public class BackendController {
     
     public CartItem createFinalShoppingCartItem(Product product, double amount, UIController parentcontroller) {
         if (product.getUnitSuffix().equals("kg")) {
+            parentcontroller.varor += 1;
             return new CartItem(amount + " kg " + product.getName(), product, parentcontroller);
         }
         else {
             int intAmount = (int) amount;
+            parentcontroller.varor += intAmount;
             return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller);
         }
     }
