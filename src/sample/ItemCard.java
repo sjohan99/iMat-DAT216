@@ -34,6 +34,7 @@ public class ItemCard extends AnchorPane {
     private BackendController backend;
     private Product product;
     public double amount;
+    public double numberOfItems;
     
     public ItemCard(Product product, UIController parentController, BackendController backend) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("itemCard.fxml"));
@@ -63,6 +64,7 @@ public class ItemCard extends AnchorPane {
     private void setCardUnitSuffix() {
         if (product.getUnitSuffix().equals("kg")) {
             cardUnitSuffix.setText("kg");
+            numberOfItems = 1;
         }
         else {
             cardUnitSuffix.setText("st");
