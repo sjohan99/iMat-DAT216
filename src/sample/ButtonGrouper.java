@@ -80,4 +80,13 @@ public class ButtonGrouper {
         siblings.get(step).getStyleClass().add("sidebar_button_pressed");
 
     }
+
+    void activateDateButtons(String pressedButtonId) {
+        for (Button button : siblings) {
+            if (button.getId().equals(pressedButtonId)) {
+                button.getStyleClass().removeAll("");
+                button.getStyleClass().add("delivery_date_button_pressed");
+            }
+        }
+    }
 }

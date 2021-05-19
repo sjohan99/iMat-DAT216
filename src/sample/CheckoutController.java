@@ -15,22 +15,28 @@ import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class CheckoutController implements Initializable {
 
     private UIController parentController;
     public BackendController backend = new BackendController();
+    private ButtonGrouper dateButtons;
     SideMenus sideMenus;
-
+    List<String> monthName = new ArrayList<>();
+    String dayName;
+    List<Integer> dayNum = new ArrayList<>();
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
-    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2;
+    @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2, dayButton1, dayButton2, dayButton3, timeButton;
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
-    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel;
+    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel;
     @FXML ScrollPane checkoutScrollPane;
     @FXML FlowPane checkoutItemFlowPane;
     
@@ -43,12 +49,32 @@ public class CheckoutController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        initTime();
         initButtons();
         initMyPagesTextFields();
         initMyPagesTextFieldListeners();
         checkoutScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
-    
+
+    private void timeButtons(ActionEvent e) {
+        String id = ((Node) e.getSource()).getId();
+        dateButtons.activateDateButtons(id);
+    }
+
+    private void initTime() {
+        LocalDate date  = LocalDate.now();
+        for (int i = 0; i < 3; i++) {
+            monthName.add(capitalize(date.plusDays(i).getMonth().getDisplayName(TextStyle.FULL, new Locale("sv"))));
+            dayNum.add(date.plusDays(i).getDayOfMonth());
+        }
+        dayName = (capitalize(date.plusDays(3).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
+    }
+
+    public String capitalize(String str) {
+        if(str == null) return str;
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
+    }
+
     public void populateItemsToBeBought() {
         checkoutItemFlowPane.getChildren().clear();
         double total = 0;
@@ -76,8 +102,15 @@ public class CheckoutController implements Initializable {
         emailTextField.setText(backend.dataHandler.getCustomer().getEmail());
         phoneTextField.setText(backend.dataHandler.getCustomer().getPhoneNumber());
         adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
-        dateLabel.setText("12:00-16:00, 2 Maj 2021");
+        dateLabel.setText("12:00-16:00, " + dayName + " " + dayNum.get(2) + " " + monthName.get(2));
         priceLabel.setText("100 kr");
+        monthLabel1.setText(monthName.get(0));
+        monthLabel2.setText(monthName.get(1));
+        monthLabel3.setText(monthName.get(2));
+        dayButton1.setText(String.valueOf(dayNum.get(0)));
+        dayButton2.setText(String.valueOf(dayNum.get(1)));
+        dayButton3.setText(String.valueOf(dayNum.get(2)));
+        dayLabel.setText(dayName);
     }
 
     /**
@@ -191,6 +224,14 @@ public class CheckoutController implements Initializable {
 
         for (Button button : buttons) { button.setOnAction(e -> changeStep(e)); }
 
+        dateButtons = new ButtonGrouper();
+        dateButtons.addButtonToList(dayButton3);
+        dateButtons.addButtonToList(timeButton);
+
+
+        for (Button button : dateButtons.getButtons()) {
+            button.setOnAction(e -> timeButtons(e));
+        }
     }
 
     private void changeStep(ActionEvent e) {

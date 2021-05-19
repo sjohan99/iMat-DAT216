@@ -148,6 +148,7 @@ public class UIController implements Initializable {
                 break;
             case "my_pages_button":
                 parentView.getChildren().add(new MyPages(myPagesController));
+                sideMenus.myPagesButtonGroup.activateSideBarButtons("personal_info");
                 break;
             case "checkout_button":
                 parentView.getChildren().add(new Checkout(checkoutController));
