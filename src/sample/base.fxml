@@ -393,6 +393,9 @@
                <font>
                   <Font size="86.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
             <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
                <font>
