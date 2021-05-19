@@ -163,6 +163,7 @@ public class SideMenus extends AnchorPane {
                 break;
             default:
                 shopping_menuPane.toFront();
+                parentController.showAllItems();
                 break;
         }
     }
