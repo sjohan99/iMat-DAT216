@@ -219,6 +219,11 @@
 -fx-font-size: 64px;
 }
 
+.delivery_date_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .delivery_time_button {
 -fx-background-color: #F2F0E9;
 -fx-border-width: 1px;
@@ -227,6 +232,15 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 20px;
+}
+
+.delivery_time_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
+.delivery_date_button_pressed {
+-fx-background-color: #F2B84B;
 }
 
 .go_back_button {
