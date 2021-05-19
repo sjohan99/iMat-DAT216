@@ -22,10 +22,10 @@ public class ShoppingController implements Initializable {
     public List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
             ekoItems, fruitItems, snackItems, greensItems, searchItems;
     
-    @FXML private FlowPane shoppingFlowPane;
+    @FXML public FlowPane shoppingFlowPane;
     @FXML private ScrollPane shoppingScrollPane;
     @FXML private AnchorPane shoppingAnchorPane;
-    @FXML private Label shoppingHeadline;
+    @FXML public Label shoppingHeadline;
     
     public ShoppingController(UIController parentController, BackendController backend) {
         this.parentController = parentController;
@@ -153,10 +153,12 @@ public class ShoppingController implements Initializable {
                 break;
             case "eko":
                 shoppingFlowPane.getChildren().clear();
-                for (Product product : backend.dataHandler.findProducts("ekologi")) {
-                    for (ItemCard itemCard : itemCards) {
-                        if (itemCard.getProduct().equals(product)) {
-                            ekoItems.add(itemCard);
+                if (ekoItems.size() == 0) {
+                    for (Product product : backend.dataHandler.findProducts("ekologi")) {
+                        for (ItemCard itemCard : itemCards) {
+                            if (itemCard.getProduct().equals(product)) {
+                                ekoItems.add(itemCard);
+                            }
                         }
                     }
                 }
