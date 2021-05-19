@@ -34,7 +34,7 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML public Label iMatLabel, adressLabel;
+    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel;
     @FXML private ImageView testimage;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
@@ -49,6 +49,7 @@ public class UIController implements Initializable {
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
     private Shopping shopping;
+    public int varor = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,6 +66,8 @@ public class UIController implements Initializable {
         initSearch();
         
         backend.shoppingCart.clear(); // Remove this to save cart between runs
+        updateItemCardAmounts();
+        updateShoppingCart();
     }
 
     /**
@@ -212,13 +215,32 @@ public class UIController implements Initializable {
     
     public void updateShoppingCart() {
         shoppingCartPane.getChildren().clear();
+        varor = 0;
         for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
             shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this));
         }
         updateItemCardAmounts();
+        totalPriceLabel.setText("Totalt: " + roundTwoDecimals(backend.shoppingCart.getTotal()) + " kr");
+        itemAmountLabel.setText("Varor: " + varor + " st");
+    }
+    
+    public double roundTwoDecimals(double a) {
+        return Math.round(a * 100.0) / 100.0;
     }
     
     public void updateItemCardAmounts() {
+        for (ItemCard itemCard : shoppingController.itemCards) {
+            boolean found = false;
+            for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
+                if (shoppingItem.getProduct().equals(itemCard.getProduct())) {
+                    itemCard.amount = shoppingItem.getAmount();
+                    found = true;
+                }
+            }
+            if (!found) {
+                itemCard.amount = 0;
+            }
+        }
         for (ItemCard itemCard : shoppingController.itemCards) {
             if (itemCard.getProduct().getUnitSuffix().equals("kg")) {
                 itemCard.cardAmountTextField.setText(String.valueOf(itemCard.amount));
@@ -295,6 +317,12 @@ public class UIController implements Initializable {
         buttonGrouper.activate(id);
         sideMenus.changeSideMenu(id);
         changeMainView(id);
+    }
+    
+    public void showAllItems() {
+        shoppingController.shoppingFlowPane.getChildren().clear();
+        shoppingController.addItems(shoppingController.itemCards);
+        shoppingController.shoppingHeadline.setText("Alla");
     }
 
     /**
