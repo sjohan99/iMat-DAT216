@@ -242,8 +242,8 @@
                   <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="260.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
                </content>
             </ScrollPane>
-            <Label layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
-            <Label layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
+            <Label fx:id="totalPriceLabel" layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
+            <Label fx:id="itemAmountLabel" layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
             <Line fx:id="cartLineDivider" endX="245.0" endY="492.0" layoutY="14.0" startX="25.0" startY="492.0" styleClass="line_divider" />
          </children>
       </AnchorPane>
