@@ -83,6 +83,7 @@ public class CartItem extends AnchorPane {
         amountTextField.setText(amountText);
         backend.addItemToShoppingCart(product, amount);
         parentController.updateShoppingCart();
+        parentController.updateItemCardAmounts();
         
         if (product.getUnitSuffix().equals("kg")) {
             amountTextField.setText(amountText);
@@ -116,6 +117,7 @@ public class CartItem extends AnchorPane {
         amountTextField.setText(String.valueOf(amount));
         System.out.println(String.valueOf(amount));
         parentController.updateShoppingCart();
+        parentController.updateItemCardAmounts();
         System.out.println("add called");
     }
     
@@ -126,6 +128,7 @@ public class CartItem extends AnchorPane {
                 amountToBeRemoved = existingItems.getAmount() - 1;
             }
         }
+        parentController.updateItemCardAmounts();
         backend.addItemToShoppingCart(product, amountToBeRemoved);
         amountTextField.setText(String.valueOf(amountToBeRemoved));
         parentController.updateShoppingCart();
