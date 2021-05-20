@@ -103,7 +103,7 @@ public class CheckoutController implements Initializable {
         phoneTextField.setText(backend.dataHandler.getCustomer().getPhoneNumber());
         adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
         dateLabel.setText("12:00-16:00, " + dayName + " " + dayNum.get(2) + " " + monthName.get(2));
-        priceLabel.setText("100 kr");
+        priceLabel.setText(backend.shoppingCart.getTotal() + " kr");
         monthLabel1.setText(monthName.get(0));
         monthLabel2.setText(monthName.get(1));
         monthLabel3.setText(monthName.get(2));
