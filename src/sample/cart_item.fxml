@@ -6,17 +6,17 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 
-<fx:root maxWidth="480.0" prefHeight="40.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" stylesheets="@item_card_style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="480.0" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" stylesheets="@item_card_style.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="itemAmountAndName" layoutY="6.0" maxWidth="240.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" />
-      <Label fx:id="priceLabel" alignment="BASELINE_LEFT" layoutX="264.0" layoutY="6.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90 kr" />
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="370.0" layoutY="2.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" />
-      <TextField alignment="CENTER" layoutX="358.0" layoutY="3.0" mouseTransparent="true" prefHeight="34.0" prefWidth="112.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" />
-      <Circle fx:id="removeCircleButton" fill="WHITE" layoutX="375.0" layoutY="20.0" onMouseClicked="#removeFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
-      <Circle fx:id="addCircleButton" fill="WHITE" layoutX="453.0" layoutY="20.0" onMouseClicked="#addFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="add_circle_style" />
-      <Line endX="100.0" layoutX="270.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
-      <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" rotate="90.0" startX="110.0" strokeWidth="3.0" />
-      <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
-      <Label fx:id="unitSuffixLabel" layoutX="419.0" layoutY="8.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" />
+      <Label fx:id="itemAmountAndName" layoutX="-2.0" layoutY="11.0" maxWidth="240.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" AnchorPane.bottomAnchor="11.0" AnchorPane.topAnchor="11.0" />
+      <Label fx:id="priceLabel" alignment="BASELINE_LEFT" layoutX="258.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90 kr" AnchorPane.topAnchor="11.0" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="366.0" layoutY="8.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" />
+      <TextField alignment="CENTER" layoutX="351.0" layoutY="7.0" mouseTransparent="true" prefHeight="36.0" prefWidth="122.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0" />
+      <Circle fx:id="removeCircleButton" fill="WHITE" layoutX="369.0" layoutY="25.0" onMouseClicked="#removeFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
+      <Circle fx:id="addCircleButton" fill="WHITE" layoutX="455.0" layoutY="25.0" onMouseClicked="#addFromCart" radius="13.0" stroke="BLACK" strokeType="INSIDE" styleClass="add_circle_style" />
+      <Line endX="100.0" layoutX="264.0" layoutY="25.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
+      <Line endX="100.0" layoutX="350.0" layoutY="25.0" mouseTransparent="true" rotate="90.0" startX="110.0" strokeWidth="3.0" />
+      <Line endX="100.0" layoutX="350.0" layoutY="25.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
+      <Label fx:id="unitSuffixLabel" layoutX="419.0" layoutY="14.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" AnchorPane.bottomAnchor="13.0" />
    </children>
 </fx:root>
