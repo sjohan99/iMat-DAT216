@@ -339,6 +339,10 @@ public class UIController implements Initializable {
          */
         private void slideOut() {
             if (!shoppingCartExpanded) {
+                if (speed > 1) {
+                    speed = 0.93 * speed;
+                }
+                /*
                 if (speed >= 3) {
                     speed -= 1;
                 }
@@ -346,6 +350,8 @@ public class UIController implements Initializable {
                 if (shoppingCartAnchorPane.getMaxWidth() > 485) {
                     speed = 1;
                 }
+                
+                 */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
 
@@ -356,6 +362,10 @@ public class UIController implements Initializable {
                 }
             }
             else {
+                if (speed > 1) {
+                    speed = 0.93 * speed;
+                }
+                /*
                 if (speed >= 3) {
                     speed -= 1;
                 }
@@ -363,6 +373,8 @@ public class UIController implements Initializable {
                 if (shoppingCartAnchorPane.getMaxWidth() < 290) {
                     speed = 1;
                 }
+                
+                 */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
 
