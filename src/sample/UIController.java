@@ -34,7 +34,7 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel;
+    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel;
     @FXML private ImageView testimage;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
@@ -89,6 +89,7 @@ public class UIController implements Initializable {
         guideButtonsPane.toFront();
         nextStepButton.toFront();
         skipGuideButton.setStyle("-fx-opacity: 1");
+        skipGuideLabel.setStyle("-fx-opacity: 1");
     }
     
     private void initSearch() {
@@ -123,7 +124,9 @@ public class UIController implements Initializable {
                 shoppingCartAnchorPane.setStyle("-fx-opacity: 0.5");
                 topBarPane.setStyle("-fx-opacity: 1");
                 skipGuideButton.setStyle("-fx-opacity: 0");
+                skipGuideLabel.setStyle("-fx-opacity: 0");
                 endGuideButton.toFront();
+                endGuideLabel.toFront();
                 break;
             default:
 
