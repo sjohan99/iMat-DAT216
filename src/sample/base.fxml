@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,17 +18,25 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Ellipse?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
          <children>
             <AnchorPane fx:id="guidePane1" prefHeight="900.0" prefWidth="1600.0">
                <children>
-                  <Ellipse fill="#f2b84b" layoutX="819.0" layoutY="478.0" radiusX="198.0" radiusY="138.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="819.0" layoutY="478.0" radiusX="198.0" radiusY="138.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
                   <Label layoutX="686.0" layoutY="372.0" prefHeight="220.0" prefWidth="272.0" text="Här kommer en snabb guide för att du lättare ska lära dig hur du navigerar i applikationen" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -42,7 +51,14 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="556.0" layoutY="329.0" radiusX="184.0" radiusY="88.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="556.0" layoutY="329.0" radiusX="184.0" radiusY="88.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
                   <Label layoutX="420.0" layoutY="222.0" prefHeight="214.0" prefWidth="272.0" text="Tryck på &quot;iMat&quot; för att komma tillbaka till första sidan" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -57,13 +73,29 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="1075.0" layoutY="308.0" radiusX="184.0" radiusY="102.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="1075.0" layoutY="308.0" radiusX="184.0" radiusY="102.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
                   <Label layoutX="923.0" layoutY="219.0" prefHeight="184.0" prefWidth="313.0" text="Via hjälp-knappen kan du titta på den här genomgången igen" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
                      </font>
                   </Label>
-                  <Ellipse fill="#f2b84b" layoutX="608.0" layoutY="650.0" radiusX="151.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="608.0" layoutY="650.0" radiusX="151.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow height="41.68" radius="20.42" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
                   <Label layoutX="495.0" layoutY="595.0" prefHeight="116.0" prefWidth="236.0" text="Nu är det bara att sätta igång!" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -88,7 +120,14 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="1027.0" layoutY="393.0" radiusX="173.0" radiusY="107.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="1027.0" layoutY="393.0" radiusX="173.0" radiusY="107.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
                   <Label layoutX="895.0" layoutY="286.0" prefHeight="214.0" prefWidth="272.0" text="Här kan du handla, se dina tidigare köp eller ändra dina uppgifter" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -113,7 +152,14 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="664.0" layoutY="440.0" radiusX="175.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="664.0" layoutY="440.0" radiusX="175.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
                   <Label layoutX="513.0" layoutY="345.0" prefHeight="205.0" prefWidth="313.0" text="För att visa varor väljer du en kategori i listan här" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -128,7 +174,14 @@
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="1018.0" layoutY="506.0" radiusX="125.0" radiusY="86.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#f2b84b" layoutX="1018.0" layoutY="506.0" radiusX="125.0" radiusY="86.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
                   <Label layoutX="905.0" layoutY="407.0" prefHeight="198.0" prefWidth="236.0" text="Här syns dina tillagda varor i varukorgen" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
@@ -138,7 +191,14 @@
             </AnchorPane>
             <AnchorPane fx:id="guideButtonsPane">
                <children>
-                  <Button fx:id="skipGuideButton" layoutX="1066.0" layoutY="786.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="61.0" prefWidth="170.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="skipGuideButton" layoutX="1066.0" layoutY="786.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="61.0" prefWidth="170.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" textAlignment="CENTER" wrapText="true">
+                     <effect>
+                        <DropShadow height="36.75" radius="13.9375">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Button>
                   <Button fx:id="nextStepButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#changeGuideView" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Nästa steg">
                      <graphic>
                         <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
@@ -148,7 +208,14 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="endGuideButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" />
+                  <Button fx:id="endGuideButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Button>
                   <Label layoutX="1103.0" layoutY="786.0" prefHeight="61.0" prefWidth="104.0" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" wrapText="true">
                      <font>
                         <Font name="Roboto" size="18.0" />
@@ -470,7 +537,7 @@
                   <Image url="@resources/startpage.png" />
                </image>
             </ImageView>
-            <Label id="imat_homepage" layoutX="290.0" layoutY="176.0" prefHeight="183.0" prefWidth="385.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="290.0">
+            <Label id="imat_homepage" layoutX="290.0" layoutY="176.0" prefHeight="183.0" prefWidth="237.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="291.5">
                <font>
                   <Font size="96.0" />
                </font>
@@ -502,22 +569,22 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="175.0" layoutY="73.0" prefHeight="77.0" prefWidth="600.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Välkommen till " textFill="WHITE">
+            <Label layoutX="175.0" layoutY="73.0" prefHeight="87.0" prefWidth="499.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Välkommen till " textFill="WHITE" AnchorPane.leftAnchor="160.5">
                <font>
                   <Font name="Roboto" size="72.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="610.0" prefHeight="47.0" prefWidth="220.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textFill="WHITE">
+            <Label layoutX="59.0" layoutY="610.0" prefHeight="49.0" prefWidth="195.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textFill="WHITE" AnchorPane.leftAnchor="58.0">
                <font>
                   <Font name="Roboto" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="594.0" layoutY="610.0" prefHeight="46.0" prefWidth="160.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Historik" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutX="594.0" layoutY="610.0" prefHeight="49.0" prefWidth="140.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Historik" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="594.5">
                <font>
                   <Font name="Roboto" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="645.0" prefHeight="58.0" prefWidth="170.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Handla" textFill="WHITE">
+            <Label layoutX="328.0" layoutY="645.0" prefHeight="58.0" prefWidth="154.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Handla" textFill="WHITE" AnchorPane.leftAnchor="333.0">
                <font>
                   <Font name="Roboto" size="48.0" />
                </font>
