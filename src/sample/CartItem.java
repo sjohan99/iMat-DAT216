@@ -18,7 +18,7 @@ public class CartItem extends AnchorPane {
     /**
      * Keeping the amount and name of the item as one Label, just construct correct string before creating CartItem.
      */
-    @FXML Label itemAmountAndName, priceLabel;
+    @FXML Label itemAmountAndName, priceLabel, unitSuffixLabel;
     @FXML TextField amountTextField;
     
     private BackendController backend = new BackendController();
@@ -41,6 +41,14 @@ public class CartItem extends AnchorPane {
         itemAmountAndName.setText(text);
         initTextField();
         priceLabel.setText(backend.getProductPrice(product.getPrice() * amount) + " kr");
+        if (product.getUnitSuffix().equals("kg")) {
+            unitSuffixLabel.setText("kg");
+            amountTextField.setText(String.valueOf(amount));
+        }
+        else {
+            unitSuffixLabel.setText("st");
+            amountTextField.setText(String.valueOf((int) amount));
+        }
     }
     
     private void initTextField() {
@@ -81,17 +89,17 @@ public class CartItem extends AnchorPane {
                 }
             }
         }
-        amountTextField.setText(amountText);
+        //amountTextField.setText(amountText);
         backend.addItemToShoppingCart(product, amount);
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
         
-        if (product.getUnitSuffix().equals("kg")) {
+        /*if (product.getUnitSuffix().equals("kg")) {
             amountTextField.setText(amountText);
         }
         else {
             amountTextField.setText(amountText);
-        }
+        }*/
     }
     
     /**

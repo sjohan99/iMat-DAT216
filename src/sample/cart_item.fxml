@@ -17,6 +17,6 @@
       <Line endX="100.0" layoutX="270.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
       <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" rotate="90.0" startX="110.0" strokeWidth="3.0" />
       <Line endX="100.0" layoutX="348.0" layoutY="20.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
-      <Label layoutX="419.0" layoutY="8.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" />
+      <Label fx:id="unitSuffixLabel" layoutX="419.0" layoutY="8.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" />
    </children>
 </fx:root>
