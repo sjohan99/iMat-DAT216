@@ -67,7 +67,7 @@ public class CheckoutController implements Initializable {
             monthName.add(capitalize(date.plusDays(i).getMonth().getDisplayName(TextStyle.FULL, new Locale("sv"))));
             dayNum.add(date.plusDays(i).getDayOfMonth());
         }
-        dayName = (capitalize(date.plusDays(3).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
+        dayName = (capitalize(date.plusDays(2).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
     }
 
     public String capitalize(String str) {
