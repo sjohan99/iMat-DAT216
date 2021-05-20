@@ -23,7 +23,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -216,15 +216,18 @@
                            </color>
                         </DropShadow>
                      </effect></Button>
-                  <Label layoutX="1083.0" layoutY="717.0" text="Börja Handla!">
+                  <Label fx:id="endGuideLabel" layoutX="1075.0" layoutY="717.0" mouseTransparent="true" text="Börja Handla!">
                      <font>
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="1103.0" layoutY="786.0" prefHeight="61.0" prefWidth="104.0" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" wrapText="true">
+                  <Label fx:id="skipGuideLabel" layoutX="1098.0" layoutY="786.0" mouseTransparent="true" prefHeight="61.0" prefWidth="115.0" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" wrapText="true">
                      <font>
                         <Font name="Roboto" size="18.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Label>
                </children>
             </AnchorPane>
@@ -569,22 +572,22 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Label layoutX="175.0" layoutY="73.0" prefHeight="87.0" prefWidth="499.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Välkommen till " textFill="WHITE" AnchorPane.leftAnchor="160.5">
+            <Label layoutX="175.0" layoutY="73.0" prefHeight="87.0" prefWidth="600.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Välkommen till " textFill="WHITE" AnchorPane.leftAnchor="160.5">
                <font>
                   <Font name="Roboto" size="72.0" />
                </font>
             </Label>
-            <Label layoutX="59.0" layoutY="610.0" prefHeight="49.0" prefWidth="195.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textFill="WHITE" AnchorPane.leftAnchor="58.0">
+            <Label layoutX="59.0" layoutY="610.0" prefHeight="49.0" prefWidth="220.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textFill="WHITE" AnchorPane.leftAnchor="58.0">
                <font>
                   <Font name="Roboto" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="594.0" layoutY="610.0" prefHeight="49.0" prefWidth="140.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Historik" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="594.5">
+            <Label layoutX="594.0" layoutY="610.0" prefHeight="49.0" prefWidth="160.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Historik" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="594.5">
                <font>
                   <Font name="Roboto" size="40.0" />
                </font>
             </Label>
-            <Label layoutX="328.0" layoutY="645.0" prefHeight="58.0" prefWidth="154.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Handla" textFill="WHITE" AnchorPane.leftAnchor="333.0">
+            <Label layoutX="328.0" layoutY="645.0" prefHeight="58.0" prefWidth="170.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Handla" textFill="WHITE" AnchorPane.leftAnchor="333.0">
                <font>
                   <Font name="Roboto" size="48.0" />
                </font>
