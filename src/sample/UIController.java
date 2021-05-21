@@ -220,9 +220,19 @@ public class UIController implements Initializable {
     public void updateShoppingCart() {
         shoppingCartPane.getChildren().clear();
         varor = 0;
-        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
-            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this));
+        int backgroundCount = 1;
+        int length = backend.shoppingCart.getItems().size();
+        List<ShoppingItem> list = backend.shoppingCart.getItems();
+        for (int i = length - 1; i >= 0; i--) {
+            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(list.get(i).getProduct(), list.get(i).getAmount(), this, backgroundCount++));
         }
+        
+        /*
+        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
+            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this, backgroundCount++) );
+        }
+        
+         */
         updateItemCardAmounts();
         totalPriceLabel.setText("Totalt: " + backend.roundTwoDecimals(backend.shoppingCart.getTotal()) + " kr");
         itemAmountLabel.setText("Varor: " + varor + " st");
