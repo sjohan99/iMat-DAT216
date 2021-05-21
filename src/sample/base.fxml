@@ -23,7 +23,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -540,7 +540,7 @@
                   <Image url="@resources/startpage.png" />
                </image>
             </ImageView>
-            <Label id="imat_homepage" layoutX="290.0" layoutY="176.0" prefHeight="183.0" prefWidth="237.0" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="291.5">
+            <Label id="imat_homepage" layoutX="290.0" layoutY="176.0" prefHeight="183.0" prefWidth="237.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="291.5">
                <font>
                   <Font size="96.0" />
                </font>
