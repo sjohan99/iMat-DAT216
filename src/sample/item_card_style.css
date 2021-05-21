@@ -37,21 +37,25 @@
 .add_circle_style {
 -fx-stroke-width: 2px;
 -fx-stroke: #4E4873;
+-fx-fill: #FFFFFF;
 }
 
 .add_circle_style:hover {
 -fx-stroke-width: 4px;
 -fx-cursor: hand;
+-fx-fill: #F1F1F1;
 }
 
 .remove_circle_style {
 -fx-stroke-width: 2px;
 -fx-stroke: #4E4873;
+-fx-fill: #FFFFFF;
 }
 
 .remove_circle_style:hover {
 -fx-stroke-width: 4px;
 -fx-cursor: hand;
+-fx-fill: #F1F1F1;
 }
 
 .shopping_item {
@@ -77,6 +81,19 @@
 }
 .rounded_smaller {
     -fx-background-color: transparent;
+    -fx-border-width: 2px;
+    -fx-border-color: #4E4873;
+    -fx-border-radius: 45px;
+    -fx-background-radius: 45px;
+    -fx-text-fill: #000000;
+    -fx-background-insets: 0;
+    -fx-padding: 1;
+    -fx-font-family: 'Roboto';
+    -fx-font-size: 20px;
+}
+
+.rounded_smaller_background {
+    -fx-background-color: #F2F0E9;
     -fx-border-width: 2px;
     -fx-border-color: #4E4873;
     -fx-border-radius: 45px;
