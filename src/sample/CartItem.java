@@ -20,12 +20,13 @@ public class CartItem extends AnchorPane {
      */
     @FXML Label itemAmountAndName, priceLabel, unitSuffixLabel;
     @FXML TextField amountTextField;
+    @FXML AnchorPane backgroundAnchorPane;
     
     private BackendController backend = new BackendController();
     private UIController parentController;
     private Product product;
     
-    public CartItem(String text, Product product, UIController parentController, double amount) {
+    public CartItem(String text, Product product, UIController parentController, double amount, int background) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("cart_item.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -48,6 +49,9 @@ public class CartItem extends AnchorPane {
         else {
             unitSuffixLabel.setText("st");
             amountTextField.setText(String.valueOf((int) amount));
+        }
+        if (background % 2 == 0) {
+            backgroundAnchorPane.setStyle("-fx-background-color: #FFFFFF;");
         }
     }
     

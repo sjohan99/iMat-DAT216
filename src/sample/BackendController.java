@@ -8,15 +8,15 @@ public class BackendController {
     IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     ShoppingCart shoppingCart = dataHandler.getShoppingCart();
     
-    public CartItem createFinalShoppingCartItem(Product product, double amount, UIController parentcontroller) {
+    public CartItem createFinalShoppingCartItem(Product product, double amount, UIController parentcontroller, int backgroundCount) {
         if (product.getUnitSuffix().equals("kg")) {
             parentcontroller.varor += 1;
-            return new CartItem(amount + " kg " + product.getName(), product, parentcontroller, amount);
+            return new CartItem(amount + " kg " + product.getName(), product, parentcontroller, amount, backgroundCount++);
         }
         else {
             int intAmount = (int) amount;
             parentcontroller.varor += intAmount;
-            return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller, amount);
+            return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller, amount, backgroundCount++);
         }
     }
     
