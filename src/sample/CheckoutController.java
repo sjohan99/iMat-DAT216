@@ -83,7 +83,7 @@ public class CheckoutController implements Initializable {
             //total += shoppingItem.getTotal();
         }
         System.out.println(backend.shoppingCart.getItems());
-        totalPriceLabel.setText("Totalt: " + String.valueOf(backend.shoppingCart.getTotal()) + " kr");
+        totalPriceLabel.setText("Totalt: " + String.valueOf(backend.roundTwoDecimals(backend.shoppingCart.getTotal())) + " kr");
         
     }
     
