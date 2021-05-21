@@ -318,7 +318,7 @@
 }
 
 .information_textfield:hover, .information_textfield:focused {
--fx-background-color: #FFFFFF;
+-fx-background-color: #F1F1F1;
 -fx-border-color: #000000;
 }
 
