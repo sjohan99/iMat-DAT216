@@ -88,7 +88,7 @@
                      </font>
                   </Label>
                   <TextField fx:id="cardNumberTextField" layoutX="273.0" layoutY="182.0" prefHeight="38.0" prefWidth="525.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
-                  <TextField fx:id="securityCodeTextField" layoutX="273.0" layoutY="427.0" prefHeight="38.0" prefWidth="167.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
+                  <TextField fx:id="securityCodeTextField" layoutX="273.0" layoutY="427.0" prefHeight="38.0" prefWidth="150.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
                   <Label layoutX="68.0" layoutY="92.0" prefHeight="66.0" prefWidth="316.0" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="86.0">
                      <font>
                         <Font size="45.0" />
@@ -98,8 +98,8 @@
                         <String fx:value="label_scaled_bold" />
                      </styleClass>
                   </Label>
-                  <TextField layoutX="273.0" layoutY="255.0" prefHeight="38.0" prefWidth="141.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
-                  <TextField layoutX="416.0" layoutY="265.0" prefHeight="38.0" prefWidth="141.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.topAnchor="265.0" />
+                  <TextField layoutX="273.0" layoutY="255.0" prefHeight="38.0" prefWidth="150.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
+                  <TextField layoutX="416.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.topAnchor="265.0" />
                   <Label layoutX="473.0" layoutY="347.0" prefHeight="38.0" prefWidth="342.0" styleClass="label_normal" stylesheets="@text_styles.css" text="* tre sista på baksidan av kortet" wrapText="true" AnchorPane.topAnchor="348.0" />
                </children>
             </AnchorPane>
