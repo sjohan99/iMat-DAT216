@@ -91,7 +91,7 @@ public class BackendController {
         int ore = Integer.parseInt(arr[1]);
         
         if (ore == 0) {
-            price = kr + ":00";
+            price = kr + ":-";
         }
         else {
             if (ore < 10) {
