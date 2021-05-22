@@ -45,7 +45,7 @@ public class UIController implements Initializable {
 
     private ButtonGrouper buttonGrouper;
     public SideMenus sideMenus = new SideMenus(this, historyController);
-    private boolean shoppingCartExpanded;
+    public boolean shoppingCartExpanded;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
     private Shopping shopping;
@@ -57,7 +57,6 @@ public class UIController implements Initializable {
         checkoutController = new CheckoutController(this, sideMenus);
         initMenuButtons();
         initStartMenuButtons();
-        addPlaceholderCartItems();
         addSideMenus();
         startPagePane.toFront();
         guideStackPane.toBack();
@@ -178,31 +177,27 @@ public class UIController implements Initializable {
      */
     public void expandShoppingCart() {
         if (shoppingCartAnchorPane.getMaxWidth() < 500) {
-            shoppingCartExpanded = false;
             //shoppingCartAnchorPane.setMaxWidth(500); //uncomment for instant expansion
             //cartLineDivider.setEndX(cartLineDivider.getEndX() + 225); //uncomment for instant expansion
             timer.start();
-
+            
             expandButton.setText("Minska varukorg");
-        }
-        else {
-            shoppingCartExpanded = true;
+        } else {
             //shoppingCartAnchorPane.setMaxWidth(275); //uncomment for instant expansion
             //cartLineDivider.setEndX(245); //uncomment for instant expansion
             timer.start();
-
             expandButton.setText("Ändra i varukorgen");
         }
         for (Node item : shoppingCartPane.getChildren()) {
             ((CartItem) item).resizeNameLabel();
         }
     }
-
+    
     private void addSideMenus() {
         sideMenuParentAnchorPane.getChildren().clear();
         sideMenuParentAnchorPane.getChildren().add(sideMenus);
     }
-
+    
     /**
      * Placeholder method which just adds fake items in the shopping cart. Gives a bunch of processValue errors
      * (atleast for me) shouldn't do any harm though
@@ -220,21 +215,14 @@ public class UIController implements Initializable {
     public void updateShoppingCart() {
         shoppingCartPane.getChildren().clear();
         varor = 0;
-        int backgroundCount = 1;
+        int backgroundCount = 0;
         int length = backend.shoppingCart.getItems().size();
         List<ShoppingItem> list = backend.shoppingCart.getItems();
         for (int i = length - 1; i >= 0; i--) {
             shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(list.get(i).getProduct(), list.get(i).getAmount(), this, backgroundCount++));
         }
-        
-        /*
-        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
-            shoppingCartPane.getChildren().add(backend.createFinalShoppingCartItem(shoppingItem.getProduct(), shoppingItem.getAmount(), this, backgroundCount++) );
-        }
-        
-         */
         updateItemCardAmounts();
-        totalPriceLabel.setText("Totalt: " + backend.roundTwoDecimals(backend.shoppingCart.getTotal()) + " kr");
+        totalPriceLabel.setText("Totalt: " + backend.getProductPrice(backend.shoppingCart.getTotal()) + " kr");
         itemAmountLabel.setText("Varor: " + varor + " st");
     }
     
@@ -254,8 +242,7 @@ public class UIController implements Initializable {
         for (ItemCard itemCard : shoppingController.itemCards) {
             if (itemCard.getProduct().getUnitSuffix().equals("kg")) {
                 itemCard.cardAmountTextField.setText(String.valueOf(itemCard.amount));
-            }
-            else {
+            } else {
                 itemCard.cardAmountTextField.setText(String.valueOf((int) itemCard.amount));
             }
             
@@ -268,11 +255,11 @@ public class UIController implements Initializable {
                 itemCard.itemAmountTextField.getStyleClass().removeAll("rounded_in_cart");
                 itemCard.itemAmountTextField.getStyleClass().add("rounded");
             }
-        
+            
         }
         
     }
-
+    
     /**
      * Initializes buttons to be "toggled" by setting their id's (has to be the same as their css id
      * to not remove their individual styling) and adding an actionevent which reads the id of the pressed button.
@@ -283,43 +270,44 @@ public class UIController implements Initializable {
         buttonGrouper.addButtonToList(helpButton);
         buttonGrouper.addButtonToList(historyButton);
         buttonGrouper.addButtonToList(myPagesButton);
-
+        
         shoppingButton.setId("shopping_button");
         helpButton.setId("help_button");
         historyButton.setId("history_button");
         myPagesButton.setId("my_pages_button");
-
+        
         for (Button button : buttonGrouper.getButtons()) {
             button.setOnAction(e -> toggleOnButton(e));
         }
     }
-
+    
     private void initStartMenuButtons() {
-
+        
         startHistoryButton.setId("history_button");
         startShoppingButton.setId("shopping_button");
         startMyPagesButton.setId("my_pages_button");
-
+        
         // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
         checkoutButton.setOnAction(e -> toggleOnButton(e));
         backToShoppingButton.setId("shopping_button");
         backToShoppingButton.setOnAction(e -> toggleOnButton(e));
-
+        
         skipGuideButton.setId("shopping_button");
         skipGuideButton.setOnAction(e -> toggleOnButton(e));
         endGuideButton.setId("shopping_button");
         endGuideButton.setOnAction(e -> toggleOnButton(e));
-
+        
         iMatLabel.setOnMouseClicked(e -> labelButton(e));
     }
-
+    
     private void labelButton(MouseEvent e) {
         changeMainView("imat");
     }
-
+    
     /**
      * Reads the id of the pressed button and sends it topMenuBarButtons to handle the rest. Also tells SideMenus to update view
+     *
      * @param e triggered event
      */
     public void toggleOnButton(ActionEvent e) {
@@ -334,19 +322,19 @@ public class UIController implements Initializable {
         shoppingController.addItems(shoppingController.itemCards);
         shoppingController.shoppingHeadline.setText("Alla");
     }
-
+    
     /**
      * Animation timer for sliding out the cart when expanded.
      */
     private class MyTimer extends AnimationTimer {
-
+        
         double speed = 20;
-
+        
         @Override
         public void handle(long l) {
             slideOut();
         }
-
+        
         /**
          * Method is called every frame, starts with high speed then slows down at the end
          */
@@ -367,14 +355,14 @@ public class UIController implements Initializable {
                  */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
-
+                
                 if (shoppingCartAnchorPane.getMaxWidth() >= 500) {
                     stop();
                     speed = 20;
                     shoppingCartAnchorPane.setMaxWidth(500);
+                    shoppingCartExpanded = true;
                 }
-            }
-            else {
+            } else {
                 if (speed > 1) {
                     speed = 0.93 * speed;
                 }
@@ -390,11 +378,12 @@ public class UIController implements Initializable {
                  */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
-
+                
                 if (shoppingCartAnchorPane.getMaxWidth() <= 275) {
                     stop();
                     speed = 20;
                     shoppingCartAnchorPane.setMaxWidth(275);
+                    shoppingCartExpanded = false;
                 }
             }
         }
