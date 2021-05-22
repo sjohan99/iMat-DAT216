@@ -38,6 +38,6 @@ public class HistoryController implements Initializable {
             HistoryItemFlowPane.getChildren().add(new HistoryItem(shoppingItem));
             total += shoppingItem.getTotal();
         }
-        totalprisLabel.setText("Totalt: " + String.valueOf(total) + " kr");
+        totalprisLabel.setText("Totalt: " + backend.getProductPrice(total) + " kr");
     }
 }
