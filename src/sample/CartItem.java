@@ -41,7 +41,7 @@ public class CartItem extends AnchorPane {
         this.product = product;
         itemAmountAndName.setText(text);
         initTextField();
-        priceLabel.setText(backend.getProductPrice(product.getPrice() * amount) + " kr");
+        priceLabel.setText(backend.getProductPrice(product.getPrice() * amount));
         if (product.getUnitSuffix().equals("kg")) {
             unitSuffixLabel.setText("kg");
             amountTextField.setText(String.valueOf(amount));
@@ -52,6 +52,9 @@ public class CartItem extends AnchorPane {
         }
         if (background % 2 == 0) {
             backgroundAnchorPane.setStyle("-fx-background-color: #FFFFFF;");
+        }
+        if (parentController.shoppingCartExpanded) {
+            itemAmountAndName.setMaxWidth(270);
         }
     }
     
@@ -110,9 +113,9 @@ public class CartItem extends AnchorPane {
      * Changes the size of the item-name-label to remove "..." (ellipsis) at the end.
      */
     public void resizeNameLabel() {
-        int expasionSize = 300;
+        int expasionSize = 270;
         if (itemAmountAndName.getMaxWidth() == expasionSize) {
-            itemAmountAndName.setMaxWidth(240);
+            itemAmountAndName.setMaxWidth(250);
         }
         else {
             itemAmountAndName.setMaxWidth(expasionSize);
