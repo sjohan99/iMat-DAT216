@@ -35,6 +35,7 @@ public class SideMenus extends AnchorPane {
     @FXML ScrollPane historyScrollPane;
 
     private List<ImageView> images;
+    public List<Node> historyButtonList;
 
     public SideMenus(UIController parentController, HistoryController historyController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("side_menus.fxml"));
@@ -58,8 +59,12 @@ public class SideMenus extends AnchorPane {
     
     public void updateHistory() {
         receiptFlowPane.getChildren().clear();
+        historyButtonList = new ArrayList<>();
+        int i = 0;
         for (Order order : backend.dataHandler.getOrders()) {
-            receiptFlowPane.getChildren().add(new HistoryMenuButton(order, historyParentController));
+            receiptFlowPane.getChildren().add(new HistoryMenuButton(order, historyParentController, this));
+            historyButtonList.add(receiptFlowPane.getChildren().get(i));
+            i++;
         }
     }
     

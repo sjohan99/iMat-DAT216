@@ -147,6 +147,7 @@ public class UIController implements Initializable {
         switch(buttonId) {
             case "history_button":
                 parentView.getChildren().add(new History(historyController));
+                sideMenus.updateHistory(); // Needed to reset button styles
                 break;
             case "my_pages_button":
                 parentView.getChildren().add(new MyPages(myPagesController));
