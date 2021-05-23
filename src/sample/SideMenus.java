@@ -61,7 +61,7 @@ public class SideMenus extends AnchorPane {
         receiptFlowPane.getChildren().clear();
         historyButtonList = new ArrayList<>();
         int i = 0;
-        for (Order order : backend.dataHandler.getOrders()) {
+        for (Order order : backend.getOrdersSorted()) {
             receiptFlowPane.getChildren().add(new HistoryMenuButton(order, historyParentController, this));
             historyButtonList.add(receiptFlowPane.getChildren().get(i));
             i++;
@@ -158,7 +158,6 @@ public class SideMenus extends AnchorPane {
         switch(buttonId) {
             case "history_button":
                 history_menuPane.toFront();
-                System.out.println(backend.dataHandler.getOrders());
                 break;
             case "my_pages_button":
                 my_pages_menuPane.toFront();

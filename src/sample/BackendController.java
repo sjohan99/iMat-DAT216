@@ -3,11 +3,28 @@ package sample;
 import javafx.scene.image.Image;
 import se.chalmers.cse.dat216.project.*;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
 public class BackendController {
     
     IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     ShoppingCart shoppingCart = dataHandler.getShoppingCart();
-    
+
+    public List<Order> getOrdersSorted() {
+        List<Order> orderList = new ArrayList<>();
+        orderList = dataHandler.getOrders();
+        Collections.sort(orderList, new Comparator<Order>() {
+            public int compare(Order order, Order t1) {
+                return order.getDate().compareTo(t1.getDate());
+            }
+        });
+        Collections.reverse(orderList);
+        return orderList;
+    }
+
     public CartItem createFinalShoppingCartItem(Product product, double amount, UIController parentcontroller, int backgroundCount) {
         if (product.getUnitSuffix().equals("kg")) {
             parentcontroller.varor += 1;
