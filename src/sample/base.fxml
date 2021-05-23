@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
@@ -457,82 +458,6 @@
             <Line fx:id="cartLineDivider" endX="245.0" endY="492.0" layoutY="14.0" startX="25.0" startY="492.0" styleClass="line_divider" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label id="imat" fx:id="iMatLabel" layoutX="46.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat" AnchorPane.leftAnchor="54.5">
-               <font>
-                  <Font size="86.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Label>
-            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="help_button" fx:id="helpButton" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/help.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="history_button" fx:id="historyButton" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/history.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button id="shopping_button" fx:id="shoppingButton" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
-               <font>
-                  <Font size="26.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@resources/shoppingcart.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="search_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
-               <font>
-                  <Font size="32.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextField>
-            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@resources/search.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="startPagePane" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <children>
             <ImageView fitHeight="775.0" fitWidth="1600.0" layoutX="73.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -592,6 +517,102 @@
                   <Font name="Roboto" size="48.0" />
                </font>
             </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="imat" fx:id="iMatLabel" layoutX="46.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat" AnchorPane.leftAnchor="54.5">
+               <font>
+                  <Font size="86.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="round_button" />
+                  <String fx:value="dropshadow_button" />
+               </styleClass>
+            </Button>
+            <Button id="help_button" fx:id="helpButton" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/help.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="round_button" />
+                  <String fx:value="dropshadow_button" />
+               </styleClass>
+            </Button>
+            <Button id="history_button" fx:id="historyButton" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <styleClass>
+                  <String fx:value="round_button" />
+                  <String fx:value="dropshadow_button" />
+               </styleClass>
+            </Button>
+            <Button id="shopping_button" fx:id="shoppingButton" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/shoppingcart.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <styleClass>
+                  <String fx:value="round_button" />
+                  <String fx:value="dropshadow_button" />
+               </styleClass>
+            </Button>
+            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
+               <font>
+                  <Font size="32.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <styleClass>
+                  <String fx:value="search_button" />
+                  <String fx:value="dropshadow_button" />
+               </styleClass>
+            </TextField>
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@resources/search.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
