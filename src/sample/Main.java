@@ -13,14 +13,13 @@ import java.util.ResourceBundle;
 public class Main extends Application {
     
     
-    //   /../resources/.ttf
     @Override
     public void start(Stage primaryStage) throws Exception{
-        //ResourceBundle bundle = java.util.ResourceBundle.getBundle("sample/resources/Main");
         Parent root = FXMLLoader.load(getClass().getResource("base.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("iMat");
         primaryStage.setScene(new Scene(root, 1600, 900));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
     
     public static void main(String[] args) {
