@@ -10,7 +10,7 @@
    <children>
       <ScrollPane fx:id="shoppingScrollPane" layoutX="11.0" layoutY="57.0" prefHeight="721.0" prefWidth="1025.0" style="-fx-background-color: #FFFFFF;" styleClass="remove_focus" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
          <content>
-            <FlowPane fx:id="shoppingFlowPane" prefHeight="697.0" prefWidth="1023.0" styleClass="remove_focus" stylesheets="@base_style.css">
+            <FlowPane fx:id="shoppingFlowPane" onMouseEntered="#initScrollbar" onMouseMoved="#initScrollbar" prefHeight="697.0" prefWidth="1023.0" styleClass="remove_focus" stylesheets="@base_style.css">
                <padding>
                   <Insets left="20.0" />
                </padding>

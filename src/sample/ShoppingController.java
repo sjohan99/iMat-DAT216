@@ -3,9 +3,14 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
@@ -27,6 +32,10 @@ public class ShoppingController implements Initializable {
     @FXML private AnchorPane shoppingAnchorPane;
     @FXML public Label shoppingHeadline;
     
+    public int loadedItems = 12;
+    public boolean allItemsLoaded = false;
+    public boolean scrollBarInitiated = false;
+    
     public ShoppingController(UIController parentController, BackendController backend) {
         this.parentController = parentController;
         this.backend = backend;
@@ -47,7 +56,73 @@ public class ShoppingController implements Initializable {
         searchItems = new ArrayList<>();
         populateItemCards();
         parentController.updateItemCardAmounts();
+        addMouseScrollingActivator(shoppingScrollPane);
     }
+    
+    public void addMouseScrollingActivator(ScrollPane shoppingScrollPane) {
+        shoppingScrollPane.setOnScroll((ScrollEvent event) -> {
+            initScrollbar();
+        });
+    }
+    
+    public void resetScrollbar() {
+        loadedItems = 12;
+        allItemsLoaded = false;
+        resetScrollbarPos();
+        shoppingFlowPane.getChildren().clear();
+    }
+    
+    public void resetScrollbarPos() {
+        ScrollBar scrollbar = getScrollBar();
+        if (scrollbar != null) {
+            scrollbar.setValue(scrollbar.getMin());
+        }
+    }
+    
+    public ScrollBar getScrollBar() {
+        ScrollBar scrollbar = null;
+        for (Node node : shoppingScrollPane.lookupAll(".scroll-bar")) {
+            if (node instanceof ScrollBar) {
+                ScrollBar bar = (ScrollBar) node;
+                if (bar.getOrientation().equals(Orientation.VERTICAL)) {
+                    scrollbar = bar;
+                }
+            }
+        }
+        return scrollbar;
+    }
+    
+    public void initScrollbar() {
+        if (!scrollBarInitiated) {
+            ScrollBar scrollBar = getScrollBar();
+            if (scrollBar != null) {
+                scrollBarInitiated = true;
+                scrollBar.valueProperty().addListener((observable, oldValue, newValue) -> {
+                    double position = newValue.doubleValue();
+                    if (position == scrollBar.getMax()) {
+                        loadMoreItems();
+                    }
+                });
+            }
+        }
+    }
+    
+    private void loadMoreItems() {
+        if (!allItemsLoaded) {
+            if (loadedItems + 12 > 120) {
+                addItems(itemCards.subList(loadedItems, itemCards.size()));
+                allItemsLoaded = true;
+                return;
+            }
+            try {
+                addItems(itemCards.subList(loadedItems, loadedItems + 12));
+            } catch (Exception e) {
+            
+            }
+            loadedItems = loadedItems + 12;
+        }
+    }
+   
     
     private void createItemCards() {
         itemCards = new ArrayList<>();
@@ -166,6 +241,7 @@ public class ShoppingController implements Initializable {
                 shoppingHeadline.setText("Ekologiskt");
                 break;
         }
+        resetScrollbarPos();
     }
     
     public void addItems(List<ItemCard> items) {

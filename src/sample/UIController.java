@@ -340,7 +340,8 @@ public class UIController implements Initializable {
     
     public void showAllItems() {
         shoppingController.shoppingFlowPane.getChildren().clear();
-        shoppingController.addItems(shoppingController.itemCards);
+        shoppingController.resetScrollbar();
+        shoppingController.addItems(shoppingController.itemCards.subList(0, shoppingController.loadedItems));
         shoppingController.shoppingHeadline.setText("Alla");
     }
     
