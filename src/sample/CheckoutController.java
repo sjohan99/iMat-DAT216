@@ -233,7 +233,7 @@ public class CheckoutController implements Initializable {
         confirmButton1.setId("back2");
         confirmButton2.setId("confirm");
 
-        backToShoppingButton.setId("shopping_button");
+        backToShoppingButton.setId("go_back_to_shopping_button");
         backToShoppingButton.setOnAction(e -> parentController.toggleOnButton(e));
 
         buttons.add(nextStepButton1);

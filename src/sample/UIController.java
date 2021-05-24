@@ -162,6 +162,8 @@ public class UIController implements Initializable {
             case "help_button":
                 initGuideView();
                 break;
+            case "next_step_button_final":
+            case "go_back_to_shopping_button":
             case "shopping_button":
                 //parentView.getChildren().add(new Shopping(shoppingController));
                 parentView.getChildren().add(shopping);
@@ -311,7 +313,7 @@ public class UIController implements Initializable {
         // Lägger de här sålänge
         checkoutButton.setId("checkout_button");
         checkoutButton.setOnAction(e -> toggleOnButton(e));
-        backToShoppingButton.setId("shopping_button");
+        backToShoppingButton.setId("next_step_button_final");
         backToShoppingButton.setOnAction(e -> toggleOnButton(e));
         
         skipGuideButton.setId("shopping_button");
