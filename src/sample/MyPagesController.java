@@ -21,7 +21,7 @@ public class MyPagesController implements Initializable {
     public BackendController backend = new BackendController();
     
     @FXML TextField adressTextField, apartmentNumTextField, postNumTextField, postalAreaTextField;
-    @FXML TextField cardNumberTextField, securityCodeTextField;
+    @FXML TextField cardNumberTextField, securityCodeTextField, cardMonthTextField, cardYearTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryAnchorPane;
     
@@ -62,12 +62,38 @@ public class MyPagesController implements Initializable {
         surnameTextField.setText(backend.dataHandler.getCustomer().getLastName());
         emailTextField.setText(backend.dataHandler.getCustomer().getEmail());
         phoneTextField.setText(backend.dataHandler.getCustomer().getPhoneNumber());
+        cardMonthTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidMonth()));
+        cardYearTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidYear()));
     }
     
     /**
      * Updates the information in backend immediately when the text in a textfield is changed
      */
     private void initMyPagesTextFieldListeners() {
+        cardYearTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+                try {
+                    backend.dataHandler.getCreditCard().setValidYear(Integer.parseInt(newValue));
+                } catch (NumberFormatException e) {
+                
+                }
+            }
+        });
+    
+        cardMonthTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+                try {
+                    backend.dataHandler.getCreditCard().setValidMonth(Integer.parseInt(newValue));
+                } catch (NumberFormatException e) {
+                
+                }
+            }
+        });
+        
         firstNameTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,

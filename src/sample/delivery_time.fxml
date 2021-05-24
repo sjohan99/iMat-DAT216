@@ -95,8 +95,8 @@
                         <String fx:value="label_scaled_bold" />
                      </styleClass>
                   </Label>
-                  <TextField layoutX="273.0" layoutY="255.0" prefHeight="38.0" prefWidth="150.0" promptText="Mån (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="283.0" AnchorPane.topAnchor="265.0" />
-                  <TextField layoutX="416.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="År (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="456.0" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="cardMonthTextField" layoutX="273.0" layoutY="255.0" prefHeight="38.0" prefWidth="150.0" promptText="Mån (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="283.0" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="cardYearTextField" layoutX="416.0" layoutY="265.0" prefHeight="38.0" prefWidth="150.0" promptText="År (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="456.0" AnchorPane.topAnchor="265.0" />
                   <Label layoutX="473.0" layoutY="347.0" prefHeight="38.0" prefWidth="342.0" styleClass="label_normal" stylesheets="@text_styles.css" text="* tre sista på baksidan av kortet" wrapText="true" AnchorPane.topAnchor="348.0" />
                   <Line endX="-80.0" layoutX="538.0" layoutY="297.0" rotate="63.4" startX="-107.21244812011719" startY="-18.083478927612305">
                      <rotationAxis>
@@ -306,7 +306,7 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="536.0" layoutX="952.0" layoutY="130.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="37.0" />
                   <Label layoutX="87.0" layoutY="91.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Datum:" visible="false" />
                   <Button fx:id="confirmButton1" layoutX="689.0" layoutY="646.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Bekräfta varor" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
-                  <Button fx:id="backToShoppingButton" graphicTextGap="0.0" layoutX="98.0" layoutY="607.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Tillbaka till Handla" textAlignment="CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+                  <Button fx:id="backToShoppingButton" alignment="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Tillbaka till handla" textAlignment="CENTER" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
                   <Label layoutX="88.0" layoutY="9.0" prefHeight="54.0" prefWidth="196.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Kassan" />
                   <Line endX="-49.0" endY="466.2928466796875" layoutX="136.0" layoutY="82.0" startX="-49.0" startY="75.49996948242188" />
                   <Line endX="-49.0" endY="466.2928466796875" layoutX="1007.0" layoutY="82.0" startX="-49.0" startY="75.49996948242188" />

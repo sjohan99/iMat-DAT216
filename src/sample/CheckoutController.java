@@ -34,7 +34,7 @@ public class CheckoutController implements Initializable {
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
     @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2, dayButton1, dayButton2, dayButton3, timeButton;
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
-    @FXML TextField cardNumberTextField, securityCodeTextField;
+    @FXML TextField cardNumberTextField, securityCodeTextField, cardMonthTextField, cardYearTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
     @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel;
     @FXML ScrollPane checkoutScrollPane;
@@ -101,6 +101,8 @@ public class CheckoutController implements Initializable {
         surnameTextField.setText(backend.dataHandler.getCustomer().getLastName());
         emailTextField.setText(backend.dataHandler.getCustomer().getEmail());
         phoneTextField.setText(backend.dataHandler.getCustomer().getPhoneNumber());
+        cardMonthTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidMonth()));
+        cardYearTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidYear()));
         adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
         dateLabel.setText("12:00-16:00, " + dayName + " " + dayNum.get(2) + " " + monthName.get(2));
         priceLabel.setText(backend.shoppingCart.getTotal() + " kr");
@@ -117,6 +119,30 @@ public class CheckoutController implements Initializable {
      * Updates the information in backend immediately when the text in a textfield is changed
      */
     private void initMyPagesTextFieldListeners() {
+        cardYearTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+                try {
+                    backend.dataHandler.getCreditCard().setValidYear(Integer.parseInt(newValue));
+                } catch (NumberFormatException e) {
+                
+                }
+            }
+        });
+        
+        cardMonthTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable,
+                                String oldValue, String newValue) {
+                try {
+                    backend.dataHandler.getCreditCard().setValidMonth(Integer.parseInt(newValue));
+                } catch (NumberFormatException e) {
+                
+                }
+            }
+        });
+        
         firstNameTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
