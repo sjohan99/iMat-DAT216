@@ -175,6 +175,12 @@
 -fx-cursor: hand;
 }
 
+.checkout_button_disabled {
+-fx-background-color: #C9C9C9;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
 .headline_label {
 -fx-font-style: italic;
 -fx-font-weight: 700;

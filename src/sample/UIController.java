@@ -170,6 +170,26 @@ public class UIController implements Initializable {
                 startPagePane.toFront();
                 break;
         }
+        if (buttonId.equals("checkout_button")) {
+            disableCheckoutButton();
+        }
+        else {
+            enableCheckoutButton();
+        }
+    }
+    
+    private void disableCheckoutButton() {
+            checkoutButton.getStyleClass().removeAll("checkout_button");
+            checkoutButton.getStyleClass().removeAll("checkout_button_disabled");
+            checkoutButton.getStyleClass().add("checkout_button_disabled");
+            checkoutButton.setText("Du är i kassan");
+    }
+    
+    private void enableCheckoutButton() {
+        checkoutButton.getStyleClass().removeAll("checkout_button");
+        checkoutButton.getStyleClass().removeAll("checkout_button_disabled");
+        checkoutButton.getStyleClass().add("checkout_button");
+        checkoutButton.setText("Gå till kassan");
     }
 
     /**
