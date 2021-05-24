@@ -270,6 +270,7 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
 }
 
 .go_back_button:hover {
@@ -279,12 +280,13 @@
 
 .next_step_button {
 -fx-background-color: #F2B84B;
+-fx-text-fill: #000000;
 -fx-border-width: 1px;
 -fx-border-color: #000000;
--fx-text-fill: #000000;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
 }
 
 .next_step_button:hover {
