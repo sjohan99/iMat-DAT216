@@ -33,7 +33,7 @@ public class BackendController {
         else {
             int intAmount = (int) amount;
             parentcontroller.varor += intAmount;
-            return new CartItem(intAmount + "x " + product.getName(), product, parentcontroller, amount, backgroundCount++);
+            return new CartItem(intAmount + " st " + product.getName(), product, parentcontroller, amount, backgroundCount++);
         }
     }
     
