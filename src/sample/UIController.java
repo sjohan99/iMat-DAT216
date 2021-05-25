@@ -34,7 +34,7 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel;
+    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel, varukorgLabel;
     @FXML private ImageView testimage;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
@@ -368,22 +368,15 @@ public class UIController implements Initializable {
                 if (speed > 1) {
                     speed = 0.93 * speed;
                 }
-                /*
-                if (speed >= 3) {
-                    speed -= 1;
-                }
-
-                if (shoppingCartAnchorPane.getMaxWidth() > 485) {
-                    speed = 1;
-                }
                 
-                 */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
+                //varukorgLabel.setPrefWidth(varukorgLabel.getWidth() + speed);
                 
                 if (shoppingCartAnchorPane.getMaxWidth() >= 500) {
                     stop();
                     speed = 20;
+                    //varukorgLabel.setPrefWidth(500);
                     shoppingCartAnchorPane.setMaxWidth(500);
                     shoppingCartExpanded = true;
                 }
@@ -391,22 +384,15 @@ public class UIController implements Initializable {
                 if (speed > 1) {
                     speed = 0.93 * speed;
                 }
-                /*
-                if (speed >= 3) {
-                    speed -= 1;
-                }
-
-                if (shoppingCartAnchorPane.getMaxWidth() < 290) {
-                    speed = 1;
-                }
                 
-                 */
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
+                //varukorgLabel.setPrefWidth(varukorgLabel.getWidth() - speed);
                 
                 if (shoppingCartAnchorPane.getMaxWidth() <= 275) {
                     stop();
                     speed = 20;
+                    //varukorgLabel.setPrefWidth(275);
                     shoppingCartAnchorPane.setMaxWidth(275);
                     shoppingCartExpanded = false;
                 }
