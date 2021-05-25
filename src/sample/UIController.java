@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -177,9 +178,11 @@ public class UIController implements Initializable {
         }
         if (buttonId.equals("checkout_button")) {
             disableCheckoutButton();
+            disableExpandCartButton();
         }
         else {
             enableCheckoutButton();
+            enableExpandCartButton();
         }
     }
     
@@ -196,13 +199,32 @@ public class UIController implements Initializable {
         checkoutButton.getStyleClass().add("checkout_button");
         checkoutButton.setText("Gå till kassan");
     }
+    
+    private void disableExpandCartButton() {
+        expandButton.setMouseTransparent(true);
+        expandButton.setStyle("-fx-opacity: 0.6;");
+        expandButton.setText("Ändra ej tillgänglig");
+    }
+    
+    private void enableExpandCartButton() {
+        expandButton.setText("Ändra i varukorgen");
+        expandButton.setMouseTransparent(false);
+        expandButton.setStyle("-fx-opacity: 1;");
+    }
 
     /**
      * Method is called when expanding shopping cart.
      * Resizes necessary elements and changes the button-text.
      */
     public void expandShoppingCart() {
+        if (!shoppingCartExpanded) {
+            expandButton.setText("Minska varukorg");
+        }
+        else {
+            expandButton.setText("Ändra i varukorgen");
+        }
         timer.start();
+        
         for (Node item : shoppingCartPane.getChildren()) {
             ((CartItem) item).resizeNameLabel();
         }
@@ -210,6 +232,7 @@ public class UIController implements Initializable {
     
     public void shrinkShoppingCart() {
         if (shoppingCartExpanded) {
+            expandButton.setText("Ändra i varukorgen");
             timer.start();
         }
     }
@@ -359,7 +382,7 @@ public class UIController implements Initializable {
                     stop();
                     speed = 20;
                     shoppingCartAnchorPane.setMaxWidth(500);
-                    expandButton.setText("Minska varukorg");
+                    
                     shoppingCartExpanded = true;
                 }
             } else {
@@ -374,7 +397,7 @@ public class UIController implements Initializable {
                     stop();
                     speed = 20;
                     shoppingCartAnchorPane.setMaxWidth(275);
-                    expandButton.setText("Ändra i varukorgen");
+                    
                     shoppingCartExpanded = false;
                 }
             }
