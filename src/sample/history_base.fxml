@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
@@ -85,6 +86,7 @@
                   <Label layoutX="87.0" layoutY="91.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Datum:" />
                   <Line endX="-42.00001525878906" endY="491.0" layoutX="129.0" layoutY="162.0" startX="-42.00001525878906" startY="49.49998474121094" />
                   <Line endX="-42.00001525878906" endY="491.0" layoutX="1003.0" layoutY="162.0" startX="-42.0" startY="49.00001525878906" />
+                  <Button fx:id="addItemsToCart" alignment="CENTER" layoutX="490.0" layoutY="75.0" mnemonicParsing="false" onAction="#addItemsFromHistory" prefHeight="75.0" prefWidth="472.0" styleClass="add_items_to_cart_button" stylesheets="@base_style.css" text="Lägg till dessa varor i varukorgen" />
                </children>
             </AnchorPane>
          </children>

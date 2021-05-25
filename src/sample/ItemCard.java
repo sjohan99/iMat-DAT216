@@ -138,6 +138,12 @@ public class ItemCard extends AnchorPane {
         parentController.updateShoppingCart();
     }
     
+    public void add(double amountToBeAdded) {
+        amount += amountToBeAdded;
+        backend.addItemToShoppingCart(product, amount);
+        parentController.updateShoppingCart();
+    }
+    
     public void remove() {
         amount -= 1;
         if (amount < 0) {

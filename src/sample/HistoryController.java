@@ -2,6 +2,7 @@ package sample;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
@@ -21,6 +22,9 @@ public class HistoryController implements Initializable {
     @FXML ScrollPane historyScrollPane;
     @FXML Label totalprisLabel, timeLabel;
     @FXML FlowPane HistoryItemFlowPane;
+    @FXML Button addItemsToCart;
+    
+    Order currentlyShowingOrder;
     
     public HistoryController(UIController parentController) { this.parentController = parentController; }
 
@@ -39,5 +43,18 @@ public class HistoryController implements Initializable {
             total += shoppingItem.getTotal();
         }
         totalprisLabel.setText("Totalt: " + backend.getProductPrice(total) + " kr");
+        this.currentlyShowingOrder = order;
+    }
+    
+    public void addItemsFromHistory() {
+        if (currentlyShowingOrder != null) {
+            for (ShoppingItem shoppingItem : currentlyShowingOrder.getItems()) {
+                for (ItemCard itemCard : parentController.shoppingController.itemCards) {
+                    if (itemCard.getProduct().equals(shoppingItem.getProduct())) {
+                        itemCard.add(shoppingItem.getAmount());
+                    }
+                }
+            }
+        }
     }
 }
