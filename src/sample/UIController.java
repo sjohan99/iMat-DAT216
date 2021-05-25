@@ -170,6 +170,7 @@ public class UIController implements Initializable {
                 break;
             case "imat":
                 startPagePane.toFront();
+                buttonGrouper.activate("");
                 break;
         }
         if (buttonId.equals("checkout_button")) {
