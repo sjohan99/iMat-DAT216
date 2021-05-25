@@ -22,7 +22,7 @@ public class SideMenus extends AnchorPane {
     private HistoryController historyParentController;
     private BackendController backend = new BackendController();
     public ButtonGrouper myPagesButtonGroup;
-    private ButtonGrouper shoppingButtonGroup;
+    public ButtonGrouper shoppingButtonGroup;
     ButtonGrouper checkoutButtonsGroup;
     /**
      * Different side menu views

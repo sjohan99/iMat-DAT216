@@ -167,6 +167,7 @@ public class UIController implements Initializable {
             case "shopping_button":
                 //parentView.getChildren().add(new Shopping(shoppingController));
                 parentView.getChildren().add(shopping);
+                sideMenus.shoppingButtonGroup.activateSideBarButtons("");
                 break;
             case "imat":
                 startPagePane.toFront();
