@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="773.0" prefWidth="1022.0">
          <children>
@@ -261,6 +261,11 @@
                   </Label>
                   <Button fx:id="nextStepButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button" stylesheets="@roundedbuttonstyle.css" text="Nästa steg" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" />
                   <Button fx:id="backButton1" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="go_back_button" stylesheets="@roundedbuttonstyle.css" text="Gå tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="warningAnchorPane" mouseTransparent="true">
+               <children>
+                  <Label layoutX="704.0" layoutY="601.0" prefHeight="47.0" prefWidth="301.0" text="Vänligen fyll i alla fält innan du går vidare!" textFill="RED" wrapText="true" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="confirmCartAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">

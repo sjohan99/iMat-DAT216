@@ -31,7 +31,7 @@ public class CheckoutController implements Initializable {
     List<String> monthName = new ArrayList<>();
     String dayName;
     List<Integer> dayNum = new ArrayList<>();
-    @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane;
+    @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane, warningAnchorPane;
     @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2, dayButton1, dayButton2, dayButton3, timeButton;
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField, cardMonthTextField, cardYearTextField;
@@ -113,6 +113,21 @@ public class CheckoutController implements Initializable {
         dayButton2.setText(String.valueOf(dayNum.get(1)));
         dayButton3.setText(String.valueOf(dayNum.get(2)));
         dayLabel.setText(dayName);
+    }
+
+    private boolean isPersonNull() {
+        if (firstNameTextField.getText().equals("") || surnameTextField.getText().equals("") || emailTextField.getText().equals("") || phoneTextField.getText().equals("")) { return true; }
+        return false;
+    }
+
+    private boolean isAdressNull() {
+        if (adressTextField.getText().equals("") || postNumTextField.getText().equals("") || postalAreaTextField.getText().equals("")) { return true; }
+        return false;
+    }
+
+    private boolean isCardNull() {
+        if (cardNumberTextField.getText().equals("") || cardMonthTextField.getText().equals("") || cardYearTextField.getText().equals("") || securityCodeTextField.getText().equals("")) { return true; }
+        return false;
     }
 
     /**
@@ -266,9 +281,11 @@ public class CheckoutController implements Initializable {
     }
 
     public void checkoutChangeWindow(String id) {
+        warningAnchorPane.toBack();
         switch(id) {
             case "next_step1":
             case "back3":
+                if (isPersonNull()) { warningAnchorPane.toFront(); break; }
                 adressAnchorPane.toFront();
                 sideMenus.changeIcon(2);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton3", 2);
@@ -281,6 +298,7 @@ public class CheckoutController implements Initializable {
                 break;
             case "next_step2":
             case "back4":
+                if (isAdressNull()) { warningAnchorPane.toFront(); break; }
                 deliveryTimeAnchorPane.toFront();
                 sideMenus.changeIcon(3);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton4", 3);
@@ -297,6 +315,7 @@ public class CheckoutController implements Initializable {
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton5", 4);
                 break;
             case "next_step4":
+                if (isCardNull()) { warningAnchorPane.toFront(); break; }
                 confirmOrderAnchorPane.toFront();
                 sideMenus.changeIcon(5);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton6", 5);
