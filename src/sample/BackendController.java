@@ -138,7 +138,5 @@ public class BackendController {
         ShoppingItem shoppingItem = new ShoppingItem(product);
         shoppingItem.setAmount(amount);
         shoppingCart.addItem(shoppingItem);
-        System.out.println(shoppingCart.getItems());
     }
-    
 }

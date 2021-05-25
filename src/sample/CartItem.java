@@ -131,10 +131,8 @@ public class CartItem extends AnchorPane {
             }
         }
         amountTextField.setText(String.valueOf(amount));
-        System.out.println(String.valueOf(amount));
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
-        System.out.println("add called");
     }
     
     public void removeFromCart() {
@@ -148,6 +146,5 @@ public class CartItem extends AnchorPane {
         backend.addItemToShoppingCart(product, amountToBeRemoved);
         amountTextField.setText(String.valueOf(amountToBeRemoved));
         parentController.updateShoppingCart();
-        System.out.println("remove called");
     }
 }

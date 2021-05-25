@@ -100,7 +100,6 @@ public class CheckoutController implements Initializable {
             checkoutItemFlowPane.getChildren().add(new HistoryItem(shoppingItem));
             //total += shoppingItem.getTotal();
         }
-        System.out.println(backend.shoppingCart.getItems());
         totalPriceLabel.setText("Totalt: " + (backend.getProductPrice(backend.shoppingCart.getTotal())) + " kr");
         
     }
@@ -352,7 +351,6 @@ public class CheckoutController implements Initializable {
                 sideMenus.checkoutButton6.getStyleClass().removeAll("sidebar_button_pressed");
                 sideMenus.checkoutButton6.getStyleClass().add("sidebar_buttonNH");
                 parentController.adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
-                System.out.println(backend.dataHandler.getCustomer().getPostCode());
                 break;
         }
     }
