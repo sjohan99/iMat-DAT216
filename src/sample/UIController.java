@@ -154,6 +154,7 @@ public class UIController implements Initializable {
                 sideMenus.myPagesButtonGroup.activateSideBarButtons("personal_info");
                 break;
             case "checkout_button":
+                shrinkShoppingCart();
                 parentView.getChildren().add(new Checkout(checkoutController));
                 sideMenus.changeIcon(0);
                 checkoutController.populateItemsToBeBought();
@@ -201,40 +202,21 @@ public class UIController implements Initializable {
      * Resizes necessary elements and changes the button-text.
      */
     public void expandShoppingCart() {
-        if (shoppingCartAnchorPane.getMaxWidth() < 500) {
-            //shoppingCartAnchorPane.setMaxWidth(500); //uncomment for instant expansion
-            //cartLineDivider.setEndX(cartLineDivider.getEndX() + 225); //uncomment for instant expansion
-            timer.start();
-            
-            expandButton.setText("Minska varukorg");
-        } else {
-            //shoppingCartAnchorPane.setMaxWidth(275); //uncomment for instant expansion
-            //cartLineDivider.setEndX(245); //uncomment for instant expansion
-            timer.start();
-            expandButton.setText("Ändra i varukorgen");
-        }
+        timer.start();
         for (Node item : shoppingCartPane.getChildren()) {
             ((CartItem) item).resizeNameLabel();
+        }
+    }
+    
+    public void shrinkShoppingCart() {
+        if (shoppingCartExpanded) {
+            timer.start();
         }
     }
     
     private void addSideMenus() {
         sideMenuParentAnchorPane.getChildren().clear();
         sideMenuParentAnchorPane.getChildren().add(sideMenus);
-    }
-    
-    /**
-     * Placeholder method which just adds fake items in the shopping cart. Gives a bunch of processValue errors
-     * (atleast for me) shouldn't do any harm though
-     */
-    private void addPlaceholderCartItems() {
-        shoppingCartPane.getChildren().clear(); // Have to do this even if it's empty at launch for unknown reason
-        /*
-        shoppingCartPane.getChildren().add(new CartItem(this, "1x Långt ooooooooord"));
-        for (int i = 0; i < 16; i++) {
-            shoppingCartPane.getChildren().add(new CartItem(this, i + "x Test Item"));
-        }
-         */
     }
     
     public void updateShoppingCart() {
@@ -372,13 +354,12 @@ public class UIController implements Initializable {
                 
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() + speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() + speed);
-                //varukorgLabel.setPrefWidth(varukorgLabel.getWidth() + speed);
                 
                 if (shoppingCartAnchorPane.getMaxWidth() >= 500) {
                     stop();
                     speed = 20;
-                    //varukorgLabel.setPrefWidth(500);
                     shoppingCartAnchorPane.setMaxWidth(500);
+                    expandButton.setText("Minska varukorg");
                     shoppingCartExpanded = true;
                 }
             } else {
@@ -388,13 +369,12 @@ public class UIController implements Initializable {
                 
                 shoppingCartAnchorPane.setMaxWidth(shoppingCartAnchorPane.getMaxWidth() - speed);
                 cartLineDivider.setEndX(cartLineDivider.getEndX() - speed);
-                //varukorgLabel.setPrefWidth(varukorgLabel.getWidth() - speed);
                 
                 if (shoppingCartAnchorPane.getMaxWidth() <= 275) {
                     stop();
                     speed = 20;
-                    //varukorgLabel.setPrefWidth(275);
                     shoppingCartAnchorPane.setMaxWidth(275);
+                    expandButton.setText("Ändra i varukorgen");
                     shoppingCartExpanded = false;
                 }
             }
