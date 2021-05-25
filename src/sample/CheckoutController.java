@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -29,16 +26,17 @@ public class CheckoutController implements Initializable {
     private ButtonGrouper dateButtons;
     SideMenus sideMenus;
     List<String> monthName = new ArrayList<>();
-    String dayName;
+    List<String> dayName = new ArrayList<>();
     List<Integer> dayNum = new ArrayList<>();
     @FXML AnchorPane personalInfoAnchorPane, cardDetailsAnchorPane, deliveryTimeAnchorPane, adressAnchorPane, confirmCartAnchorPane, confirmOrderAnchorPane, warningAnchorPane;
     @FXML Button nextStepButton1, backButton1, nextStepButton2, backButton2, nextStepButton3, backButton3, nextStepButton4, backButton4, backButton5, backToShoppingButton, confirmButton1, confirmButton2, dayButton1, dayButton2, dayButton3, timeButton;
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField, cardMonthTextField, cardYearTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
-    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel;
+    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel1, dayLabel2, dayLabel3;
     @FXML ScrollPane checkoutScrollPane;
     @FXML FlowPane checkoutItemFlowPane;
+    @FXML DatePicker datePicker;
     
     
     public CheckoutController(UIController parentController, SideMenus sideMenus) {
@@ -49,7 +47,7 @@ public class CheckoutController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        initTime();
+        updateTime(LocalDate.now());
         initButtons();
         initMyPagesTextFields();
         initMyPagesTextFieldListeners();
@@ -61,13 +59,33 @@ public class CheckoutController implements Initializable {
         dateButtons.activateDateButtons(id);
     }
 
-    private void initTime() {
-        LocalDate date  = LocalDate.now();
+    private void updateTime(LocalDate date) {
+
         for (int i = 0; i < 3; i++) {
             monthName.add(capitalize(date.plusDays(i).getMonth().getDisplayName(TextStyle.FULL, new Locale("sv"))));
             dayNum.add(date.plusDays(i).getDayOfMonth());
+            dayName.add(capitalize(date.plusDays(i).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
         }
-        dayName = (capitalize(date.plusDays(2).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
+
+        dateLabel.setText("12:00-16:00, " + dayName.get(2) + " " + dayNum.get(2) + " " + monthName.get(2));
+        monthLabel1.setText(monthName.get(0));
+        monthLabel2.setText(monthName.get(1));
+        monthLabel3.setText(monthName.get(2));
+        dayButton1.setText(String.valueOf(dayNum.get(0)));
+        dayButton2.setText(String.valueOf(dayNum.get(1)));
+        dayButton3.setText(String.valueOf(dayNum.get(2)));
+        if (date.equals(LocalDate.now())) {
+            dayLabel1.setText("Idag");
+            dayLabel2.setText("Imorgon");
+        } else {
+            dayLabel1.setText(dayName.get(0));
+            dayLabel2.setText(dayName.get(1));
+        }
+        dayLabel3.setText(dayName.get(2));
+
+        monthName.clear();
+        dayNum.clear();
+        dayName.clear();
     }
 
     public String capitalize(String str) {
@@ -104,15 +122,7 @@ public class CheckoutController implements Initializable {
         cardMonthTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidMonth()));
         cardYearTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidYear()));
         adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
-        dateLabel.setText("12:00-16:00, " + dayName + " " + dayNum.get(2) + " " + monthName.get(2));
         priceLabel.setText(backend.shoppingCart.getTotal() + " kr");
-        monthLabel1.setText(monthName.get(0));
-        monthLabel2.setText(monthName.get(1));
-        monthLabel3.setText(monthName.get(2));
-        dayButton1.setText(String.valueOf(dayNum.get(0)));
-        dayButton2.setText(String.valueOf(dayNum.get(1)));
-        dayButton3.setText(String.valueOf(dayNum.get(2)));
-        dayLabel.setText(dayName);
     }
 
     private boolean isPersonNull() {
@@ -134,6 +144,14 @@ public class CheckoutController implements Initializable {
      * Updates the information in backend immediately when the text in a textfield is changed
      */
     private void initMyPagesTextFieldListeners() {
+        datePicker.valueProperty().addListener(new ChangeListener<LocalDate>() {
+            @Override
+            public void changed(ObservableValue<? extends LocalDate> observableValue, LocalDate localDate, LocalDate t1) {
+                updateTime(t1);
+            }
+        });
+
+
         cardYearTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable,
