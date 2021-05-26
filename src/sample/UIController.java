@@ -149,6 +149,12 @@ public class UIController implements Initializable {
         sideMenuParentAnchorPane.setStyle("-fx-opacity: 1");
         guideStep = 1;
         parentView.getChildren().clear();
+        if (backend.shoppingCart.getItems().isEmpty()) {
+            disableCheckoutButton();
+        } else { enableCheckoutButton();
+        }
+        checkoutButton.setText("Gå till kassan");
+        enableExpandCartButton();
         switch(buttonId) {
             case "history_button":
                 parentView.getChildren().add(new History(historyController));
@@ -164,6 +170,9 @@ public class UIController implements Initializable {
                 sideMenus.changeIcon(0);
                 checkoutController.populateItemsToBeBought();
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
+                disableCheckoutButton();
+                disableExpandCartButton();
+                checkoutButton.setText("Du är i kassan");
                 break;
             case "help_button":
                 initGuideView();
@@ -182,21 +191,13 @@ public class UIController implements Initializable {
                 buttonGrouper.activate("");
                 break;
         }
-        if (buttonId.equals("checkout_button")) {
-            disableCheckoutButton();
-            disableExpandCartButton();
-        }
-        else {
-            enableCheckoutButton();
-            enableExpandCartButton();
-        }
     }
     
     private void disableCheckoutButton() {
             checkoutButton.getStyleClass().removeAll("checkout_button");
             checkoutButton.getStyleClass().removeAll("checkout_button_disabled");
             checkoutButton.getStyleClass().add("checkout_button_disabled");
-            checkoutButton.setText("Du är i kassan");
+            checkoutButton.setMouseTransparent(true);
     }
     
     private void enableCheckoutButton() {
@@ -204,6 +205,7 @@ public class UIController implements Initializable {
         checkoutButton.getStyleClass().removeAll("checkout_button_disabled");
         checkoutButton.getStyleClass().add("checkout_button");
         checkoutButton.setText("Gå till kassan");
+        checkoutButton.setMouseTransparent(false);
     }
     
     private void disableExpandCartButton() {
@@ -260,6 +262,11 @@ public class UIController implements Initializable {
         updateItemCardAmounts();
         totalPriceLabel.setText("Totalt: " + backend.getProductPrice(backend.shoppingCart.getTotal()) + " kr");
         itemAmountLabel.setText("Varor: " + varor + " st");
+
+        if (backend.shoppingCart.getItems().isEmpty()) {
+            disableCheckoutButton();
+        } else { enableCheckoutButton();
+        }
     }
     
     public void updateItemCardAmounts() {
