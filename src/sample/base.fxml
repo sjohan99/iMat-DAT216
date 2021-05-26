@@ -432,7 +432,7 @@
             </Label>
             <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <children>
-                  <Button fx:id="expandButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                  <Button fx:id="expandButton" alignment="CENTER" graphicTextGap="20.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -447,7 +447,7 @@
                   </Button>
                </children>
             </VBox>
-            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" onMouseClicked="#expandShoppingCart" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
                <content>
                   <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="273.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
                </content>
@@ -455,6 +455,11 @@
             <Label fx:id="totalPriceLabel" layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
             <Label fx:id="itemAmountLabel" layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
             <Line fx:id="cartLineDivider" endX="257.0" endY="492.0" layoutY="14.0" startX="17.0" startY="492.0" styleClass="line_divider" />
+            <ImageView fx:id="expandImageView" fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="157.0" AnchorPane.leftAnchor="13.0">
+               <image>
+                  <Image url="@resources/expand.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="startPagePane" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">

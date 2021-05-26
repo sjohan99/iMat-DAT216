@@ -36,7 +36,7 @@ public class UIController implements Initializable {
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
     @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel, varukorgLabel;
-    @FXML private ImageView testimage;
+    @FXML private ImageView expandImageView;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
     @FXML public StackPane guideStackPane, purchaseDonePane;
@@ -154,7 +154,9 @@ public class UIController implements Initializable {
         } else { enableCheckoutButton();
         }
         checkoutButton.setText("Gå till kassan");
-        enableExpandCartButton();
+        if (!shoppingCartExpanded) {
+            enableExpandCartButton();
+        }
         switch(buttonId) {
             case "history_button":
                 parentView.getChildren().add(new History(historyController));
@@ -172,6 +174,7 @@ public class UIController implements Initializable {
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 disableCheckoutButton();
                 disableExpandCartButton();
+                expandImageView.setVisible(false);
                 checkoutButton.setText("Du är i kassan");
                 break;
             case "help_button":
@@ -185,11 +188,19 @@ public class UIController implements Initializable {
                 parentView.getChildren().add(shopping);
                 shoppingController.inAllItemsCategory = true;
                 sideMenus.shoppingButtonGroup.activateSideBarButtons("");
+                expandImageReset();
                 break;
             case "imat":
                 startPagePane.toFront();
                 buttonGrouper.activate("");
                 break;
+        }
+    }
+    
+    private void expandImageReset() {
+        if (!shoppingCartExpanded) {
+            expandImageView.setVisible(true);
+            expandImageView.setRotate(0);
         }
     }
     
@@ -227,9 +238,11 @@ public class UIController implements Initializable {
     public void expandShoppingCart() {
         if (!shoppingCartExpanded) {
             expandButton.setText("Minska varukorg");
+            expandImageView.setRotate(180);
         }
         else {
             expandButton.setText("Ändra i varukorgen");
+            expandImageView.setRotate(0);
         }
         timer.start();
         
