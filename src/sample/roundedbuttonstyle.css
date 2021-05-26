@@ -107,6 +107,10 @@
     -fx-text-fill: #4E4873;
 }
 
+#imat:hover {
+-fx-text-fill: #6a648f;
+}
+
 #imat_homepage {
     -fx-font-family: 'Rochester';
     -fx-font-size: 130px;
