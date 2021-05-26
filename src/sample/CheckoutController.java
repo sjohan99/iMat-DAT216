@@ -121,7 +121,7 @@ public class CheckoutController implements Initializable {
         cardMonthTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidMonth()));
         cardYearTextField.setText(String.valueOf(backend.dataHandler.getCreditCard().getValidYear()));
         adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
-        priceLabel.setText(backend.shoppingCart.getTotal() + " kr");
+        priceLabel.setText(backend.getProductPrice(backend.shoppingCart.getTotal()));
     }
 
     private boolean isPersonNull() {
