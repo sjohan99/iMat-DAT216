@@ -380,6 +380,7 @@ public class CheckoutController implements Initializable {
             case "next_step4":
                 if (isCardNull()) { warningAnchorPane.toFront(); break; }
                 confirmOrderAnchorPane.toFront();
+                adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
                 sideMenus.changeIcon(5);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton6", 5);
                 break;
