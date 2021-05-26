@@ -35,6 +35,7 @@ public class HistoryController implements Initializable {
     }
     
     public void populateHistoryOrder(Order order) {
+        
         timeLabel.setText(backend.getCorrectDateFormat(order));
         HistoryItemFlowPane.getChildren().clear();
         double total = 0;
@@ -44,6 +45,7 @@ public class HistoryController implements Initializable {
         }
         totalprisLabel.setText("Totalt: " + backend.getProductPrice(total) + " kr");
         this.currentlyShowingOrder = order;
+        enableAddButton();
     }
     
     public void addItemsFromHistory() {
@@ -55,6 +57,21 @@ public class HistoryController implements Initializable {
                     }
                 }
             }
+            disableAddButton();
         }
     }
+    
+    private void disableAddButton() {
+        addItemsToCart.setStyle("-fx-background-color: #C9C9C9");
+        addItemsToCart.setMouseTransparent(true);
+        addItemsToCart.setText("Varor tillagda!");
+    }
+    
+    private void enableAddButton() {
+        addItemsToCart.setStyle("-fx-background-color: #F2B84B");
+        addItemsToCart.setMouseTransparent(false);
+        addItemsToCart.setText("Lägg till i varukorgen");
+    }
+    
+    
 }
