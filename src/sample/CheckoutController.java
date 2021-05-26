@@ -52,6 +52,20 @@ public class CheckoutController implements Initializable {
         initMyPagesTextFields();
         initMyPagesTextFieldListeners();
         checkoutScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        initDatePicker();
+    }
+
+    private void initDatePicker() {
+        datePicker.setValue(LocalDate.now());
+        datePicker.setOnShowing(e-> Locale.setDefault(new Locale("sv")));
+        datePicker.setOnHiding(e-> Locale.setDefault(new Locale("sv")));
+        datePicker.setOnAction(e-> Locale.setDefault(new Locale("sv")));
+        datePicker.setDayCellFactory(picker -> new DateCell() {
+            public void updateItem(LocalDate date, boolean empty) {
+                super.updateItem(date, empty);
+                setDisable(empty || date.compareTo(LocalDate.now()) < 0 );
+            }
+        });
     }
 
     private void timeButtons(ActionEvent e) {
@@ -66,7 +80,7 @@ public class CheckoutController implements Initializable {
             dayNum.add(date.plusDays(i).getDayOfMonth());
             dayName.add(capitalize(date.plusDays(i).getDayOfWeek().getDisplayName(TextStyle.FULL, new Locale("sv"))));
         }
-
+        datePicker.setValue(date);
         dateLabel.setText("12:00-16:00, " + dayName.get(2) + " " + dayNum.get(2) + " " + monthName.get(2));
         monthLabel1.setText(monthName.get(0));
         monthLabel2.setText(monthName.get(1));
