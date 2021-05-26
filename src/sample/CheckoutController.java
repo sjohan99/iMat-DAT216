@@ -36,7 +36,7 @@ public class CheckoutController implements Initializable {
     @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel1, dayLabel2, dayLabel3;
     @FXML ScrollPane checkoutScrollPane;
     @FXML FlowPane checkoutItemFlowPane;
-    @FXML DatePicker datePicker;
+    @FXML DatePicker datePicker = new DatePicker();
     
     
     public CheckoutController(UIController parentController, SideMenus sideMenus) {
@@ -124,20 +124,37 @@ public class CheckoutController implements Initializable {
         priceLabel.setText(backend.shoppingCart.getTotal() + " kr");
     }
 
-    private boolean isPersonNull() {
-        if (firstNameTextField.getText().equals("") || surnameTextField.getText().equals("") || emailTextField.getText().equals("") || phoneTextField.getText().equals("")) { return true; }
-        return false;
+    private boolean setErrorTextField(TextField tf) {
+        if (tf.getText().equals("")) {
+            tf.getStyleClass().removeAll("information_textfield");
+            tf.getStyleClass().add("information_textfield_red");
+            return true;
+        } else {
+            tf.getStyleClass().removeAll("information_textfield_red");
+            tf.getStyleClass().add("information_textfield");
+            return false;
+        }
     }
+
+    private boolean isPersonNull() {
+        setErrorTextField(firstNameTextField);
+        setErrorTextField(surnameTextField);
+        setErrorTextField(emailTextField);
+        setErrorTextField(phoneTextField);
+        return (setErrorTextField(firstNameTextField) || setErrorTextField(surnameTextField) || setErrorTextField(emailTextField) || setErrorTextField(phoneTextField)); }
 
     private boolean isAdressNull() {
-        if (adressTextField.getText().equals("") || postNumTextField.getText().equals("") || postalAreaTextField.getText().equals("")) { return true; }
-        return false;
-    }
+        setErrorTextField(adressTextField);
+        setErrorTextField(postNumTextField);
+        setErrorTextField(postalAreaTextField);
+        return (setErrorTextField(adressTextField) || setErrorTextField(postNumTextField) || setErrorTextField(postalAreaTextField)); }
 
     private boolean isCardNull() {
-        if (cardNumberTextField.getText().equals("") || cardMonthTextField.getText().equals("") || cardYearTextField.getText().equals("") || securityCodeTextField.getText().equals("")) { return true; }
-        return false;
-    }
+        setErrorTextField(cardNumberTextField);
+        setErrorTextField(cardMonthTextField);
+        setErrorTextField(cardYearTextField);
+        setErrorTextField(securityCodeTextField);
+        return (setErrorTextField(cardNumberTextField) || setErrorTextField(cardMonthTextField) || setErrorTextField(cardYearTextField) || setErrorTextField(securityCodeTextField)); }
 
     /**
      * Updates the information in backend immediately when the text in a textfield is changed
@@ -155,6 +172,7 @@ public class CheckoutController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
+                isCardNull();
                 try {
                     backend.dataHandler.getCreditCard().setValidYear(Integer.parseInt(newValue));
                 } catch (NumberFormatException e) {
@@ -167,6 +185,7 @@ public class CheckoutController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
+                isCardNull();
                 try {
                     backend.dataHandler.getCreditCard().setValidMonth(Integer.parseInt(newValue));
                 } catch (NumberFormatException e) {
@@ -180,6 +199,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setFirstName(newValue);
+                isPersonNull();
             }
         });
 
@@ -188,6 +208,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setLastName(newValue);
+                isPersonNull();
             }
         });
 
@@ -196,6 +217,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setEmail(newValue);
+                isPersonNull();
             }
         });
 
@@ -204,6 +226,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setPhoneNumber(newValue);
+                isPersonNull();
             }
         });
 
@@ -213,6 +236,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setAddress(newValue);
+                isAdressNull();
             }
         });
 
@@ -221,6 +245,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setPostCode(newValue);
+                isAdressNull();
             }
         });
 
@@ -229,6 +254,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCustomer().setPostAddress(newValue);
+                isAdressNull();
             }
         });
 
@@ -238,6 +264,7 @@ public class CheckoutController implements Initializable {
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
                 backend.dataHandler.getCreditCard().setCardNumber(newValue);
+                isCardNull();
             }
         });
 
@@ -245,6 +272,7 @@ public class CheckoutController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
+                isCardNull();
                 try {
                     backend.dataHandler.getCreditCard().setVerificationCode(Integer.parseInt(newValue));
                 } catch (NumberFormatException e) {
