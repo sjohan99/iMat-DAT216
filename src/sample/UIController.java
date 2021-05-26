@@ -47,6 +47,7 @@ public class UIController implements Initializable {
     private ButtonGrouper buttonGrouper;
     public SideMenus sideMenus = new SideMenus(this, historyController);
     public boolean shoppingCartExpanded;
+    private boolean isFirstRun = true;
     List<AnchorPane> guidePanes = new ArrayList<>();
     private int guideStep = 1;
     private Shopping shopping;
@@ -69,8 +70,9 @@ public class UIController implements Initializable {
         updateShoppingCart();
         // Next two lines are needed to simulate first run
         backend.dataHandler.resetFirstRun();
-        if (backend.dataHandler.isFirstRun()) { changeMainView("help_button"); buttonGrouper.activate("help_button"); }
     }
+
+
 
     /**
      * Adds all guidePanes to a List. Lowers opacity for surrounding elements and brings guide to front
@@ -169,6 +171,7 @@ public class UIController implements Initializable {
             case "next_step_button_final":
             case "go_back_to_shopping_button":
             case "shopping_button":
+                if (backend.dataHandler.isFirstRun() && isFirstRun) { changeMainView("help_button"); buttonGrouper.activate("help_button"); isFirstRun = false; break;}
                 //parentView.getChildren().add(new Shopping(shoppingController));
                 parentView.getChildren().add(shopping);
                 sideMenus.shoppingButtonGroup.activateSideBarButtons("");
