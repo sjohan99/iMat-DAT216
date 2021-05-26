@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane prefHeight="773.0" prefWidth="1022.0">
          <children>
@@ -107,7 +107,7 @@
             </AnchorPane>
             <AnchorPane fx:id="deliveryTimeAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <Button layoutX="100.0" layoutY="469.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="101.0" />
+                  <Button layoutX="101.0" layoutY="398.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="101.0" />
                   <Button layoutX="98.0" layoutY="537.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="101.0" />
                   <Button layoutX="96.0" layoutY="602.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.leftAnchor="101.0" />
                   <Button fx:id="dayButton1" layoutX="75.0" layoutY="184.0" mnemonicParsing="false" prefHeight="226.0" prefWidth="250.0" styleClass="delivery_date_button" stylesheets="@roundedbuttonstyle.css" text="1" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="150.0">
@@ -131,7 +131,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="dayLabel1" layoutX="143.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Idag">
+                  <Label fx:id="dayLabel1" alignment="CENTER" layoutX="154.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Idag">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -152,12 +152,12 @@
                   <Button layoutX="718.0" layoutY="419.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="08:00-12:00" AnchorPane.bottomAnchor="325.0" AnchorPane.rightAnchor="101.0" />
                   <Button fx:id="timeButton" layoutX="716.0" layoutY="498.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="12:00-16:00" AnchorPane.bottomAnchor="250.0" AnchorPane.rightAnchor="101.0" />
                   <Button layoutX="714.0" layoutY="563.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" styleClass="delivery_time_button" stylesheets="@roundedbuttonstyle.css" text="16:00-20:00" AnchorPane.bottomAnchor="175.0" AnchorPane.rightAnchor="101.0" />
-                  <Label fx:id="dayLabel2" layoutX="450.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Imorgon" AnchorPane.leftAnchor="474.0" AnchorPane.topAnchor="177.0">
+                  <Label fx:id="dayLabel2" alignment="CENTER" layoutX="469.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Imorgon" AnchorPane.leftAnchor="469.0" AnchorPane.topAnchor="177.0">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="dayLabel3" layoutX="757.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Torsdag" AnchorPane.rightAnchor="154.0" AnchorPane.topAnchor="177.0">
+                  <Label fx:id="dayLabel3" alignment="CENTER" layoutX="784.0" layoutY="177.0" prefHeight="29.0" prefWidth="92.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Torsdag" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="177.0">
                      <font>
                         <Font size="24.0" />
                      </font>

@@ -35,6 +35,7 @@ public class ShoppingController implements Initializable {
     public int loadedItems = 12;
     public boolean allItemsLoaded = false;
     public boolean scrollBarInitiated = false;
+    public boolean inAllItemsCategory = false;
     
     public ShoppingController(UIController parentController, BackendController backend) {
         this.parentController = parentController;
@@ -108,7 +109,7 @@ public class ShoppingController implements Initializable {
     }
     
     private void loadMoreItems() {
-        if (!allItemsLoaded) {
+        if (!allItemsLoaded && inAllItemsCategory) {
             if (loadedItems + 12 > 120) {
                 addItems(itemCards.subList(loadedItems, itemCards.size()));
                 allItemsLoaded = true;
@@ -241,6 +242,7 @@ public class ShoppingController implements Initializable {
                 shoppingHeadline.setText("Ekologiskt");
                 break;
         }
+        inAllItemsCategory = false;
         resetScrollbarPos();
     }
     

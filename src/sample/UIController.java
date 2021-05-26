@@ -183,6 +183,7 @@ public class UIController implements Initializable {
                 if (backend.dataHandler.isFirstRun() && isFirstRun) { changeMainView("help_button"); buttonGrouper.activate("help_button"); isFirstRun = false; break;}
                 //parentView.getChildren().add(new Shopping(shoppingController));
                 parentView.getChildren().add(shopping);
+                shoppingController.inAllItemsCategory = true;
                 sideMenus.shoppingButtonGroup.activateSideBarButtons("");
                 buttonGrouper.activate("shopping_button");
                 break;
