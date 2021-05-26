@@ -89,6 +89,9 @@ public class CartItem extends AnchorPane {
             if (existingItems.getProduct().equals(product)) {
                 amount = existingItems.getAmount();
                 try {
+                    if (tooManyDecimals(amountTextField.getText())) {
+                        amountTextField.setText(limitDecimals(amountTextField.getText()));
+                    }
                     amount = Double.parseDouble(amountTextField.getText());
                     amountText = amountTextField.getText();
                 } catch (NumberFormatException e) {
@@ -96,17 +99,41 @@ public class CartItem extends AnchorPane {
                 }
             }
         }
-        //amountTextField.setText(amountText);
         backend.addItemToShoppingCart(product, amount);
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
-        
-        /*if (product.getUnitSuffix().equals("kg")) {
-            amountTextField.setText(amountText);
+    }
+    
+    private boolean tooManyDecimals(String input) {
+        if (input.contains(".")) {
+            double val = Double.parseDouble(input);
+            String[] arr = String.valueOf(val).split("\\.");
+            if (arr[1].length() > 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
         }
         else {
-            amountTextField.setText(amountText);
-        }*/
+            return false;
+        }
+    }
+    
+    private String limitDecimals(String input) {
+        if (input.contains(".")) {
+            double val = Double.parseDouble(input);
+            String[] arr = String.valueOf(val).split("\\.");
+            if (arr[1].length() > 1) {
+                arr[1] = arr[1].substring(0,2);
+            }
+            
+            String integers = arr[0];
+            String decimals = arr[1];
+            String result = integers + "." + decimals;
+            return result;
+        }
+        return null;
     }
     
     /**
