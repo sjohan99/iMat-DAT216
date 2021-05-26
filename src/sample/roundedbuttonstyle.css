@@ -380,9 +380,26 @@
 -fx-border-color: #000000;
 }
 
+.information_textfield_red {
+-fx-background-color: #E4E4E4;
+-fx-border-width: 2px;
+-fx-border-color: #ff1100;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
 .calendar_date {
 -fx-border-width: 1px;
 -fx-border-color: #000000;
 -fx-font-family: 'Roboto';
 -fx-font-size: 14px;
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 290px;
+    -fx-font-size: 22px;
+}
+.date-picker-popup .spinner-label {
+    -fx-font-size: 25px;
 }

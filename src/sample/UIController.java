@@ -188,6 +188,7 @@ public class UIController implements Initializable {
                 parentView.getChildren().add(shopping);
                 shoppingController.inAllItemsCategory = true;
                 sideMenus.shoppingButtonGroup.activateSideBarButtons("");
+                buttonGrouper.activate("shopping_button");
                 expandImageReset();
                 break;
             case "imat":
