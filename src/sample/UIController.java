@@ -64,10 +64,12 @@ public class UIController implements Initializable {
         shoppingCartScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         shopping = new Shopping(shoppingController);
         initSearch();
-        
         backend.shoppingCart.clear(); // Remove this to save cart between runs
         updateItemCardAmounts();
         updateShoppingCart();
+        // Next two lines are needed to simulate first run
+        backend.dataHandler.resetFirstRun();
+        if (backend.dataHandler.isFirstRun()) { changeMainView("help_button"); buttonGrouper.activate("help_button"); }
     }
 
     /**

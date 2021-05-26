@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="side_menuPane" prefHeight="775.0" prefWidth="275.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane fx:id="menuStack">
          <children>
@@ -184,6 +184,24 @@
                   </VBox>
                </children>
             </AnchorPane>
+            <AnchorPane fx:id="history_menuPane" prefHeight="775.0" prefWidth="275.0">
+               <children>
+                   <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                       <children>
+                           <Label alignment="CENTER" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Kvitton" textAlignment="CENTER">
+                               <font>
+                                   <Font name="System Bold" size="36.0" />
+                               </font>
+                           </Label>
+                        <ScrollPane fx:id="historyScrollPane" layoutX="-1.0" prefHeight="710.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css">
+                           <content>
+                              <FlowPane fx:id="receiptFlowPane" layoutX="-1.0" prefHeight="708.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css" />
+                           </content>
+                        </ScrollPane>
+                       </children>
+                   </VBox>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="shopping_menuPane" prefHeight="775.0" prefWidth="275.0">
                <children>
                   <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -318,24 +336,6 @@
                         </Button>
                      </children>
                   </VBox>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="history_menuPane" prefHeight="775.0" prefWidth="275.0">
-               <children>
-                   <VBox prefHeight="775.0" prefWidth="275.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                       <children>
-                           <Label alignment="CENTER" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Kvitton" textAlignment="CENTER">
-                               <font>
-                                   <Font name="System Bold" size="36.0" />
-                               </font>
-                           </Label>
-                        <ScrollPane fx:id="historyScrollPane" layoutX="-1.0" prefHeight="710.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css">
-                           <content>
-                              <FlowPane fx:id="receiptFlowPane" layoutX="-1.0" prefHeight="708.0" prefWidth="276.0" styleClass="remove_focus_beige" stylesheets="@base_style.css" />
-                           </content>
-                        </ScrollPane>
-                       </children>
-                   </VBox>
                </children>
             </AnchorPane>
          </children>
