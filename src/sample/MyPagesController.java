@@ -164,7 +164,11 @@ public class MyPagesController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable,
                                 String oldValue, String newValue) {
-                backend.dataHandler.getCreditCard().setVerificationCode(Integer.parseInt(newValue));
+                try {
+                    backend.dataHandler.getCreditCard().setVerificationCode(Integer.parseInt(newValue));
+                } catch (NumberFormatException e) {
+                
+                }
             }
         });
         
