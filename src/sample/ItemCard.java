@@ -116,6 +116,9 @@ public class ItemCard extends AnchorPane {
             }
         }
         try {
+            if (tooManyDecimals(cardAmountTextField.getText())) {
+                cardAmountTextField.setText(limitDecimals(cardAmountTextField.getText()));
+            }
             amount = Double.parseDouble(cardAmountTextField.getText());
             amountText = cardAmountTextField.getText();
         } catch (NumberFormatException e) {
@@ -130,6 +133,38 @@ public class ItemCard extends AnchorPane {
         cardAmountTextField.setText(amountText);
         backend.addItemToShoppingCart(product, amount);
         parentController.updateShoppingCart();
+    }
+    
+    private boolean tooManyDecimals(String input) {
+        if (input.contains(".")) {
+            double val = Double.parseDouble(input);
+            String[] arr = String.valueOf(val).split("\\.");
+            if (arr[1].length() > 2) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    
+    private String limitDecimals(String input) {
+        if (input.contains(".")) {
+            double val = Double.parseDouble(input);
+            String[] arr = String.valueOf(val).split("\\.");
+            if (arr[1].length() > 1) {
+                arr[1] = arr[1].substring(0,2);
+            }
+    
+            String integers = arr[0];
+            String decimals = arr[1];
+            String result = integers + "." + decimals;
+            return result;
+        }
+        return null;
     }
     
     public void add() {
