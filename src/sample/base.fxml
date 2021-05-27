@@ -169,12 +169,17 @@
             </AnchorPane>
             <AnchorPane fx:id="guidePane5" prefHeight="900.0" prefWidth="1600.0">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="989.0" layoutY="448.0" pickOnBounds="true" preserveRatio="true" rotate="157.9">
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1026.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true" rotate="-146.3">
                      <image>
                         <Image url="@resources/arrow_long.png" />
                      </image>
                   </ImageView>
-                  <Ellipse fill="#f2b84b" layoutX="1018.0" layoutY="506.0" radiusX="125.0" radiusY="86.0" stroke="BLACK" strokeType="INSIDE">
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1066.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="1008.0" layoutY="345.0" radiusX="125.0" radiusY="86.0" stroke="BLACK" strokeType="INSIDE">
                      <effect>
                         <DropShadow radius="15.25" width="42.0">
                            <color>
@@ -182,7 +187,21 @@
                            </color>
                         </DropShadow>
                      </effect></Ellipse>
-                  <Label layoutX="905.0" layoutY="407.0" prefHeight="198.0" prefWidth="236.0" text="Här syns dina tillagda varor i varukorgen" textAlignment="CENTER" wrapText="true">
+                  <Label layoutX="895.0" layoutY="246.0" prefHeight="198.0" prefWidth="236.0" text="Här syns dina tillagda varor i varukorgen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+                  <Ellipse fill="#f2b84b" layoutX="1101.0" layoutY="574.0" radiusX="125.0" radiusY="86.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
+                  <Label layoutX="988.0" layoutY="475.0" prefHeight="198.0" prefWidth="236.0" text="Fäll ut varukorgen via den här??" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Roboto" size="30.0" />
                      </font>
@@ -533,7 +552,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
+            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font size="26.0" />
                </font>
