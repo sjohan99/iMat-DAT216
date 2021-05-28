@@ -172,6 +172,8 @@
 -fx-background-color: #F2B84B;
 -fx-border-width: 2px;
 -fx-border-color: #000000;
+-fx-font-family: 'Roboto Medium';
+-fx-font-size: 28px;
 }
 
 .checkout_button:hover {
@@ -398,7 +400,7 @@
 .date-picker-popup .calendar-grid {
     -fx-pref-width: 300px;
     -fx-pref-height: 290px;
-    -fx-font-size: 22px;
+    -fx-font-size: 20px;
 }
 .date-picker-popup .spinner-label {
     -fx-font-size: 25px;
