@@ -265,7 +265,11 @@
             </AnchorPane>
             <AnchorPane fx:id="warningAnchorPane" mouseTransparent="true">
                <children>
-                  <Label layoutX="704.0" layoutY="601.0" prefHeight="47.0" prefWidth="301.0" text="Vänligen fyll i alla fält innan du går vidare!" textFill="RED" wrapText="true" />
+                  <Label layoutX="676.0" layoutY="592.0" prefHeight="47.0" prefWidth="307.0" text="Vänligen fyll i alla fält innan du går vidare!" textFill="RED" wrapText="true" AnchorPane.rightAnchor="50.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane fx:id="confirmCartAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;">

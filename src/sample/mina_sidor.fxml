@@ -35,6 +35,37 @@
                   <TextField fx:id="adressTextField" prefHeight="36.0" prefWidth="525.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
                   <TextField fx:id="postNumTextField" layoutX="248.0" layoutY="262.0" prefHeight="36.0" prefWidth="525.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
                   <TextField fx:id="postalAreaTextField" layoutX="248.0" layoutY="347.0" prefHeight="36.0" prefWidth="525.0" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
+                  <Label layoutX="-91.0" layoutY="496.0" prefHeight="29.0" prefWidth="388.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Dina ändringar sparas automatiskt" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="546.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label prefHeight="54.0" prefWidth="326.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="86.0">
+                     <font>
+                        <Font name="Roboto Black" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="133.0" layoutY="194.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Kortnummer:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="180.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="262.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Utgångsdatum:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="265.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="38.0" layoutY="349.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Säkerhetskod:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="348.0">
+                     <font>
+                        <Font name="Roboto Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="cardNumberTextField" layoutX="293.0" layoutY="145.0" prefHeight="36.0" prefWidth="525.0" promptText="NNNN NNNN NNNN NNNN" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
+                  <Label layoutX="452.0" layoutY="349.0" prefHeight="36.0" prefWidth="346.0" styleClass="label_normal" stylesheets="@text_styles.css" text="* tre sista på baksidan av kortet" wrapText="true" AnchorPane.topAnchor="348.0" />
+                  <TextField fx:id="cardMonthTextField" layoutX="284.0" layoutY="269.0" prefHeight="36.0" prefWidth="150.0" promptText="Mån (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="cardYearTextField" layoutX="430.0" layoutY="265.0" prefHeight="36.0" prefWidth="150.0" promptText="År (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.topAnchor="265.0" />
+                  <TextField fx:id="securityCodeTextField" layoutX="284.0" layoutY="349.0" prefHeight="47.0" prefWidth="150.0" promptText="NNN" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
+                  <Label layoutX="-44.0" layoutY="505.0" prefHeight="29.0" prefWidth="388.0" styleClass="label_normal" stylesheets="@text_styles.css" text="Dina ändringar sparas automatiskt" AnchorPane.leftAnchor="47.0" AnchorPane.topAnchor="546.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="personalInfoAnchorPane" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
@@ -69,35 +100,6 @@
                         <Font name="Roboto Regular" size="24.0" />
                      </font>
                   </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="cardDetailsAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="773.0" prefWidth="1032.0" style="-fx-background-color: #FFFFFF;">
-               <children>
-                  <Label prefHeight="54.0" prefWidth="326.0" styleClass="label_scaled_bold" stylesheets="@text_styles.css" text="Kortuppgifter" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="86.0">
-                     <font>
-                        <Font name="Roboto Black" size="36.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="133.0" layoutY="194.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Kortnummer:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="180.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="28.0" layoutY="262.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Utgångsdatum:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="265.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="38.0" layoutY="349.0" styleClass="label_scaled_normal" stylesheets="@text_styles.css" text="Säkerhetskod:" AnchorPane.rightAnchor="800.0" AnchorPane.topAnchor="348.0">
-                     <font>
-                        <Font name="Roboto Regular" size="24.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="cardNumberTextField" layoutX="293.0" layoutY="145.0" prefHeight="36.0" prefWidth="525.0" promptText="NNNN NNNN NNNN NNNN" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="180.0" />
-                  <Label layoutX="452.0" layoutY="349.0" prefHeight="36.0" prefWidth="346.0" styleClass="label_normal" stylesheets="@text_styles.css" text="* tre sista på baksidan av kortet" wrapText="true" AnchorPane.topAnchor="348.0" />
-                  <TextField fx:id="cardMonthTextField" layoutX="284.0" layoutY="269.0" prefHeight="36.0" prefWidth="150.0" promptText="Mån (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="265.0" />
-                  <TextField fx:id="cardYearTextField" layoutX="430.0" layoutY="265.0" prefHeight="36.0" prefWidth="150.0" promptText="År (NN)" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.topAnchor="265.0" />
-                  <TextField fx:id="securityCodeTextField" layoutX="284.0" layoutY="349.0" prefHeight="47.0" prefWidth="150.0" promptText="NNN" styleClass="information_textfield" stylesheets="@roundedbuttonstyle.css" AnchorPane.leftAnchor="248.0" AnchorPane.topAnchor="348.0" />
                </children>
             </AnchorPane>
          </children>
