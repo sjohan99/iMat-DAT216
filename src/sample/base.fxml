@@ -442,45 +442,6 @@
           <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" />
         </items>
       </SplitPane>
-      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
-         <children>
-            <Label fx:id="varukorgLabel" alignment="CENTER" maxWidth="500.0" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <font>
-                  <Font name="System Bold Italic" size="36.0" />
-               </font>
-            </Label>
-            <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-               <children>
-                  <Button fx:id="expandButton" alignment="CENTER" graphicTextGap="20.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="checkoutButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="150.0" prefWidth="500.0" styleClass="checkout_button" stylesheets="@roundedbuttonstyle.css" text="Gå till kassan">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" onMouseClicked="#expandShoppingCart" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
-               <content>
-                  <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="273.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
-               </content>
-            </ScrollPane>
-            <Label fx:id="totalPriceLabel" layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
-            <Label fx:id="itemAmountLabel" layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
-            <Line fx:id="cartLineDivider" endX="257.0" endY="492.0" layoutY="14.0" startX="17.0" startY="492.0" styleClass="line_divider" />
-            <ImageView fx:id="expandImageView" fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="157.0" AnchorPane.leftAnchor="13.0">
-               <image>
-                  <Image url="@resources/expand.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <AnchorPane fx:id="startPagePane" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
          <children>
             <ImageView fitHeight="775.0" fitWidth="1600.0" layoutX="73.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -616,6 +577,55 @@
                   <Image url="@resources/search.png" />
                </image>
             </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9; -fx-opacity: 0.8;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
+         <children>
+            <Label fx:id="varukorgLabel" alignment="CENTER" maxWidth="500.0" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button fx:id="expandButton" alignment="CENTER" graphicTextGap="20.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="checkoutButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="150.0" prefWidth="500.0" styleClass="checkout_button" stylesheets="@roundedbuttonstyle.css" text="Gå till kassan">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" onMouseClicked="#expandShoppingCart" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+               <content>
+                  <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="273.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
+               </content>
+            </ScrollPane>
+            <Label fx:id="totalPriceLabel" layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
+            <Label fx:id="itemAmountLabel" layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
+            <Line fx:id="cartLineDivider" endX="257.0" endY="492.0" layoutY="14.0" startX="17.0" startY="492.0" styleClass="line_divider" />
+            <ImageView fx:id="expandImageView" fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="157.0" AnchorPane.leftAnchor="13.0">
+               <image>
+                  <Image url="@resources/expand.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="15.0" layoutY="-39.0">
+               <children>
+                  <Label layoutX="51.0" layoutY="340.0" prefHeight="73.0" prefWidth="150.0" styleClass="label_smaller" stylesheets="@text_styles.css" text="Varkorg låst i kassan" textAlignment="CENTER" wrapText="true" />
+                  <ImageView fitHeight="87.0" fitWidth="78.0" layoutX="84.0" layoutY="262.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/lock.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>

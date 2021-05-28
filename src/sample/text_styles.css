@@ -35,6 +35,11 @@
 -fx-font-weight: 500;
 }
 
+.label_smaller {
+-fx-font-family: 'Roboto';
+-fx-font-size: 20px;
+}
+
 .label_normal {
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
