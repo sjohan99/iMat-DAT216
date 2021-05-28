@@ -60,6 +60,7 @@ public class CheckoutController implements Initializable {
         datePicker.setOnShowing(e-> Locale.setDefault(new Locale("sv")));
         datePicker.setOnHiding(e-> Locale.setDefault(new Locale("sv")));
         datePicker.setOnAction(e-> Locale.setDefault(new Locale("sv")));
+        datePicker.setShowWeekNumbers(false);
         datePicker.setDayCellFactory(picker -> new DateCell() {
             public void updateItem(LocalDate date, boolean empty) {
                 super.updateItem(date, empty);
