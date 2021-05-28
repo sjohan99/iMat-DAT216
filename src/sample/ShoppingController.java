@@ -147,6 +147,7 @@ public class ShoppingController implements Initializable {
         }
         addItems(searchItems);
         shoppingHeadline.setText("Sökresultat för '" + searchInput + "':");
+        if (searchInput.equals("")) { shoppingHeadline.setText("Alla"); }
     }
     
     private void populateItemCards() {
