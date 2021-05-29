@@ -141,6 +141,7 @@ public class UIController implements Initializable {
     }
 
     public void changeMainView(String buttonId) {
+        searchTextField.clear();
         startPagePane.toBack(); // Needed because it won't disappear otherwise
         guideStackPane.toBack();
         purchaseDonePane.toBack();
