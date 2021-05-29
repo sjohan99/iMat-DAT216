@@ -357,6 +357,7 @@ public class CheckoutController implements Initializable {
             case "back1":
                 confirmCartAnchorPane.toFront();
                 populateItemsToBeBought();
+                parentController.enableExpandCartButton();
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 sideMenus.changeIcon(0);
                 break;
@@ -369,6 +370,7 @@ public class CheckoutController implements Initializable {
                 break;
             case "back2":
                 personalInfoAnchorPane.toFront();
+                parentController.disableExpandCartButton();
                 sideMenus.changeIcon(1);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton2", 1);
                 break;

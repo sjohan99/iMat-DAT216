@@ -102,6 +102,7 @@ public class CartItem extends AnchorPane {
         backend.addItemToShoppingCart(product, amount);
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
+        parentController.checkoutController.populateItemsToBeBought();
     }
     
     private boolean tooManyDecimals(String input) {
@@ -160,6 +161,7 @@ public class CartItem extends AnchorPane {
         amountTextField.setText(String.valueOf(amount));
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
+        parentController.checkoutController.populateItemsToBeBought();
     }
     
     public void removeFromCart() {
@@ -173,5 +175,6 @@ public class CartItem extends AnchorPane {
         backend.addItemToShoppingCart(product, amountToBeRemoved);
         amountTextField.setText(String.valueOf(amountToBeRemoved));
         parentController.updateShoppingCart();
+        parentController.checkoutController.populateItemsToBeBought();
     }
 }
