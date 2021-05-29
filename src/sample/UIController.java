@@ -194,6 +194,7 @@ public class UIController implements Initializable {
                 shoppingController.inAllItemsCategory = true;
                 sideMenus.shoppingButtonGroup.activateSideBarButtons("");
                 buttonGrouper.activate("shopping_button");
+                sideMenus.shoppingButtonGroup.activateSideBarButtons("all");
                 expandImageReset();
                 break;
             case "imat":

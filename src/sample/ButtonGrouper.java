@@ -45,7 +45,6 @@ public class ButtonGrouper {
                 button.getStyleClass().removeAll("round_button_pressed");
                 button.getStyleClass().add("round_button_pressed");
             }
-            //System.out.println(button.getStyleClass());
         }
     }
     
