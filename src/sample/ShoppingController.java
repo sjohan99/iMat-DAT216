@@ -166,6 +166,7 @@ public class ShoppingController implements Initializable {
                 case "CABBAGE":
                 case "ROOT_VEGETABLE":
                 case "HERB":
+                case "FRUIT":
                     greensItems.add(itemCard);
                     break;
                 case "BERRY":
@@ -186,6 +187,7 @@ public class ShoppingController implements Initializable {
                 case "PASTA":
                 case "FLOUR_SUGAR_SALT":
                 case "POTATO_RICE":
+                case "BREAD":
                     skafferiItems.add(itemCard);
             }
         }
