@@ -24,7 +24,7 @@ public class ShoppingController implements Initializable {
     
     private UIController parentController;
     private BackendController backend;
-    public List<ItemCard> itemCards, mejeriItems, meatItems, skafferiItems, dryckItems,
+    public List<ItemCard> itemCards, allItems, mejeriItems, meatItems, skafferiItems, dryckItems,
             ekoItems, fruitItems, snackItems, greensItems, searchItems;
     
     @FXML public FlowPane shoppingFlowPane;
@@ -46,6 +46,7 @@ public class ShoppingController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         createItemCards();
+        allItems = new ArrayList<>();
         mejeriItems = new ArrayList<>();
         meatItems = new ArrayList<>();
         skafferiItems = new ArrayList<>();
@@ -152,6 +153,7 @@ public class ShoppingController implements Initializable {
     
     private void populateItemCards() {
         for (ItemCard itemCard : itemCards) {
+            allItems.add(itemCard);
             switch (itemCard.getCategory()) {
                 case "DAIRIES":
                     mejeriItems.add(itemCard);
@@ -193,6 +195,11 @@ public class ShoppingController implements Initializable {
     
     public void ShoppingChangeWindow(String id) {
         switch(id) {
+            case "all":
+                shoppingFlowPane.getChildren().clear();
+                addItems(allItems);
+                shoppingHeadline.setText("Alla");
+                break;
             case "mejeri":
                 shoppingFlowPane.getChildren().clear();
                 addItems(mejeriItems);
