@@ -23,7 +23,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -471,7 +471,7 @@
                   </Button>
                </children>
             </VBox>
-            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" onMouseClicked="#expandShoppingCart" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
                <content>
                   <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="273.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
                </content>
@@ -484,12 +484,6 @@
                   <Image url="@resources/expand.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="87.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="97.5" AnchorPane.topAnchor="220.0">
-               <image>
-                  <Image url="@resources/lock.png" />
-               </image>
-            </ImageView>
-            <Label prefHeight="73.0" prefWidth="150.0" styleClass="label_smaller" stylesheets="@text_styles.css" text="Varukorg låst i kassan" textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="61.5" AnchorPane.topAnchor="300.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -629,5 +623,11 @@
             </Label>
          </children>
       </AnchorPane>
+      <Label fx:id="cartLockedLabel" mouseTransparent="true" prefHeight="73.0" prefWidth="150.0" styleClass="label_smaller" stylesheets="@text_styles.css" text="Varukorg låst i kassan" textAlignment="CENTER" visible="false" wrapText="true" AnchorPane.rightAnchor="61.5" AnchorPane.topAnchor="425.0" />
+      <ImageView fx:id="lockImageView" fitHeight="87.0" fitWidth="78.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.rightAnchor="97.5" AnchorPane.topAnchor="345.0">
+         <image>
+            <Image url="@resources/lock.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

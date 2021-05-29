@@ -35,8 +35,8 @@ public class UIController implements Initializable {
 
     @FXML public Button shoppingButton, historyButton, myPagesButton, helpButton, expandButton, checkoutButton, backToShoppingButton,// main
             startShoppingButton, startHistoryButton, startMyPagesButton, skipGuideButton, endGuideButton, nextStepButton;// welcome page
-    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel, varukorgLabel;
-    @FXML private ImageView expandImageView;
+    @FXML public Label iMatLabel, adressLabel, totalPriceLabel, itemAmountLabel, endGuideLabel, skipGuideLabel, varukorgLabel, cartLockedLabel;
+    @FXML private ImageView expandImageView, lockImageView;
     @FXML private FlowPane shoppingCartPane;
     @FXML public AnchorPane sideMenuParentAnchorPane, parentView, shoppingCartAnchorPane, startPagePane, guidePane1, guidePane2, guidePane3, guidePane4, guidePane5, guidePane6, guideButtonsPane, topBarPane;
     @FXML public StackPane guideStackPane, purchaseDonePane;
@@ -69,7 +69,9 @@ public class UIController implements Initializable {
         updateItemCardAmounts();
         updateShoppingCart();
         // Next two lines are needed to simulate first run
-        backend.dataHandler.resetFirstRun();
+        //backend.dataHandler.reset();
+        //backend.dataHandler.resetFirstRun();
+        shoppingCartAnchorPane.setOnMouseClicked(this::openCart);
     }
 
 
@@ -174,7 +176,6 @@ public class UIController implements Initializable {
                 checkoutController.populateItemsToBeBought();
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 disableCheckoutButton();
-                disableExpandCartButton();
                 expandImageView.setVisible(false);
                 checkoutButton.setText("Du är i kassan");
                 break;
@@ -206,11 +207,17 @@ public class UIController implements Initializable {
         }
     }
     
-    private void disableCheckoutButton() {
+    public void disableCheckoutButton() {
             checkoutButton.getStyleClass().removeAll("checkout_button");
             checkoutButton.getStyleClass().removeAll("checkout_button_disabled");
             checkoutButton.getStyleClass().add("checkout_button_disabled");
-            checkoutButton.setMouseTransparent(true);
+            checkoutButton.setOnAction(this::mouseTrap);
+            //checkoutButton.setMouseTransparent(true);
+    }
+    
+    @FXML
+    public void mouseTrap(ActionEvent event){
+        event.consume();
     }
     
     private void enableCheckoutButton() {
@@ -219,18 +226,27 @@ public class UIController implements Initializable {
         checkoutButton.getStyleClass().add("checkout_button");
         checkoutButton.setText("Gå till kassan");
         checkoutButton.setMouseTransparent(false);
+        checkoutButton.setOnAction(e -> toggleOnButton(e));
     }
     
-    private void disableExpandCartButton() {
+    public void disableExpandCartButton() {
         expandButton.setMouseTransparent(true);
-        expandButton.setStyle("-fx-opacity: 0.6;");
+        //expandButton.setStyle("-fx-opacity: 0.6;");
         expandButton.setText("Ändra ej tillgänglig");
+        cartLockedLabel.setVisible(true);
+        lockImageView.setVisible(true);
+        shoppingCartAnchorPane.setOnMouseClicked(null);
+        shoppingCartAnchorPane.setStyle("-fx-opacity: 0.6");
     }
     
-    private void enableExpandCartButton() {
+    public void enableExpandCartButton() {
         expandButton.setText("Ändra i varukorgen");
         expandButton.setMouseTransparent(false);
-        expandButton.setStyle("-fx-opacity: 1;");
+        //expandButton.setStyle("-fx-opacity: 1;");
+        cartLockedLabel.setVisible(false);
+        lockImageView.setVisible(false);
+        shoppingCartAnchorPane.setOnMouseClicked(this::openCart);
+        shoppingCartAnchorPane.setStyle("-fx-opacity: 1");
     }
 
     /**
@@ -250,6 +266,18 @@ public class UIController implements Initializable {
         
         for (Node item : shoppingCartPane.getChildren()) {
             ((CartItem) item).resizeNameLabel();
+        }
+    }
+    
+    @FXML
+    protected void openCart(MouseEvent event)  {
+        if (!shoppingCartExpanded) {
+            expandButton.setText("Minska varukorg");
+            expandImageView.setRotate(180);
+            timer.start();
+            for (Node item : shoppingCartPane.getChildren()) {
+                ((CartItem) item).resizeNameLabel();
+            }
         }
     }
     
