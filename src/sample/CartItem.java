@@ -103,6 +103,7 @@ public class CartItem extends AnchorPane {
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
         parentController.checkoutController.populateItemsToBeBought();
+        checkIfCartEmpty();
     }
     
     private boolean tooManyDecimals(String input) {
@@ -162,6 +163,17 @@ public class CartItem extends AnchorPane {
         parentController.updateShoppingCart();
         parentController.updateItemCardAmounts();
         parentController.checkoutController.populateItemsToBeBought();
+        checkIfCartEmpty();
+    }
+    
+    private void checkIfCartEmpty() {
+        if (backend.shoppingCart.getItems().size() == 0) {
+            parentController.checkoutController.disableConfirmItemsButton();
+            if (parentController.checkoutController.emptyCartLabel1 != null) {
+                parentController.checkoutController.emptyCartLabel1.setVisible(true);
+                parentController.checkoutController.emptyCartLabel2.setVisible(true);
+            }
+        }
     }
     
     public void removeFromCart() {
@@ -176,5 +188,6 @@ public class CartItem extends AnchorPane {
         amountTextField.setText(String.valueOf(amountToBeRemoved));
         parentController.updateShoppingCart();
         parentController.checkoutController.populateItemsToBeBought();
+        checkIfCartEmpty();
     }
 }

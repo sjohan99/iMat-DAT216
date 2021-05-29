@@ -33,7 +33,7 @@ public class CheckoutController implements Initializable {
     @FXML TextField adressTextField, postNumTextField, postalAreaTextField;
     @FXML TextField cardNumberTextField, securityCodeTextField, cardMonthTextField, cardYearTextField;
     @FXML TextField firstNameTextField, surnameTextField, emailTextField, phoneTextField;
-    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel1, dayLabel2, dayLabel3;
+    @FXML Label adressLabel, dateLabel, priceLabel, totalPriceLabel, monthLabel1, monthLabel2, monthLabel3, dayLabel1, dayLabel2, dayLabel3, emptyCartLabel1, emptyCartLabel2;
     @FXML ScrollPane checkoutScrollPane;
     @FXML FlowPane checkoutItemFlowPane;
     @FXML DatePicker datePicker = new DatePicker();
@@ -109,14 +109,17 @@ public class CheckoutController implements Initializable {
     }
 
     public void populateItemsToBeBought() {
-        checkoutItemFlowPane.getChildren().clear();
-        double total = 0;
-        for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
-            checkoutItemFlowPane.getChildren().add(new HistoryItem(shoppingItem));
-            //total += shoppingItem.getTotal();
-        }
-        totalPriceLabel.setText("Totalt: " + (backend.getProductPrice(backend.shoppingCart.getTotal())) + " kr");
+        try {
+            checkoutItemFlowPane.getChildren().clear();
+            double total = 0;
+            for (ShoppingItem shoppingItem : backend.shoppingCart.getItems()) {
+                checkoutItemFlowPane.getChildren().add(new HistoryItem(shoppingItem));
+                //total += shoppingItem.getTotal();
+            }
+            totalPriceLabel.setText("Totalt: " + (backend.getProductPrice(backend.shoppingCart.getTotal())) + " kr");
+        } catch (Exception e) {
         
+        }
     }
     
 
@@ -343,6 +346,21 @@ public class CheckoutController implements Initializable {
         String id = ((Node) e.getSource()).getId();
         checkoutChangeWindow(id);
     }
+    
+    public void disableConfirmItemsButton() {
+        if (confirmButton1 != null) {
+            confirmButton1.setStyle("-fx-background-color: #C9C9C9");
+            confirmButton1.setMouseTransparent(true);
+        }
+    }
+    
+    public void enableConfirmItemsButton() {
+        if (confirmButton1 != null) {
+            confirmButton1.setStyle("-fx-background-color: #F2B84B");
+            confirmButton1.setMouseTransparent(false);
+        }
+    }
+    
 
     public void checkoutChangeWindow(String id) {
         warningAnchorPane.toBack();

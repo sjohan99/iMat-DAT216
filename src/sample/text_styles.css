@@ -21,6 +21,12 @@
 -fx-font-size: 45px;
 }
 
+.empty_cart_text {
+-fx-font-family: 'Roboto Medium';
+-fx-font-size: 32px;
+-fx-font-color: red
+}
+
 .label_bold {
 -fx-font-family: 'Roboto Medium';
 -fx-font-size: 30px;

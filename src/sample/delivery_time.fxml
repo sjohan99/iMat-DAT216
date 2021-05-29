@@ -319,6 +319,16 @@
                   <Label layoutX="88.0" layoutY="9.0" prefHeight="54.0" prefWidth="196.0" styleClass="headline_label_history" stylesheets="@base_style.css" text="Kassan" />
                   <Line endX="-49.0" endY="466.2928466796875" layoutX="136.0" layoutY="82.0" startX="-49.0" startY="75.49996948242188" />
                   <Line endX="-49.0" endY="466.2928466796875" layoutX="1007.0" layoutY="82.0" startX="-49.0" startY="75.49996948242188" />
+                  <Label fx:id="emptyCartLabel1" alignment="TOP_LEFT" layoutX="250.0" layoutY="300.0" mouseTransparent="true" prefHeight="139.0" prefWidth="540.0" styleClass="empty_cart_text" stylesheets="@text_styles.css" text="Din varukorg är tom, gå tillbaka till Handla för att lägga till varor i varukorgen" textFill="RED" visible="false" wrapText="true">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emptyCartLabel2" layoutX="707.0" layoutY="617.0" mouseTransparent="true" text="Din varukorg är tom" textFill="RED" visible="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
          </children>
