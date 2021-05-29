@@ -176,6 +176,9 @@ public class UIController implements Initializable {
                 checkoutController.populateItemsToBeBought();
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton1", 0);
                 disableCheckoutButton();
+                checkoutController.enableConfirmItemsButton();
+                checkoutController.emptyCartLabel1.setVisible(false);
+                checkoutController.emptyCartLabel2.setVisible(false);
                 expandImageView.setVisible(false);
                 checkoutButton.setText("Du är i kassan");
                 break;
