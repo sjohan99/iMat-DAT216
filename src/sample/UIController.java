@@ -266,10 +266,12 @@ public class UIController implements Initializable {
         if (!shoppingCartExpanded) {
             expandButton.setText("Minska varukorg");
             expandImageView.setRotate(180);
+            shoppingCartAnchorPane.setCursor(Cursor.DEFAULT);
         }
         else {
             expandButton.setText("Ändra i varukorgen");
             expandImageView.setRotate(0);
+            shoppingCartAnchorPane.setCursor(Cursor.HAND);
         }
         timer.start();
         
@@ -283,6 +285,7 @@ public class UIController implements Initializable {
         if (!shoppingCartExpanded) {
             expandButton.setText("Minska varukorg");
             expandImageView.setRotate(180);
+            shoppingCartAnchorPane.setCursor(Cursor.DEFAULT);
             timer.start();
             for (Node item : shoppingCartPane.getChildren()) {
                 ((CartItem) item).resizeNameLabel();
