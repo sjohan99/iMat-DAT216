@@ -58,6 +58,7 @@ public class UIController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingCartExpanded = false;
         checkoutController = new CheckoutController(this, sideMenus);
+        shoppingCartScrollPane.setStyle("-fx-font-size: 16px;");
         initMenuButtons();
         initStartMenuButtons();
         addSideMenus();

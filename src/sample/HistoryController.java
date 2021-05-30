@@ -32,6 +32,7 @@ public class HistoryController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         historyGuidePane.toFront();
         historyScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        historyScrollPane.setStyle("-fx-font-size: 20px;");
     }
     
     public void populateHistoryOrder(Order order) {

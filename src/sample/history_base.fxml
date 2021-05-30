@@ -49,9 +49,9 @@
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <ScrollPane fx:id="historyScrollPane" layoutX="53.0" layoutY="211.0" prefHeight="442.0" prefWidth="888.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="74.0">
+                  <ScrollPane fx:id="historyScrollPane" layoutX="53.0" layoutY="211.0" prefHeight="442.0" prefWidth="888.0" style="-fx-background-color: #FFFFFF;" styleClass="scroll_pane_style_white" stylesheets="@base_style.css" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="74.0">
                      <content>
-                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" />
+                        <FlowPane fx:id="HistoryItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" styleClass="remove_focus" />
                      </content>
                   </ScrollPane>
                   <Label layoutX="102.0" layoutY="162.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="96.0">

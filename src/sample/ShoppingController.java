@@ -45,6 +45,7 @@ public class ShoppingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         shoppingScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        shoppingScrollPane.setStyle("-fx-font-size: 40px;");
         createItemCards();
         allItems = new ArrayList<>();
         mejeriItems = new ArrayList<>();

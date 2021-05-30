@@ -53,6 +53,7 @@ public class CheckoutController implements Initializable {
         initMyPagesTextFieldListeners();
         checkoutScrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         initDatePicker();
+        checkoutScrollPane.setStyle("-fx-font-size: 20px;");
     }
 
     private void initDatePicker() {
