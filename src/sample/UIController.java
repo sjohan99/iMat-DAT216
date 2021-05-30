@@ -293,6 +293,10 @@ public class UIController implements Initializable {
         if (shoppingCartExpanded) {
             expandButton.setText("Ändra i varukorgen");
             timer.start();
+            expandImageView.setRotate(0);
+            for (Node item : shoppingCartPane.getChildren()) {
+                ((CartItem) item).resizeNameLabel();
+            }
         }
     }
     
