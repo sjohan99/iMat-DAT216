@@ -20,6 +20,18 @@
 -fx-fill: #4E4873;
 }
 
+.add_items_to_cart_button_disabled {
+-fx-background-color: #C9C9C9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-background-radius: 0px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 0;
+-fx-font-family: 'Roboto';
+-fx-font-size: 30px;
+}
+
 .add_items_to_cart_button {
 -fx-background-color: #F2B84B;
 -fx-border-width: 1px;

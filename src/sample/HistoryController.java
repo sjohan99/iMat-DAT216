@@ -62,13 +62,18 @@ public class HistoryController implements Initializable {
     }
     
     private void disableAddButton() {
-        addItemsToCart.setStyle("-fx-background-color: #C9C9C9");
+    
+        addItemsToCart.getStyleClass().removeAll("add_items_to_cart_button");
+        addItemsToCart.getStyleClass().removeAll("add_items_to_cart_button_disabled");
+        addItemsToCart.getStyleClass().add("add_items_to_cart_button_disabled");
         addItemsToCart.setMouseTransparent(true);
         addItemsToCart.setText("Varor tillagda!");
     }
     
     private void enableAddButton() {
-        addItemsToCart.setStyle("-fx-background-color: #F2B84B");
+        addItemsToCart.getStyleClass().removeAll("add_items_to_cart_button");
+        addItemsToCart.getStyleClass().removeAll("add_items_to_cart_button_disabled");
+        addItemsToCart.getStyleClass().add("add_items_to_cart_button");
         addItemsToCart.setMouseTransparent(false);
         addItemsToCart.setText("Lägg till i varukorgen");
     }
