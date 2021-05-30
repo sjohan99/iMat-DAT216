@@ -29,7 +29,7 @@ public class HistoryItem extends AnchorPane {
         itemName.setText(shoppingItem.getProduct().getName());
         itemAmount.setText(getCorrectAmountFormat(shoppingItem));
         itemPrice.setText(backend.getCorrectFormatPrice(shoppingItem.getProduct()));
-        itemCost.setText(String.valueOf(shoppingItem.getTotal()));
+        itemCost.setText(backend.getProductPrice(shoppingItem.getTotal()));
     }
     
     private String getCorrectAmountFormat(ShoppingItem shoppingItem) {
