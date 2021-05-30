@@ -159,20 +159,46 @@ public class CheckoutController implements Initializable {
         setErrorTextField(surnameTextField);
         setErrorTextField(emailTextField);
         setErrorTextField(phoneTextField);
-        return (setErrorTextField(firstNameTextField) || setErrorTextField(surnameTextField) || setErrorTextField(emailTextField) || setErrorTextField(phoneTextField)); }
-
+        if (setErrorTextField(firstNameTextField) || setErrorTextField(surnameTextField) || setErrorTextField(emailTextField) || setErrorTextField(phoneTextField)) {
+            disableNextStepButton(nextStepButton1);
+            warningAnchorPane.toFront();
+            return true;
+        } else {
+            enableNextStepButton(nextStepButton1);
+            warningAnchorPane.toBack();
+            return false;
+        }
+    }
     private boolean isAdressNull() {
         setErrorTextField(adressTextField);
         setErrorTextField(postNumTextField);
         setErrorTextField(postalAreaTextField);
-        return (setErrorTextField(adressTextField) || setErrorTextField(postNumTextField) || setErrorTextField(postalAreaTextField)); }
+        if (setErrorTextField(adressTextField) || setErrorTextField(postNumTextField) || setErrorTextField(postalAreaTextField)) {
+            disableNextStepButton(nextStepButton2);
+            warningAnchorPane.toFront();
+            return true;
+        } else {
+            enableNextStepButton(nextStepButton2);
+            warningAnchorPane.toBack();
+            return false;
+        }
+    }
 
     private boolean isCardNull() {
         setErrorTextField(cardNumberTextField);
         setErrorTextField(cardMonthTextField);
         setErrorTextField(cardYearTextField);
         setErrorTextField(securityCodeTextField);
-        return (setErrorTextField(cardNumberTextField) || setErrorTextField(cardMonthTextField) || setErrorTextField(cardYearTextField) || setErrorTextField(securityCodeTextField)); }
+        if (setErrorTextField(cardNumberTextField) || setErrorTextField(cardMonthTextField) || setErrorTextField(cardYearTextField) || setErrorTextField(securityCodeTextField)) {
+            disableNextStepButton(nextStepButton4);
+            warningAnchorPane.toFront();
+            return true;
+        } else {
+            enableNextStepButton(nextStepButton4);
+            warningAnchorPane.toBack();
+            return false;
+        }
+    }
 
     /**
      * Updates the information in backend immediately when the text in a textfield is changed
@@ -346,6 +372,16 @@ public class CheckoutController implements Initializable {
         String id = ((Node) e.getSource()).getId();
         checkoutChangeWindow(id);
     }
+
+    private void disableNextStepButton(Button button) {
+        button.setStyle("-fx-background-color: #C9C9C9");
+        button.setMouseTransparent(true);
+    }
+
+    private void enableNextStepButton(Button button) {
+        button.setStyle("-fx-background-color: #F2B84B");
+        button.setMouseTransparent(false);
+    }
     
     public void disableConfirmItemsButton() {
         if (confirmButton1 != null) {
@@ -364,13 +400,16 @@ public class CheckoutController implements Initializable {
 
     public void checkoutChangeWindow(String id) {
         warningAnchorPane.toBack();
+        isPersonNull();
+        isAdressNull();
+        isCardNull();
         switch(id) {
             case "next_step1":
             case "back3":
-                if (isPersonNull()) { warningAnchorPane.toFront(); break; }
                 adressAnchorPane.toFront();
                 sideMenus.changeIcon(2);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton3", 2);
+                if (isAdressNull()) { warningAnchorPane.toFront(); }
                 break;
             case "back1":
                 confirmCartAnchorPane.toFront();
@@ -381,7 +420,6 @@ public class CheckoutController implements Initializable {
                 break;
             case "next_step2":
             case "back4":
-                if (isAdressNull()) { warningAnchorPane.toFront(); break; }
                 deliveryTimeAnchorPane.toFront();
                 sideMenus.changeIcon(3);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton4", 3);
@@ -389,18 +427,18 @@ public class CheckoutController implements Initializable {
             case "back2":
                 personalInfoAnchorPane.toFront();
                 parentController.disableExpandCartButton();
-                
                 sideMenus.changeIcon(1);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton2", 1);
+                if (isPersonNull()) { warningAnchorPane.toFront(); }
                 break;
             case "next_step3":
             case "back5":
                 cardDetailsAnchorPane.toFront();
                 sideMenus.changeIcon(4);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton5", 4);
+                if (isCardNull()) { warningAnchorPane.toFront(); }
                 break;
             case "next_step4":
-                if (isCardNull()) { warningAnchorPane.toFront(); break; }
                 confirmOrderAnchorPane.toFront();
                 adressLabel.setText(backend.dataHandler.getCustomer().getAddress() + ", " + backend.dataHandler.getCustomer().getPostCode() + " " + backend.dataHandler.getCustomer().getPostAddress());
                 sideMenus.changeIcon(5);
