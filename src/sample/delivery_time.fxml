@@ -279,9 +279,9 @@
                         <Font name="Roboto" size="24.0" />
                      </font>
                   </Label>
-                  <ScrollPane fx:id="checkoutScrollPane" layoutX="51.0" layoutY="157.0" prefHeight="394.0" prefWidth="909.0" style="-fx-background-color: #FFFFFF;" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="73.0">
+                  <ScrollPane fx:id="checkoutScrollPane" layoutX="51.0" layoutY="157.0" prefHeight="394.0" prefWidth="909.0" style="-fx-background-color: #FFFFFF;" styleClass="scroll_pane_style_white" stylesheets="@base_style.css" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="73.0">
                      <content>
-                        <FlowPane fx:id="checkoutItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" />
+                        <FlowPane fx:id="checkoutItemFlowPane" prefHeight="440.0" prefWidth="903.0" style="-fx-background-color: #FFFFFF;" styleClass="remove_focus" />
                      </content>
                   </ScrollPane>
                   <Label layoutX="102.0" layoutY="112.0" styleClass="label_bold" stylesheets="@text_styles.css" text="Vara" AnchorPane.leftAnchor="96.0">
