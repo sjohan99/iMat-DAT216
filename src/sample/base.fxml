@@ -23,7 +23,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
       <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
          <children>
@@ -485,6 +485,9 @@
                </image>
             </ImageView>
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
       <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>

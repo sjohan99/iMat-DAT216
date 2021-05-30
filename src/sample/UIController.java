@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -239,6 +240,7 @@ public class UIController implements Initializable {
         expandButton.setText("Ändra ej tillgänglig");
         cartLockedLabel.setVisible(true);
         lockImageView.setVisible(true);
+        shoppingCartAnchorPane.setCursor(Cursor.DEFAULT);
         shoppingCartAnchorPane.setOnMouseClicked(null);
         shoppingCartAnchorPane.setStyle("-fx-opacity: 0.6");
     }
@@ -249,6 +251,7 @@ public class UIController implements Initializable {
         //expandButton.setStyle("-fx-opacity: 1;");
         cartLockedLabel.setVisible(false);
         lockImageView.setVisible(false);
+        shoppingCartAnchorPane.setCursor(Cursor.HAND);
         shoppingCartAnchorPane.setOnMouseClicked(this::openCart);
         shoppingCartAnchorPane.setStyle("-fx-opacity: 1");
     }
