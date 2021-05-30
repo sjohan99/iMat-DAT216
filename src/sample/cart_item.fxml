@@ -11,13 +11,13 @@
       <Label fx:id="itemAmountAndName" ellipsisString=".." layoutX="-2.0" layoutY="11.0" maxWidth="250.0" prefHeight="28.0" prefWidth="300.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="1x Västerbottenost" AnchorPane.bottomAnchor="11.0" AnchorPane.topAnchor="11.0" />
       <Label fx:id="priceLabel" alignment="BASELINE_LEFT" layoutX="270.0" layoutY="11.0" prefHeight="28.0" prefWidth="98.0" styleClass="cart_item_text_price" stylesheets="@base_style.css" text="19:90" AnchorPane.topAnchor="16.0" />
       <TextField alignment="CENTER" editable="false" layoutX="343.0" layoutY="7.0" mouseTransparent="true" prefHeight="46.0" prefWidth="133.0" styleClass="rounded_smaller_background" stylesheets="@item_card_style.css" />
-      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="364.0" layoutY="12.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" />
+      <TextField fx:id="amountTextField" alignment="CENTER" layoutX="364.0" layoutY="12.0" prefHeight="32.0" prefWidth="68.0" styleClass="writing_text_area" stylesheets="@item_card_style.css" text="1" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0" />
       <TextField alignment="CENTER" layoutX="343.0" layoutY="7.0" mouseTransparent="true" prefHeight="46.0" prefWidth="133.0" styleClass="rounded_smaller" stylesheets="@item_card_style.css" AnchorPane.bottomAnchor="7.0" AnchorPane.topAnchor="7.0" />
       <Circle fx:id="removeCircleButton" fill="WHITE" layoutX="364.0" layoutY="30.0" onMouseClicked="#removeFromCart" radius="17.0" stroke="BLACK" strokeType="INSIDE" styleClass="remove_circle_style" />
       <Circle fx:id="addCircleButton" fill="WHITE" layoutX="455.0" layoutY="30.0" onMouseClicked="#addFromCart" radius="17.0" stroke="BLACK" strokeType="INSIDE" styleClass="add_circle_style" />
       <Line endX="95.0" layoutX="262.0" layoutY="30.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
       <Line endX="95.37911987304688" layoutX="353.0" layoutY="30.0" mouseTransparent="true" startX="110.0" strokeWidth="3.0" />
-      <Label fx:id="unitSuffixLabel" layoutX="417.0" layoutY="18.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" AnchorPane.bottomAnchor="19.0" />
+      <Label fx:id="unitSuffixLabel" layoutX="417.0" layoutY="18.0" styleClass="item_suffix" stylesheets="@item_card_style.css" text="kg" AnchorPane.bottomAnchor="18.5" AnchorPane.topAnchor="18.5" />
       <Line endX="95.37911987304688" layoutX="353.0" layoutY="30.0" mouseTransparent="true" rotate="90.0" startX="110.0" strokeWidth="3.0" />
    </children>
 </fx:root>
