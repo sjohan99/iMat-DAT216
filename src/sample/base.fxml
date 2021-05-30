@@ -268,7 +268,7 @@
                         <Font name="Roboto" size="37.0" />
                      </font>
                   </Label>
-                  <Label fx:id="adressLabel" alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="130.0" prefWidth="538.0" text="Label" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
+                  <Label fx:id="adressLabel" alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="130.0" prefWidth="538.0" text="Label" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
                      <font>
                         <Font name="Roboto" size="37.0" />
                      </font>
