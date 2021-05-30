@@ -389,6 +389,7 @@ public class CheckoutController implements Initializable {
             case "back2":
                 personalInfoAnchorPane.toFront();
                 parentController.disableExpandCartButton();
+                
                 sideMenus.changeIcon(1);
                 sideMenus.checkoutButtonsGroup.activateCheckoutButtons("checkoutButton2", 1);
                 break;

@@ -181,7 +181,6 @@ public class UIController implements Initializable {
                 checkoutController.enableConfirmItemsButton();
                 checkoutController.emptyCartLabel1.setVisible(false);
                 checkoutController.emptyCartLabel2.setVisible(false);
-                expandImageView.setVisible(false);
                 checkoutButton.setText("Du är i kassan");
                 break;
             case "help_button":
@@ -236,6 +235,7 @@ public class UIController implements Initializable {
     }
     
     public void disableExpandCartButton() {
+        expandImageView.setVisible(false);
         expandButton.setMouseTransparent(true);
         //expandButton.setStyle("-fx-opacity: 0.6;");
         expandButton.setText("Ändra ej tillgänglig");
@@ -247,6 +247,7 @@ public class UIController implements Initializable {
     }
     
     public void enableExpandCartButton() {
+        expandImageReset();
         expandButton.setText("Ändra i varukorgen");
         expandButton.setMouseTransparent(false);
         //expandButton.setStyle("-fx-opacity: 1;");
