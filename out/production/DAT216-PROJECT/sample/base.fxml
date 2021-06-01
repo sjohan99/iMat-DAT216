@@ -1,23 +1,283 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UIController">
    <children>
+      <StackPane fx:id="guideStackPane" prefHeight="900.0" prefWidth="1600.0">
+         <children>
+            <AnchorPane fx:id="guidePane1" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <Ellipse fill="#f2b84b" layoutX="819.0" layoutY="478.0" radiusX="198.0" radiusY="138.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
+                  <Label layoutX="686.0" layoutY="372.0" prefHeight="220.0" prefWidth="272.0" text="Här kommer en snabb guide för att du lättare ska lära dig hur du navigerar i applikationen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guidePane2" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="197.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" rotate="33.7">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="556.0" layoutY="329.0" radiusX="184.0" radiusY="88.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
+                  <Label layoutX="420.0" layoutY="222.0" prefHeight="214.0" prefWidth="272.0" text="Tryck på &quot;iMat&quot; för att komma tillbaka till första sidan" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guidePane6" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1087.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" rotate="143.1">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="1075.0" layoutY="308.0" radiusX="184.0" radiusY="102.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
+                  <Label layoutX="923.0" layoutY="219.0" prefHeight="184.0" prefWidth="313.0" text="Via hjälp-knappen kan du titta på den här genomgången igen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+                  <Ellipse fill="#f2b84b" layoutX="608.0" layoutY="650.0" radiusX="151.0" radiusY="83.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow height="41.68" radius="20.42" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
+                  <Label layoutX="495.0" layoutY="595.0" prefHeight="116.0" prefWidth="236.0" text="Nu är det bara att sätta igång!" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guidePane3" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="904.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" rotate="135.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="833.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="867.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="1027.0" layoutY="393.0" radiusX="173.0" radiusY="107.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
+                  <Label layoutX="895.0" layoutY="286.0" prefHeight="214.0" prefWidth="272.0" text="Här kan du handla, se dina tidigare köp eller ändra dina uppgifter" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guideButtonsPane">
+               <children>
+                  <Button fx:id="skipGuideButton" layoutX="1066.0" layoutY="786.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="61.0" prefWidth="170.0" styleClass="skip_button_startwizard" stylesheets="@roundedbuttonstyle.css" textAlignment="CENTER" wrapText="true">
+                     <effect>
+                        <DropShadow height="36.75" radius="13.9375">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Button>
+                  <Button fx:id="nextStepButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#changeGuideView" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css" text="Nästa steg">
+                     <graphic>
+                        <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@resources/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="endGuideButton" contentDisplay="RIGHT" layoutX="1041.0" layoutY="689.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="85.0" prefWidth="225.0" styleClass="next_step_startwizard" stylesheets="@roundedbuttonstyle.css">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Button>
+                  <Label fx:id="endGuideLabel" layoutX="1075.0" layoutY="717.0" mouseTransparent="true" text="Börja Handla!">
+                     <font>
+                        <Font name="Roboto" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="skipGuideLabel" layoutX="1098.0" layoutY="786.0" mouseTransparent="true" prefHeight="61.0" prefWidth="115.0" stylesheets="@roundedbuttonstyle.css" text="Hoppa över denna guide" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guidePane5" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1020.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true" rotate="-146.3">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="986.0" layoutY="278.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="1020.0" layoutY="464.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" rotate="-30.3">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="994.0" layoutY="293.0" radiusX="144.0" radiusY="96.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
+                  <Label layoutX="882.0" layoutY="194.0" prefHeight="198.0" prefWidth="236.0" text="Här syns dina tillagda varor i varukorgen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+                  <Ellipse fill="#f2b84b" layoutX="1075.0" layoutY="532.0" radiusX="150.0" radiusY="120.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Ellipse>
+                  <Label layoutX="961.0" layoutY="438.0" prefHeight="198.0" prefWidth="236.0" text="Tryck direkt på varan eller på knappen under för att ändra i varukorgen" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="guidePane4" prefHeight="900.0" prefWidth="1600.0">
+               <children>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="306.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="284.0" layoutY="462.0" pickOnBounds="true" preserveRatio="true" rotate="-35.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="334.0" layoutX="276.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true" rotate="35.0">
+                     <image>
+                        <Image url="@resources/arrow_long.png" />
+                     </image>
+                  </ImageView>
+                  <Ellipse fill="#f2b84b" layoutX="660.0" layoutY="435.0" radiusX="180.0" radiusY="89.0" stroke="BLACK" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow radius="15.25" width="42.0">
+                           <color>
+                              <Color red="0.529411792755127" green="0.5058823823928833" blue="0.5058823823928833" />
+                           </color>
+                        </DropShadow>
+                     </effect></Ellipse>
+                  <Label layoutX="508.0" layoutY="345.0" prefHeight="205.0" prefWidth="313.0" text="För att visa varor väljer du en kategori i listan här" textAlignment="CENTER" wrapText="true" AnchorPane.topAnchor="330.0">
+                     <font>
+                        <Font name="Roboto" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="purchaseDonePane" prefHeight="900.0" prefWidth="1600.0">
+         <children>
+            <AnchorPane opacity="0.5" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #000000;" />
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="700.0" style="-fx-background-color: #FFFFFF;">
+               <children>
+                  <Label layoutX="11.0" layoutY="52.0" prefHeight="77.0" prefWidth="658.0" styleClass="label_scaled_big" stylesheets="@text_styles.css" text="Tack för din beställning!" AnchorPane.leftAnchor="28.0" AnchorPane.topAnchor="70.0" />
+                  <Label alignment="CENTER" layoutX="336.0" layoutY="202.0" prefHeight="52.0" prefWidth="550.0" text="Vi levererar dina varor till:" textAlignment="CENTER" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="196.0">
+                     <font>
+                        <Font name="Roboto" size="37.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="adressLabel" alignment="CENTER" layoutX="343.0" layoutY="303.0" prefHeight="130.0" prefWidth="538.0" text="Label" textAlignment="CENTER" wrapText="true" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="258.0">
+                     <font>
+                        <Font name="Roboto" size="37.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="backToShoppingButton" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="366.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="75.0" prefWidth="275.0" styleClass="next_step_button_final" stylesheets="@roundedbuttonstyle.css" text="Gå till handla" textAlignment="CENTER" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="206.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
       <GridPane layoutY="125.0" opacity="0.58" prefHeight="773.0" prefWidth="275.0" style="-fx-background-color: #000000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
@@ -29,66 +289,217 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="275.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="69.0" minHeight="0.0" prefHeight="16.536178588867188" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="460.0" minHeight="10.0" prefHeight="443.4638214111328" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <SplitPane dividerPositions="0.18523153942428036, 0.8291614518147684" prefHeight="820.0" prefWidth="1210.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+      <SplitPane dividerPositions="0.18523153942428036" prefHeight="820.0" prefWidth="1210.0" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
         <items>
-          <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0">
+          <AnchorPane fx:id="sideMenuParentAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="672.0" prefWidth="275.0" style="-fx-background-color: #FFFFFF;">
                <children>
                   <VBox layoutX="39.0" layoutY="37.0" prefHeight="496.0" prefWidth="158.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label text="Kategorier">
+                        <Label prefHeight="44.0" prefWidth="278.0" styleClass="headline_label" stylesheets="@roundedbuttonstyle.css" text="   Kategorier" textAlignment="CENTER">
                            <font>
-                              <Font size="36.0" />
+                              <Font name="System Bold" size="36.0" />
                            </font>
                         </Label>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="115.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Mejeri">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Chark">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="120.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Chark">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Skafferi">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="275.0" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="40.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frukt &amp; Grönt">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Snacks">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="80.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Frysvaror">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="115.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Dryck">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="130.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Städ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" graphicTextGap="100.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="275.0" styleClass="sidebar_button" stylesheets="@roundedbuttonstyle.css" text="Hushåll">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@resources/arrow.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                           </graphic>
                         </Button>
                      </children>
                   </VBox>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <ScrollPane prefHeight="776.0" prefWidth="1033.0" />
-               </children>
-            </AnchorPane>
-            <AnchorPane maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-               <children>
-                  <VBox layoutX="44.0" layoutY="230.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-               </children>
-            </AnchorPane>
+          <AnchorPane fx:id="parentView" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF;" />
         </items>
       </SplitPane>
-      <AnchorPane layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="shoppingCartAnchorPane" maxWidth="275.0" minHeight="0.0" minWidth="0.0" prefHeight="775.0" prefWidth="500.0" style="-fx-background-color: #F2F0E9;" styleClass="shopping_cart" stylesheets="@base_style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="126.0">
          <children>
-            <Label layoutX="28.0" text="iMat">
+            <Label fx:id="varukorgLabel" alignment="CENTER" maxWidth="500.0" prefHeight="68.0" prefWidth="275.0" styleClass="headline_label" stylesheets="@side_menu_style.css" text="Varukorg" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+            </Label>
+            <VBox layoutX="44.0" layoutY="230.0" maxWidth="500.0" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: F2F0E9;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Button fx:id="expandButton" alignment="CENTER" graphicTextGap="20.0" maxWidth="-Infinity" mnemonicParsing="false" onAction="#expandShoppingCart" prefHeight="75.0" prefWidth="500.0" styleClass="change_cart_button" stylesheets="@roundedbuttonstyle.css" text="Ändra i varukorgen" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="checkoutButton" alignment="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="150.0" prefWidth="500.0" styleClass="checkout_button" stylesheets="@roundedbuttonstyle.css" text="Gå till kassan">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <ScrollPane fx:id="shoppingCartScrollPane" fitToWidth="true" layoutY="67.0" maxWidth="500.0" prefHeight="425.0" prefWidth="275.0" style="-fx-background-color: #F2F0E9;" styleClass="scroll_pane_style" stylesheets="@base_style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="68.0">
+               <content>
+                  <FlowPane fx:id="shoppingCartPane" maxHeight="437.0" maxWidth="480.0" prefHeight="427.0" prefWidth="273.0" style="-fx-background-color: #F2F0E9;" stylesheets="@base_style.css" />
+               </content>
+            </ScrollPane>
+            <Label fx:id="totalPriceLabel" layoutY="538.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Totalt: 0kr" />
+            <Label fx:id="itemAmountLabel" layoutX="2.0" layoutY="510.0" styleClass="cart_item_text" stylesheets="@base_style.css" text="Varor: 0st" />
+            <Line fx:id="cartLineDivider" endX="257.0" endY="492.0" layoutY="14.0" startX="17.0" startY="492.0" styleClass="line_divider" />
+            <ImageView fx:id="expandImageView" fitHeight="24.0" fitWidth="24.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="157.0" AnchorPane.leftAnchor="13.0">
+               <image>
+                  <Image url="@resources/expand.png" />
+               </image>
+            </ImageView>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </AnchorPane>
+      <AnchorPane fx:id="topBarPane" layoutX="273.0" layoutY="48.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F25E3D;" styleClass="top_bar" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="775.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label id="imat" fx:id="iMatLabel" layoutX="46.0" layoutY="-5.0" stylesheets="@roundedbuttonstyle.css" text="iMat" AnchorPane.leftAnchor="54.5">
                <font>
                   <Font size="86.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Label>
-            <Button id="my_pages_button" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
+            <Button id="my_pages_button" fx:id="myPagesButton" layoutX="1152.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Mina sidor" textOverrun="CLIP" AnchorPane.rightAnchor="250.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -100,7 +511,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="help_button" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
+            <Button id="help_button" fx:id="helpButton" layoutX="1325.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Hjälp" textOverrun="CLIP" AnchorPane.rightAnchor="21.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -112,7 +523,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="history_button" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
+            <Button id="history_button" fx:id="historyButton" layoutX="914.0" layoutY="25.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Historik" textOverrun="CLIP" AnchorPane.rightAnchor="479.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -124,7 +535,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="shopping_button" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
+            <Button id="shopping_button" fx:id="shoppingButton" layoutX="592.0" layoutY="23.0" mnemonicParsing="false" onAction="#toggleOnButton" prefHeight="80.0" prefWidth="208.0" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" text="Handla" textOverrun="CLIP" AnchorPane.rightAnchor="708.0">
                <font>
                   <Font size="26.0" />
                </font>
@@ -139,7 +550,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField id="search_button" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="round_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
+            <TextField id="search_button" fx:id="searchTextField" layoutX="324.0" layoutY="23.0" prefHeight="80.0" prefWidth="340.0" promptText="Sök vara" styleClass="search_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.rightAnchor="937.0">
                <font>
                   <Font size="32.0" />
                </font>
@@ -147,12 +558,79 @@
                   <Insets />
                </opaqueInsets>
             </TextField>
-            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="38.0" fitWidth="38.0" layoutX="601.0" layoutY="44.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@resources/search.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="startPagePane" prefHeight="900.0" prefWidth="1600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="125.0">
+         <children>
+            <ImageView fitHeight="775.0" fitWidth="1600.0" layoutX="73.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@resources/startpage.png" />
+               </image>
+            </ImageView>
+            <Label id="imat_homepage" layoutX="290.0" layoutY="176.0" prefHeight="183.0" prefWidth="237.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="iMat" textFill="WHITE" AnchorPane.leftAnchor="291.5">
+               <font>
+                  <Font size="96.0" />
+               </font>
+            </Label>
+            <Button fx:id="startShoppingButton" layoutX="330.0" layoutY="407.0" mnemonicParsing="false" onAction="#toggleOnButton" pickOnBounds="false" prefHeight="225.0" prefWidth="225.0" styleClass="bighomepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="170.0" AnchorPane.leftAnchor="297.5">
+               <graphic>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/shoppingcart2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="startHistoryButton" layoutX="626.0" layoutY="426.0" mnemonicParsing="false" onAction="#toggleOnButton" pickOnBounds="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="586.5">
+               <graphic>
+                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/history.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="startMyPagesButton" layoutX="107.0" layoutY="432.0" mnemonicParsing="false" onAction="#toggleOnButton" pickOnBounds="false" prefHeight="156.0" prefWidth="156.0" styleClass="homepage_button" stylesheets="@roundedbuttonstyle.css" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="77.5">
+               <graphic>
+                  <ImageView fitHeight="94.0" fitWidth="94.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@resources/settings2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label layoutX="175.0" layoutY="73.0" prefHeight="87.0" prefWidth="600.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Välkommen till " textFill="WHITE" AnchorPane.leftAnchor="160.5">
+               <font>
+                  <Font name="Roboto" size="72.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="610.0" prefHeight="49.0" prefWidth="220.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Mina Sidor" textFill="WHITE" AnchorPane.leftAnchor="58.0">
+               <font>
+                  <Font name="Roboto" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="594.0" layoutY="610.0" prefHeight="49.0" prefWidth="160.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Historik" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="594.5">
+               <font>
+                  <Font name="Roboto" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="328.0" layoutY="645.0" prefHeight="58.0" prefWidth="170.0" styleClass="outline" stylesheets="@roundedbuttonstyle.css" text="Handla" textFill="WHITE" AnchorPane.leftAnchor="333.0">
+               <font>
+                  <Font name="Roboto" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="cartLockedLabel" mouseTransparent="true" prefHeight="73.0" prefWidth="150.0" styleClass="label_smaller" stylesheets="@text_styles.css" text="Varukorg låst i kassan" textAlignment="CENTER" visible="false" wrapText="true" AnchorPane.rightAnchor="61.5" AnchorPane.topAnchor="425.0" />
+      <ImageView fx:id="lockImageView" fitHeight="87.0" fitWidth="78.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.rightAnchor="97.5" AnchorPane.topAnchor="345.0">
+         <image>
+            <Image url="@resources/lock.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

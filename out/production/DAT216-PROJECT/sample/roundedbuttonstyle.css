@@ -24,7 +24,41 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
 }
+
+/* Kan lägga in detta i vanliga round_button sen om vi vill ha med det */
+.dropshadow_button {
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
+}
+
+.innershadow_button {
+-fx-effect: innershadow( three-pass-box , black , 10 , 0.0 , 0 , 3 );
+}
+
+.search_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-border-radius: 45px;
+-fx-background-radius: 45px;
+-fx-text-fill: #000000;
+-fx-background-insets: 0;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
+}
+
+.search_button:hover {
+-fx-border-width: 2px;
+}
+
+.search_button:focused {
+-fx-border-width: 2px;
+-fx-background-color: #FFFFFF;
+}
+
 
 .round_button_pressed {
 -fx-background-color: #F2B84B;
@@ -37,6 +71,7 @@
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 24px;
+-fx-effect: innershadow( three-pass-box , black , 10 , 0.0 , 0 , 3 );
 }
 
 /* feedback response by changing background color of button when hovered */
@@ -72,16 +107,20 @@
     -fx-text-fill: #4E4873;
 }
 
+#imat:hover {
+-fx-text-fill: #6a648f;
+}
+
 #imat_homepage {
     -fx-font-family: 'Rochester';
     -fx-font-size: 130px;
     -fx-text-fill: #FFFFFF;
-    /*
-    -fx-border-width: 1px;
-    -fx-border-color: #000000;
-    -fx-stroke: #000000;
-    -fx-stroke-width: 2px;
-    */
+}
+
+.outline.label .text {
+-fx-stroke: #000000;
+-fx-stroke-width: 1.5px;
+-fx-stroke-type: outside;
 }
 
 #shopping_button {
@@ -117,6 +156,37 @@
 -fx-label-padding: 0 0 0 25;
 }
 
+.change_cart_button {
+-fx-background-color: #F2F0E9;
+-fx-border-width: 1px;
+-fx-border-color: #4E4873;
+-fx-text-fill: #000000;
+}
+
+.change_cart_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
+.checkout_button {
+-fx-background-color: #F2B84B;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+-fx-font-family: 'Roboto Medium';
+-fx-font-size: 28px;
+}
+
+.checkout_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
+
+.checkout_button_disabled {
+-fx-background-color: #C9C9C9;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
 .headline_label {
 -fx-font-style: italic;
 -fx-font-weight: 700;
@@ -129,9 +199,28 @@
 -fx-border-radius: 150px;
 -fx-background-radius: 150px;
 -fx-background-insets: 0; /* Vad är detta? */
+-fx-border-width: 2px;
+-fx-border-color: #000000;
 }
 
+.homepage_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
 
+.bighomepage_button {
+-fx-background-color: #F2B84B;
+-fx-border-radius: 150px;
+-fx-background-radius: 150px;
+-fx-background-insets: 0;
+-fx-border-width: 2px;
+-fx-border-color: #000000;
+}
+
+.bighomepage_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
 
 
 .shopping_item {
@@ -143,7 +232,7 @@
 }
 
 .delivery_date_button {
--fx-background-color: #F2F0E9;
+-fx-background-color: #F1F1F1;
 -fx-border-width: 1px;
 -fx-border-color: #000000;
 -fx-border-radius: 45px;
@@ -155,14 +244,28 @@
 -fx-font-size: 64px;
 }
 
+.delivery_date_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .delivery_time_button {
--fx-background-color: #F2F0E9;
+-fx-background-color: #F1F1F1;
 -fx-border-width: 1px;
 -fx-border-color: #000000;
 -fx-text-fill: #000000;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
 -fx-font-size: 20px;
+}
+
+.delivery_time_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
+.delivery_date_button_pressed {
+-fx-background-color: #F2B84B;
 }
 
 .go_back_button {
@@ -172,17 +275,63 @@
 -fx-text-fill: #000000;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
+-fx-alignment: center;
 -fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
 }
 
-.next_step_button {
--fx-background-color: #F2B84B;
+.go_back_to_shopping_button {
+-fx-background-color: #F2F0E9;
 -fx-border-width: 1px;
 -fx-border-color: #000000;
 -fx-text-fill: #000000;
 -fx-padding: 1;
 -fx-font-family: 'Roboto';
+-fx-alignment: center;
 -fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
+}
+
+.go_back_to_shopping_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
+.go_back_button:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
+.next_step_button {
+-fx-background-color: #F2B84B;
+-fx-text-fill: #000000;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
+}
+
+.next_step_button:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
+}
+
+.next_step_button_final {
+-fx-background-color: #F2B84B;
+-fx-text-fill: #000000;
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-padding: 1;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+-fx-effect: dropshadow( three-pass-box , black , 10 , 0.0 , 0 , 1 );
+}
+
+.next_step_button_final:hover {
+-fx-background-color: #d19f41;
+-fx-cursor: hand;
 }
 
 .instruction_blob {
@@ -200,6 +349,11 @@
 -fx-font-size: 24px;
 }
 
+.next_step_startwizard:hover {
+-fx-background-color: #E1DBC7;
+-fx-cursor: hand;
+}
+
 .skip_button_startwizard {
 -fx-background-color: #FABFB1;
 -fx-border-width: 1px;
@@ -208,4 +362,46 @@
 -fx-background-radius: 45px;
 -fx-font-family: 'Roboto';
 -fx-font-size: 18px;
+}
+
+.skip_button_startwizard:hover {
+-fx-background-color: #d6a296;
+-fx-cursor: hand;
+}
+
+.information_textfield {
+-fx-background-color: #E4E4E4;
+-fx-border-width: 1px;
+-fx-border-color: #737373;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.information_textfield:hover, .information_textfield:focused {
+-fx-background-color: #F1F1F1;
+-fx-border-color: #000000;
+}
+
+.information_textfield_red {
+-fx-background-color: #E4E4E4;
+-fx-border-width: 2px;
+-fx-border-color: #ff1100;
+-fx-font-family: 'Roboto';
+-fx-font-size: 24px;
+}
+
+.calendar_date {
+-fx-border-width: 1px;
+-fx-border-color: #000000;
+-fx-font-family: 'Roboto';
+-fx-font-size: 14px;
+}
+
+.date-picker-popup .calendar-grid {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 290px;
+    -fx-font-size: 20px;
+}
+.date-picker-popup .spinner-label {
+    -fx-font-size: 25px;
 }
